@@ -20,20 +20,114 @@ function initialize() {
     }, false);
     $("#data_transport_supplies").text((getTransportCapacity()).toLocaleString());
     $("#data_transport_points").text((2*(getTransportCapacity()/10000)).toLocaleString());
-    load();
+    
+    var idx = document.URL.indexOf('?');
+    if (idx != -1) {
+        var talents = document.URL.substring(idx+4, document.URL.length);
+        role = parseInt(talents[0]);
+        for(var i = 1; i < talents.length; i++) {
+            var j = parseInt(talents[i]);
+            while(j > 0) {
+                addTalent(role,i-1);
+                j--;
+            }
+        }
+    }
 }
 
 function updateData() {
-    var data = getGloryPoints();
+    var role_char = role==ROLE_OFFENSIVE?'o':role==ROLE_DEFENSIVE?'d':role==ROLE_LOGISTICS?'l':'';
+    var data;
+
+    data = getGloryPoints();
     $("#data_glory_points").text(data.toLocaleString());
     
     data = getQueues();
     $("#data_queues").text(data.toLocaleString());
+   
+    data = getMarchingSpeed();
+    $("#data_marching_speed").text(data.toLocaleString());
+   
+    data = getArmySize();
+    $("#data_army_size").text(data.toLocaleString());
+    
     
     data = getTransportCapacity();
     $("#data_transport_supplies").text((data).toLocaleString());
     $("#data_transport_points").text((2*(data/10000)).toLocaleString());
+    
+    data = getTransportSpeed();
+    $("#datal_transport_speed").text((data).toLocaleString());
+    
+    data = getTradingEfficiency();
+    $("#data_trading_efficiency").text((data).toLocaleString());
+    
+    data = getTradingTimeStr(getTradingTime());
+    $("#data_trading_time").text((data).toLocaleString());
+    
+    
+    data = getTotalAttack();
+    $("#data" + role_char + "_attack").text((data).toLocaleString());
+
+    data = getTotalDefense();
+    $("#data" + role_char + "_defense").text((data).toLocaleString());
+
+    data = getTotalHealth();
+    $("#data" + role_char + "_health").text((data).toLocaleString());
+
+
+    data = getResilienceLimit();
+    $("#data_resilience_limit").text((data).toLocaleString());
+
+    data = getResilienceBattle();
+    $("#data_resilience_battle").text((data).toLocaleString());
+
+    data = getResilienceMovement();
+    $("#data_resilience_move").text((data).toLocaleString());
+    
+    
+    data = getEnemyCasualtyRate();
+    $("#data" + role_char + "_enemy_casualty").text((data).toLocaleString());
+
+    data = getAlliedCasualtyRate();
+    $("#data" + role_char + "_allied_casualty").text((data).toLocaleString());
+    
+    showRoleData();
     updateURL();
+}
+
+function showRoleData() {
+        switch(role) {
+            case ROLE_OFFENSIVE:
+                $("#data_offensive").show();
+                $("#data_defensive").hide();
+                $("#data_logistics").hide();
+                break;
+            case ROLE_DEFENSIVE:
+                $("#data_offensive").hide();
+                $("#data_defensive").show();
+                $("#data_logistics").hide();
+                break;
+            case ROLE_LOGISTICS:
+                $("#data_offensive").hide();
+                $("#data_defensive").hide();
+                $("#data_logistics").show();
+                $("#ee0").show();
+                $("#ee1").show();
+                $("#ee2").show();
+                $("#ee3").show();
+                $("#ee4").show();
+                break;
+            default:
+                $("#data_offensive").hide();
+                $("#data_defensive").hide();
+                $("#data_logistics").show();
+                $("#ee0").hide();
+                $("#ee1").hide();
+                $("#ee2").hide();
+                $("#ee3").hide();
+                $("#ee4").hide();
+        }
 }
 
 function getGloryPoints() {
@@ -47,10 +141,102 @@ function getQueues() {
     return QUEUES + val[0] + val[7] + val[14];
 }
 
+function getMarchingSpeed() {
+    return role==ROLE_OFFENSIVE?30:0;
+}
+
+function getArmySize() {
+    //TODO
+    return 0;
+}
+
 function getTransportCapacity() {
     var res = TRANSPORT_CAPACITY;
-    var bonus = ROLE_LOGISTICS?(4 * (val[3] + val[4] + val[10] + val[11] + val[18])):0;
-    res += res*bonus/100;
+    var bonus = role==ROLE_LOGISTICS?(4 * (val[3] + val[4] + val[10] + val[11] + val[18])):0;
+    return res + res*bonus/100;
+}
+
+function getTransportSpeed() {
+    return role==ROLE_LOGISTICS?(4 * (val[1] + val[2] + val[8] + val[9] + val[16])):0;
+}
+
+function getTradingEfficiency() {
+    var res = role==ROLE_OFFENSIVE?-50:role==ROLE_LOGISTICS?30:0;
+    if (role == ROLE_LOGISTICS)
+        res += 5 * (val[6] + val[13] + val[20]);
+    return res;
+}
+
+function getTradingTime() {
+    var res = 8*60;
+    var bonus = role==ROLE_LOGISTICS?(5 * (val[5] + val[12])):0;
+    return res + res * bonus/100;
+}
+
+function getTradingTimeStr(time) {
+    var hours = Math.floor(time / 60);
+    var minutes = time % 60;
+    if (minutes > 0)
+        return hours + "h " + minutes + "m";
+    return hours + "h";
+}
+
+function getTotalAttack() {
+    var res = role==ROLE_OFFENSIVE?20:role==ROLE_DEFENSIVE?25:0;
+    if (role == ROLE_OFFENSIVE || role == ROLE_DEFENSIVE)
+        res += 4*(val[2] + val[9] + val[16]);
+    return res;
+}
+
+function getTotalDefense() {
+    var res = role==ROLE_OFFENSIVE?20:role==ROLE_DEFENSIVE?25:0;
+    if (role == ROLE_OFFENSIVE || role == ROLE_DEFENSIVE)
+        res += 4*(val[4] + val[11] + val[18]);
+    return res;
+}
+
+function getTotalHealth() {
+    var res = role==ROLE_OFFENSIVE?20:role==ROLE_DEFENSIVE?25:0;
+    if (role == ROLE_OFFENSIVE || role == ROLE_DEFENSIVE)
+        res += 4*(val[6] + val[13] + val[20]);
+    return res;
+}
+
+function getResilienceLimit() {
+    var res = role==ROLE_OFFENSIVE?140:role==ROLE_DEFENSIVE?160:100;
+    res += 0 * val[19]; //TODO: Inspired and Impassioned
+    return res;
+}
+
+function getResilienceBattle() {
+    var res = 15;
+    var bonus = 0;
+    if (role == ROLE_OFFENSIVE || role == ROLE_DEFENSIVE)
+        bonus = 5 * val[3] + val[17];
+    return res - (res * bonus) / 100 ;
+}
+
+function getResilienceMovement() {
+    var res = 1;
+    var bonus = 0;
+    if (role == ROLE_OFFENSIVE || role == ROLE_DEFENSIVE)
+        bonus = 5 * val[1] + val[15];
+    return res - (res * bonus) / 100 ;
+}
+
+function getEnemyCasualtyRate() {
+    var res = 0;
+    if (role == ROLE_OFFENSIVE || role == ROLE_DEFENSIVE)
+        res += 2*(val[5] + val[10]);
+    return res;
+}
+
+function getAlliedCasualtyRate() {
+    var res = 0;
+    if (role == ROLE_OFFENSIVE || role == ROLE_DEFENSIVE)
+        res += 2*(val[8]);
+    else if (role == ROLE_LOGISTICS)
+        res += 2*(val[15] + val[17]);
     return res;
 }
 
@@ -60,6 +246,11 @@ function reset() {
     $("#panelO").removeClass("disabled");
     $("#panelD").removeClass("disabled");
     $("#panelL").removeClass("disabled");
+    $("#ee0").hide();
+    $("#ee1").hide();
+    $("#ee2").hide();
+    $("#ee3").hide();
+    $("#ee4").hide();
     for(var i = 0; i < 22; i++) {
         $("#O"+i).addClass("disabled");
         $("#D"+i).addClass("disabled");
@@ -142,21 +333,6 @@ function removeTalent(mode,id) {
         if (id == 0 && val[id] == 0)
             reset();
         updateData();
-    }
-}
-
-function load() {
-    var idx = document.URL.indexOf('?');
-    if (idx != -1) {
-        var talents = document.URL.substring(idx+4, document.URL.length);
-        role = parseInt(talents[0]);
-        for(var i = 1; i < talents.length; i++) {
-            var j = parseInt(talents[i]);
-            while(j > 0) {
-                addTalent(role,i-1);
-                j--;
-            }
-        }
     }
 }
 

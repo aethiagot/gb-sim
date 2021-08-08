@@ -40,7 +40,8 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     padding: 20px;
-    text-align: center;
+    text-align: left;
+    padding-left: 250px;
 }
 
 .tier {
@@ -121,6 +122,21 @@ body {
     filter: grayscale(100%);
 }
 
+.offensive {
+    color: #F08654;
+}
+
+.defensive {
+    color: #88D4FF;
+}
+
+.logistics {
+    color: #65E08B;
+}
+
+.ee {
+    display: none;
+}
 .offensive-glow {
     border-color: #F08654;
     -moz-box-shadow: 0 0 25px #F08654;

@@ -27,20 +27,54 @@
         </div>
         
         <div class="controls">
-            <div></div>
-            <div></div>
-            <div></div>
-            Glory Points:&nbsp;<span id="data_glory_points">0</span><br>
-            Number of Queues:&nbsp;<span id="data_queues">2</span><br>
-            Transport Capacity:&nbsp;<span id="data_transport_supplies">120000</span> supplies (<span id="data_transport_points"></span> points)<br>
-            <!--- TODO 
-            Max Resilience:&nbsp;<span id="C2">100</span><br>
-            Total Attack:&nbsp;<span id="C3">0</span>%<br>
-            Total Defense:&nbsp;<span id="C4">0</span>%<br>
-            Total Health:&nbsp;<span id="C5">0</span>%<br>
-            Marching Speed:&nbsp;<span id="C6">0</span>%<br>
-            Trading Efficiency:&nbsp;<span id="C7">0</span>%<br>
-            --->
+            <div style="display: flex;">
+                <div style="float: left; width: 400px; min-width: 400px; max-width: 400px;">
+                    Glory Points:&nbsp;<span id="data_glory_points">0</span><br>
+                    Number of Queues:&nbsp;<span id="data_queues">2</span><br>
+                    Marching Speed:&nbsp;+<span id="data_marching_speed">0</span>%<br>
+                    Army Size:&nbsp;+<span id="data_army_size">0</span>% (incomplete)<br>
+                </div>
+                <div style="float: right; width: 400px; min-width: 400px; max-width: 400px;">
+                    Transport Capacity:&nbsp;<span id="data_transport_supplies">120000</span> supplies (<span id="data_transport_points"></span> points)<br>
+                    Transport Speed:&nbsp;+<span id="datal_transport_speed">0</span>%<br>
+                    Trading Efficiency:&nbsp;+<span id="data_trading_efficiency">0</span>%<br>
+                    Trading Time:&nbsp;<span id="data_trading_time">8</span><br>
+                </div>
+            </div>
+            <br>
+            <div style="display: flex;">
+                <div style="float: left; width: 400px; min-width: 400px; max-width: 400px;">
+                    <div id="data_offensive" style="display: none;"> <!-- OFFENSIVE -->
+                        Total attack when <span class="offensive">attacking</span>:&nbsp;+<span id="datao_attack">20</span>%<br>
+                        Total defense when <span class="offensive">attacking</span>:&nbsp;+<span id="datao_defense">20</span>%<br>
+                        Total health when <span class="offensive">attacking</span>:&nbsp;+<span id="datao_health">20</span>%<br>
+                        <br>
+                        Enemy Casualty rate when <span class="offensive">attacking</span>:&nbsp;+<span id="datao_enemy_casualty">0</span>%<br>
+                        Allied Casualty rate when <span class="offensive">attacking</span>:&nbsp;-<span id="datao_allied_casualty">0</span>%<br>
+                    </div>
+                    <div id="data_defensive" style="display: none;"> <!-- DEFENSIVE -->
+                        Total attack when <span class="defensive">defending</span>:&nbsp;+<span id="datad_attack">25</span>%<br>
+                        Total defense when <span class="defensive">defending</span>:&nbsp;+<span id="datad_defense">25</span>%<br>
+                        Total health when <span class="defensive">defending</span>:&nbsp;+<span id="datad_health">25</span>%<br>
+                        <br>
+                        Enemy Casualty rate when <span class="defensive">defending</span>:&nbsp;+<span id="datad_enemy_casualty">0</span>%<br>
+                        Allied Casualty rate when <span class="defensive">defending</span>:&nbsp;-<span id="datad_allied_casualty">0</span>%<br>
+                    </div>
+                    <div id="data_logistics" style="float: right; width: 400px; min-width: 400px; max-width: 400px;"> <!-- LOGISTICS -->
+                        Total attack<span id="ee0" class="logistics ee"> when seeing Altisio fight</span>:&nbsp;+<span id="datal_attack">0</span>%<br>
+                        Total defense<span id="ee1" class="logistics ee"> when seeing Altisio fight</span>:&nbsp;+<span id="datal_defense">0</span>%<br>
+                        Total health<span id="ee2" class="logistics ee"> when seeing Altisio fight</span>:&nbsp;+<span id="datal_health">0</span>%<br>
+                        <br>
+                        Enemy Casualty rate<span id="ee3" class="logistics ee"> when seeing Altisio fight</span>:&nbsp;+<span id="datal_enemy_casualty">0</span>%<br>
+                        Allied Casualty rate<span id="ee4" class="logistics ee"> when seeing Altisio fight</span>:&nbsp;-<span id="datal_allied_casualty">0</span>%<br>
+                    </div>
+                </div>
+                <div style="float: right; width: 400px; min-width: 400px; max-width: 400px;">
+                    Resilience Limit:&nbsp;<span id="data_resilience_limit">100</span> (incomplete)<br>
+                    Resilience lost in Battle:&nbsp;<span id="data_resilience_battle">15</span><br>
+                    Resilience lost in Movement:&nbsp;<span id="data_resilience_move">1</span> every 5 seconds<br>
+                </div>
+            </div>
             <div class="myButton" style="position: absolute; bottom: 0px; right: 0px;" onclick="reset()">Reset</div>
         </div>
         <br>
