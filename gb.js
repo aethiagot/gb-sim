@@ -20,6 +20,7 @@ function initialize() {
     }, false);
     $("#data_transport_supplies").text((getTransportCapacity()).toLocaleString());
     $("#data_transport_points").text((2*(getTransportCapacity()/10000)).toLocaleString());
+    load();
 }
 
 function updateData() {
@@ -32,6 +33,7 @@ function updateData() {
     data = getTransportCapacity();
     $("#data_transport_supplies").text((data).toLocaleString());
     $("#data_transport_points").text((2*(data/10000)).toLocaleString());
+    updateURL();
 }
 
 function getGloryPoints() {
@@ -141,4 +143,37 @@ function removeTalent(mode,id) {
             reset();
         updateData();
     }
+}
+
+function load() {
+    var idx = document.URL.indexOf('?');
+    if (idx != -1) {
+        var talents = document.URL.substring(idx+4, document.URL.length);
+        role = parseInt(talents[0]);
+        for(var i = 1; i < talents.length; i++) {
+            var j = parseInt(talents[i]);
+            while(j > 0) {
+                addTalent(role,i-1);
+                j--;
+            }
+        }
+    }
+}
+
+function updateURL() {
+    var url_export = "" + role;
+    for(var i = 0; i < val.length; i++)
+        url_export += val[i];
+    
+    var url = new URL(document.URL.toString());
+    var query_string = url.search;
+    var search_params = new URLSearchParams(query_string); 
+    search_params.set('id', url_export);
+    url.search = search_params.toString();
+    var new_url = url.toString();
+    console.log(new_url);
+    if (history.pushState)
+        window.history.pushState("", "", new_url);
+    else
+        document.location.href = new_url;
 }
