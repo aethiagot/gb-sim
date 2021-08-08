@@ -5,7 +5,7 @@ var ROLE_LOGISTICS = 3;
 var TRANSPORT_CAPACITY = 120000;
 var MAX_RESILIENCE = 100;
 var MAX_RESILIENCE_OFFENSIVE = 140;
-var QUEUES = 3;
+var QUEUES = 2;
 
 var costs = [ 250, 200, 130, 200, 130, 200, 130, 380, 250, 150, 250, 150, 250, 150, 500, 200, 200, 200, 200, 400, 200, 800 ];
 var links = [ null, 0, 0, 1, 2, 3, 4, 6, 7, 7, 8, 9, 10, 11, 13, 14, 14, 15, 16, 17, 18, 20 ];
