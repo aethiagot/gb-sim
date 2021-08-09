@@ -143,8 +143,7 @@ function getMarchingSpeed() {
 }
 
 function getArmySize() {
-    //TODO
-    return 0;
+    return (role==ROLE_OFFENSIVE || role==ROLE_DEFENSIVE)?(20000 * val[12]):0;
 }
 
 function getTransportCapacity() {
