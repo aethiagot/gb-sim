@@ -2,8 +2,6 @@ var ROLE_NONE = 0;
 var ROLE_OFFENSIVE = 1;
 var ROLE_DEFENSIVE = 2;
 var ROLE_LOGISTICS = 3;
-var TRANSPORT_CAPACITY = 120000;
-var QUEUES = 2;
 
 var costs = [ 250, 200, 130, 200, 130, 200, 130, 380, 250, 150, 250, 150, 250, 150, 500, 200, 200, 200, 200, 400, 200, 800 ];
 var links = [ null, 0, 0, 1, 2, 3, 4, 6, 7, 7, 8, 9, 10, 11, 13, 14, 14, 15, 16, 17, 18, 20 ];
@@ -36,56 +34,46 @@ function updateData() {
     var role_char = role==ROLE_OFFENSIVE?'o':role==ROLE_DEFENSIVE?'d':role==ROLE_LOGISTICS?'l':'';
     var data;
 
+    /* General data */
     data = getGloryPoints();
     $("#data_glory_points").text(data.toLocaleString());
-    
     data = getQueues();
     $("#data_queues").text(data.toLocaleString());
-   
     data = getMarchingSpeed();
     $("#data_marching_speed").text(data.toLocaleString());
-   
     data = getArmySize();
     $("#data_army_size").text(data.toLocaleString());
     
-    
+    /* Transport & Trading */
     data = getTransportCapacity();
     $("#data_transport_supplies").text((data).toLocaleString());
     $("#data_transport_points").text((2*(data/10000)).toLocaleString());
-    
     data = getTransportSpeed();
     $("#datal_transport_speed").text((data).toLocaleString());
-    
     data = getTradingEfficiency();
     $("#data_trading_efficiency").text((data).toLocaleString());
-    
     data = getTradingTimeStr(getTradingTime());
     $("#data_trading_time").text((data).toLocaleString());
     
-    
+    /* Battle stats */
     data = getTotalAttack();
     $("#data" + role_char + "_attack").text((data).toLocaleString());
-
     data = getTotalDefense();
     $("#data" + role_char + "_defense").text((data).toLocaleString());
-
     data = getTotalHealth();
     $("#data" + role_char + "_health").text((data).toLocaleString());
 
-
+    /* Resilience */
     data = getResilienceLimit();
     $("#data_resilience_limit").text((data).toLocaleString());
-
     data = getResilienceBattle();
     $("#data_resilience_battle").text((data).toLocaleString());
-
     data = getResilienceMovement();
     $("#data_resilience_move").text((data).toLocaleString());
-    
-    
+
+    /* Casualties */
     data = getEnemyCasualtyRate();
     $("#data" + role_char + "_enemy_casualty").text((data).toLocaleString());
-
     data = getAlliedCasualtyRate();
     $("#data" + role_char + "_allied_casualty").text((data).toLocaleString());
     
@@ -135,7 +123,7 @@ function getGloryPoints() {
 }
 
 function getQueues() {
-    return QUEUES + val[0] + val[7] + val[14];
+    return 2 + val[0] + val[7] + val[14];
 }
 
 function getMarchingSpeed() {
@@ -147,7 +135,7 @@ function getArmySize() {
 }
 
 function getTransportCapacity() {
-    var res = TRANSPORT_CAPACITY;
+    var res = 120000; //Default Transport Capacity
     var bonus = role==ROLE_LOGISTICS?(4 * (val[3] + val[4] + val[10] + val[11] + val[18])):0;
     return res + res*bonus/100;
 }
@@ -343,7 +331,6 @@ function updateURL() {
     search_params.set('id', url_export);
     url.search = search_params.toString();
     var new_url = url.toString();
-    console.log(new_url);
     if (history.pushState)
         window.history.pushState("", "", new_url);
     else
