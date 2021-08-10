@@ -188,7 +188,7 @@ function getTotalHealth() {
 
 function getResilienceLimit() {
     var res = role==ROLE_OFFENSIVE?140:role==ROLE_DEFENSIVE?160:100;
-    res += 0 * val[19]; //TODO: Inspired and Impassioned
+    res += 4 * val[19];
     return res;
 }
 
