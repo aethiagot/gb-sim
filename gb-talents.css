@@ -10,8 +10,25 @@ html {
     background-size: cover;
 }
 
-body {
-	
+.title {
+    position: relative;
+    font-family: 'Marcellus SC', serif;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #FFCC33;
+}
+
+.subtitle {
+    position: relative;
+    font-family: 'Marcellus SC', serif;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #FFCC33;
 }
 
 .container {
@@ -193,27 +210,6 @@ body {
     -moz-box-shadow: 0 0 25px #FFD384;
     -webkit-box-shadow: 0 0 25px #FFD384;
     box-shadow: 0 0 25px #FFD384;
-}
-
-.title {
-    position: relative;
-    font-family: 'Marcellus SC', serif;
-    font-size: 50px;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    font-weight: bold;
-    color: #FFCC33;
-}
-
-.subtitle {
-    position: relative;
-    font-family: 'Marcellus SC', serif;
-    font-size: 25px;
-    text-align: center;
-    margin-top: 20px;
-    font-weight: bold;
-    color: #FFCC33;
 }
 
 .myButton {
