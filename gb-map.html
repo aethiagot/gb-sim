@@ -8,14 +8,14 @@
         <meta http-equiv="Pragma" content="no-cache" />
         <meta http-equiv="Expires" content="0" />
     
-        <link rel="stylesheet" type="text/css" href="gb-map.css?v=1.0">
+        <link rel="stylesheet" type="text/css" href="gb-map.css?v=1.1">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Marcellus+SC" rel="stylesheet">
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script type="text/javascript" charset="utf-8" src="gb-map.js?v=1.0"></script>
+        <script type="text/javascript" charset="utf-8" src="gb-map.js?v=1.1"></script>
     </head>
 
     <body onload="initialize()">
@@ -32,239 +32,239 @@
             <canvas id="myCanvas" class="canvas" width="1200" height="1200"></canvas>
             
             <!-- BANNERS -->
-            <img id="item0" class="item banner" src="./img/map/0/banner.png" style="top: 569px; left: 569px;" onclick="attack(0)">
-            <img id="item1" class="banner" src="./img/map/1/banner.png" style="top: 6px; left: 6px;">
-            <img id="item2" class="banner" src="./img/map/2/banner.png" style="top: 568px; left: 6px;">
-            <img id="item3" class="banner" src="./img/map/3/banner.png" style="top: 1132px; left: 6px;">
-            <img id="item4" class="banner" src="./img/map/4/banner.png" style="top: 1132px; left: 570px;">
-            <img id="item5" class="banner" src="./img/map/5/banner.png" style="top: 1132px; left: 1132px;">
-            <img id="item6" class="banner" src="./img/map/6/banner.png" style="top: 568px; left: 1132px;">
-            <img id="item7" class="banner" src="./img/map/7/banner.png" style="top: 6px; left: 1132px;">
-            <img id="item8" class="banner" src="./img/map/8/banner.png" style="top: 6px; left: 570px;">
+            <img id="item0" class="item banner noselect" src="./img/map/0/banner.png" style="top: 569px; left: 569px;" onclick="attack(0)">
+            <img id="item1" class="banner noselect" src="./img/map/1/banner.png" style="top: 6px; left: 6px;">
+            <img id="item2" class="banner noselect" src="./img/map/2/banner.png" style="top: 568px; left: 6px;">
+            <img id="item3" class="banner noselect" src="./img/map/3/banner.png" style="top: 1132px; left: 6px;">
+            <img id="item4" class="banner noselect" src="./img/map/4/banner.png" style="top: 1132px; left: 570px;">
+            <img id="item5" class="banner noselect" src="./img/map/5/banner.png" style="top: 1132px; left: 1132px;">
+            <img id="item6" class="banner noselect" src="./img/map/6/banner.png" style="top: 568px; left: 1132px;">
+            <img id="item7" class="banner noselect" src="./img/map/7/banner.png" style="top: 6px; left: 1132px;">
+            <img id="item8" class="banner noselect" src="./img/map/8/banner.png" style="top: 6px; left: 570px;">
             
             <!-- CARAVANS -->
-            <img id="item9" alt="caravan1" class="item caravan" src="./img/map/0/caravan.png" style="top: 82px; left: 89px;" onclick="attack(9)">
-            <img id="item10" alt="caravan2" class="item caravan" src="./img/map/0/caravan.png" style="top: 581px; left: 85px;" onclick="attack(10)">
-            <img id="item11" alt="caravan3" class="item caravan" src="./img/map/0/caravan.png" style="top: 1081px; left: 89px;" onclick="attack(11)">
-            <img id="item12" alt="caravan4" class="item caravan" src="./img/map/0/caravan.png" style="top: 1018px; left: 589px;" onclick="attack(12)">
-            <img id="item13" alt="caravan5" class="item caravan" src="./img/map/0/caravan.png" style="top: 1081px; left: 1089px;" onclick="attack(13)">
-            <img id="item14" alt="caravan6" class="item caravan" src="./img/map/0/caravan.png" style="top: 581px; left: 1093px;" onclick="attack(14)">
-            <img id="item15" alt="caravan7" class="item caravan" src="./img/map/0/caravan.png" style="top: 82px; left: 1089px;" onclick="attack(15)">
-            <img id="item16" alt="caravan8" class="item caravan" src="./img/map/0/caravan.png" style="top: 145px; left: 589px;" onclick="attack(16)">
-            <img id="item17" alt="caravan9" class="item caravan" src="./img/map/0/caravan.png" style="top: 289px; left: 383px;" onclick="attack(17)">
-            <img id="item18" alt="caravan10" class="item caravan" src="./img/map/0/caravan.png" style="top: 375px; left: 297px;" onclick="attack(18)">
-            <img id="item19" alt="caravan11" class="item caravan" src="./img/map/0/caravan.png" style="top: 787px; left: 297px;" onclick="attack(19)">
-            <img id="item20" alt="caravan12" class="item caravan" src="./img/map/0/caravan.png" style="top: 873px; left: 383px;" onclick="attack(20)">
-            <img id="item21" alt="caravan13" class="item caravan" src="./img/map/0/caravan.png" style="top: 873px; left: 795px;" onclick="attack(21)">
-            <img id="item22" alt="caravan14" class="item caravan" src="./img/map/0/caravan.png" style="top: 787px; left: 881px;" onclick="attack(22)">
-            <img id="item23" alt="caravan15" class="item caravan" src="./img/map/0/caravan.png" style="top: 375px; left: 881px;" onclick="attack(23)">
-            <img id="item24" alt="caravan16" class="item caravan" src="./img/map/0/caravan.png" style="top: 289px; left: 795px;" onclick="attack(24)">
+            <img id="item9" alt="caravan1" class="item noselect caravan" src="./img/map/0/caravan.png" style="top: 82px; left: 89px;" onclick="attack(9)">
+            <img id="item10" alt="caravan2" class="item noselect caravan" src="./img/map/0/caravan.png" style="top: 581px; left: 85px;" onclick="attack(10)">
+            <img id="item11" alt="caravan3" class="item noselect caravan" src="./img/map/0/caravan.png" style="top: 1081px; left: 89px;" onclick="attack(11)">
+            <img id="item12" alt="caravan4" class="item noselect caravan" src="./img/map/0/caravan.png" style="top: 1018px; left: 589px;" onclick="attack(12)">
+            <img id="item13" alt="caravan5" class="item noselect caravan" src="./img/map/0/caravan.png" style="top: 1081px; left: 1089px;" onclick="attack(13)">
+            <img id="item14" alt="caravan6" class="item noselect caravan" src="./img/map/0/caravan.png" style="top: 581px; left: 1093px;" onclick="attack(14)">
+            <img id="item15" alt="caravan7" class="item noselect caravan" src="./img/map/0/caravan.png" style="top: 82px; left: 1089px;" onclick="attack(15)">
+            <img id="item16" alt="caravan8" class="item noselect caravan" src="./img/map/0/caravan.png" style="top: 145px; left: 589px;" onclick="attack(16)">
+            <img id="item17" alt="caravan9" class="item noselect caravan" src="./img/map/0/caravan.png" style="top: 289px; left: 383px;" onclick="attack(17)">
+            <img id="item18" alt="caravan10" class="item noselect caravan" src="./img/map/0/caravan.png" style="top: 375px; left: 297px;" onclick="attack(18)">
+            <img id="item19" alt="caravan11" class="item noselect caravan" src="./img/map/0/caravan.png" style="top: 787px; left: 297px;" onclick="attack(19)">
+            <img id="item20" alt="caravan12" class="item noselect caravan" src="./img/map/0/caravan.png" style="top: 873px; left: 383px;" onclick="attack(20)">
+            <img id="item21" alt="caravan13" class="item noselect caravan" src="./img/map/0/caravan.png" style="top: 873px; left: 795px;" onclick="attack(21)">
+            <img id="item22" alt="caravan14" class="item noselect caravan" src="./img/map/0/caravan.png" style="top: 787px; left: 881px;" onclick="attack(22)">
+            <img id="item23" alt="caravan15" class="item noselect caravan" src="./img/map/0/caravan.png" style="top: 375px; left: 881px;" onclick="attack(23)">
+            <img id="item24" alt="caravan16" class="item noselect caravan" src="./img/map/0/caravan.png" style="top: 289px; left: 795px;" onclick="attack(24)">
             
             <!-- GATES -->
-            <img id="item25" alt="gate1" class="item gate" src="./img/map/0/gate.png" style="top: 202px; left: 281px;" onclick="attack(25)">
-            <img id="item26" alt="gate2" class="item gate" src="./img/map/0/gate.png" style="top: 288px; left: 195px;" onclick="attack(26)">
-            <img id="item27" alt="gate3" class="item gate" src="./img/map/0/gate.png" style="top: 397px; left: 195px;" onclick="attack(27)">
-            <img id="item28" alt="gate4" class="item gate" src="./img/map/0/gate.png" style="top: 781px; left: 195px;" onclick="attack(28)">
-            <img id="item29" alt="gate5" class="item gate" src="./img/map/0/gate.png" style="top: 890px; left: 195px;" onclick="attack(29)">
-            <img id="item30" alt="gate6" class="item gate" src="./img/map/0/gate.png" style="top: 975px; left: 281px;" onclick="attack(30)">
-            <img id="item31" alt="gate7" class="item gate" src="./img/map/0/gate.png" style="top: 975px; left: 389px;" onclick="attack(31)">
-            <img id="item32" alt="gate8" class="item gate" src="./img/map/0/gate.png" style="top: 975px; left: 775px;" onclick="attack(32)">
-            <img id="item33" alt="gate9" class="item gate" src="./img/map/0/gate.png" style="top: 975px; left: 883px;" onclick="attack(33)">
-            <img id="item34" alt="gate10" class="item gate" src="./img/map/0/gate.png" style="top: 890px; left: 969px;" onclick="attack(34)">
-            <img id="item35" alt="gate11" class="item gate" src="./img/map/0/gate.png" style="top: 781px; left: 969px;" onclick="attack(35)">
-            <img id="item36" alt="gate12" class="item gate" src="./img/map/0/gate.png" style="top: 397px; left: 969px;" onclick="attack(36)">
-            <img id="item37" alt="gate13" class="item gate" src="./img/map/0/gate.png" style="top: 288px; left: 969px;" onclick="attack(37)">
-            <img id="item38" alt="gate14" class="item gate" src="./img/map/0/gate.png" style="top: 202px; left: 883px;" onclick="attack(38)">
-            <img id="item39" alt="gate15" class="item gate" src="./img/map/0/gate.png" style="top: 202px; left: 775px;" onclick="attack(39)">
-            <img id="item40" alt="gate16" class="item gate" src="./img/map/0/gate.png" style="top: 202px; left: 389px;" onclick="attack(40)">
-            <img id="item41" alt="gate17" class="item gate" src="./img/map/0/gate.png" style="top: 529px; left: 556px;" onclick="attack(41)">
-            <img id="item42" alt="gate18" class="item gate" src="./img/map/0/gate.png" style="top: 563px; left: 523px;" onclick="attack(42)">
-            <img id="item43" alt="gate19" class="item gate" src="./img/map/0/gate.png" style="top: 615px; left: 523px;" onclick="attack(43)">
-            <img id="item44" alt="gate20" class="item gate" src="./img/map/0/gate.png" style="top: 649px; left: 556px;" onclick="attack(44)">
-            <img id="item45" alt="gate21" class="item gate" src="./img/map/0/gate.png" style="top: 649px; left: 608px;" onclick="attack(45)">
-            <img id="item46" alt="gate22" class="item gate" src="./img/map/0/gate.png" style="top: 615px; left: 642px;" onclick="attack(46)">
-            <img id="item47" alt="gate23" class="item gate" src="./img/map/0/gate.png" style="top: 563px; left: 642px;" onclick="attack(47)">
-            <img id="item48" alt="gate24" class="item gate" src="./img/map/0/gate.png" style="top: 529px; left: 608px;" onclick="attack(48)">
+            <img id="item25" alt="gate1" class="item noselect gate" src="./img/map/0/gate.png" style="top: 202px; left: 281px;" onclick="attack(25)">
+            <img id="item26" alt="gate2" class="item noselect gate" src="./img/map/0/gate.png" style="top: 288px; left: 195px;" onclick="attack(26)">
+            <img id="item27" alt="gate3" class="item noselect gate" src="./img/map/0/gate.png" style="top: 397px; left: 195px;" onclick="attack(27)">
+            <img id="item28" alt="gate4" class="item noselect gate" src="./img/map/0/gate.png" style="top: 781px; left: 195px;" onclick="attack(28)">
+            <img id="item29" alt="gate5" class="item noselect gate" src="./img/map/0/gate.png" style="top: 890px; left: 195px;" onclick="attack(29)">
+            <img id="item30" alt="gate6" class="item noselect gate" src="./img/map/0/gate.png" style="top: 975px; left: 281px;" onclick="attack(30)">
+            <img id="item31" alt="gate7" class="item noselect gate" src="./img/map/0/gate.png" style="top: 975px; left: 389px;" onclick="attack(31)">
+            <img id="item32" alt="gate8" class="item noselect gate" src="./img/map/0/gate.png" style="top: 975px; left: 775px;" onclick="attack(32)">
+            <img id="item33" alt="gate9" class="item noselect gate" src="./img/map/0/gate.png" style="top: 975px; left: 883px;" onclick="attack(33)">
+            <img id="item34" alt="gate10" class="item noselect gate" src="./img/map/0/gate.png" style="top: 890px; left: 969px;" onclick="attack(34)">
+            <img id="item35" alt="gate11" class="item noselect gate" src="./img/map/0/gate.png" style="top: 781px; left: 969px;" onclick="attack(35)">
+            <img id="item36" alt="gate12" class="item noselect gate" src="./img/map/0/gate.png" style="top: 397px; left: 969px;" onclick="attack(36)">
+            <img id="item37" alt="gate13" class="item noselect gate" src="./img/map/0/gate.png" style="top: 288px; left: 969px;" onclick="attack(37)">
+            <img id="item38" alt="gate14" class="item noselect gate" src="./img/map/0/gate.png" style="top: 202px; left: 883px;" onclick="attack(38)">
+            <img id="item39" alt="gate15" class="item noselect gate" src="./img/map/0/gate.png" style="top: 202px; left: 775px;" onclick="attack(39)">
+            <img id="item40" alt="gate16" class="item noselect gate" src="./img/map/0/gate.png" style="top: 202px; left: 389px;" onclick="attack(40)">
+            <img id="item41" alt="gate17" class="item noselect gate" src="./img/map/0/gate.png" style="top: 529px; left: 556px;" onclick="attack(41)">
+            <img id="item42" alt="gate18" class="item noselect gate" src="./img/map/0/gate.png" style="top: 563px; left: 523px;" onclick="attack(42)">
+            <img id="item43" alt="gate19" class="item noselect gate" src="./img/map/0/gate.png" style="top: 615px; left: 523px;" onclick="attack(43)">
+            <img id="item44" alt="gate20" class="item noselect gate" src="./img/map/0/gate.png" style="top: 649px; left: 556px;" onclick="attack(44)">
+            <img id="item45" alt="gate21" class="item noselect gate" src="./img/map/0/gate.png" style="top: 649px; left: 608px;" onclick="attack(45)">
+            <img id="item46" alt="gate22" class="item noselect gate" src="./img/map/0/gate.png" style="top: 615px; left: 642px;" onclick="attack(46)">
+            <img id="item47" alt="gate23" class="item noselect gate" src="./img/map/0/gate.png" style="top: 563px; left: 642px;" onclick="attack(47)">
+            <img id="item48" alt="gate24" class="item noselect gate" src="./img/map/0/gate.png" style="top: 529px; left: 608px;" onclick="attack(48)">
             
             <!-- FORTRESSES -->
-            <img id="item49" alt="fortress1" class="item fortress" src="./img/map/0/fortress.png" style="top: 339px; left: 119px;" onclick="attack(49)">
-            <img id="item50" alt="fortress2" class="item fortress" src="./img/map/0/fortress.png" style="top: 832px; left: 119px;" onclick="attack(50)">
-            <img id="item51" alt="fortress3" class="item fortress" src="./img/map/0/fortress.png" style="top: 1053px; left: 341px;" onclick="attack(51)">
-            <img id="item52" alt="fortress4" class="item fortress" src="./img/map/0/fortress.png" style="top: 1053px; left: 834px;" onclick="attack(52)">
-            <img id="item53" alt="fortress5" class="item fortress" src="./img/map/0/fortress.png" style="top: 832px; left: 1056px;" onclick="attack(53)">
-            <img id="item54" alt="fortress6" class="item fortress" src="./img/map/0/fortress.png" style="top: 339px; left: 1056px;" onclick="attack(54)">
-            <img id="item55" alt="fortress7" class="item fortress" src="./img/map/0/fortress.png" style="top: 117px; left: 834px;" onclick="attack(55)">
-            <img id="item56" alt="fortress8" class="item fortress" src="./img/map/0/fortress.png" style="top: 117px; left: 341px;" onclick="attack(56)">
-            <img id="item57" alt="fortress9" class="item fortress" src="./img/map/0/fortress.png" style="top: 339px; left: 237px;" onclick="attack(57)">
-            <img id="item58" alt="fortress10" class="item fortress" src="./img/map/0/fortress.png" style="top: 832px; left: 237px;" onclick="attack(58)">
-            <img id="item59" alt="fortress11" class="item fortress" src="./img/map/0/fortress.png" style="top: 936px; left: 341px;" onclick="attack(59)">
-            <img id="item60" alt="fortress12" class="item fortress" src="./img/map/0/fortress.png" style="top: 936px; left: 834px;" onclick="attack(60)">
-            <img id="item61" alt="fortress13" class="item fortress" src="./img/map/0/fortress.png" style="top: 832px; left: 938px;" onclick="attack(61)">
-            <img id="item62" alt="fortress14" class="item fortress" src="./img/map/0/fortress.png" style="top: 339px; left: 938px;" onclick="attack(62)">
-            <img id="item63" alt="fortress15" class="item fortress" src="./img/map/0/fortress.png" style="top: 235px; left: 834px;" onclick="attack(63)">
-            <img id="item64" alt="fortress16" class="item fortress" src="./img/map/0/fortress.png" style="top: 235px; left: 341px;" onclick="attack(64)">
-            <img id="item65" alt="fortress17" class="item fortress" src="./img/map/0/fortress.png" style="top: 501px; left: 422px;" onclick="attack(65)">
-            <img id="item66" alt="fortress18" class="item fortress" src="./img/map/0/fortress.png" style="top: 669px; left: 422px;" onclick="attack(66)">
-            <img id="item67" alt="fortress19" class="item fortress" src="./img/map/0/fortress.png" style="top: 750px; left: 503px;" onclick="attack(67)">
-            <img id="item68" alt="fortress20" class="item fortress" src="./img/map/0/fortress.png" style="top: 750px; left: 671px;" onclick="attack(68)">
-            <img id="item69" alt="fortress21" class="item fortress" src="./img/map/0/fortress.png" style="top: 660px; left: 753px;" onclick="attack(69)">
-            <img id="item70" alt="fortress22" class="item fortress" src="./img/map/0/fortress.png" style="top: 501px; left: 753px;" onclick="attack(70)">
-            <img id="item71" alt="fortress23" class="item fortress" src="./img/map/0/fortress.png" style="top: 420px; left: 671px;" onclick="attack(71)">
-            <img id="item72" alt="fortress24" class="item fortress" src="./img/map/0/fortress.png" style="top: 420px; left: 503px;" onclick="attack(72)">
+            <img id="item49" alt="fortress1" class="item noselect fortress" src="./img/map/0/fortress.png" style="top: 339px; left: 119px;" onclick="attack(49)">
+            <img id="item50" alt="fortress2" class="item noselect fortress" src="./img/map/0/fortress.png" style="top: 832px; left: 119px;" onclick="attack(50)">
+            <img id="item51" alt="fortress3" class="item noselect fortress" src="./img/map/0/fortress.png" style="top: 1053px; left: 341px;" onclick="attack(51)">
+            <img id="item52" alt="fortress4" class="item noselect fortress" src="./img/map/0/fortress.png" style="top: 1053px; left: 834px;" onclick="attack(52)">
+            <img id="item53" alt="fortress5" class="item noselect fortress" src="./img/map/0/fortress.png" style="top: 832px; left: 1056px;" onclick="attack(53)">
+            <img id="item54" alt="fortress6" class="item noselect fortress" src="./img/map/0/fortress.png" style="top: 339px; left: 1056px;" onclick="attack(54)">
+            <img id="item55" alt="fortress7" class="item noselect fortress" src="./img/map/0/fortress.png" style="top: 117px; left: 834px;" onclick="attack(55)">
+            <img id="item56" alt="fortress8" class="item noselect fortress" src="./img/map/0/fortress.png" style="top: 117px; left: 341px;" onclick="attack(56)">
+            <img id="item57" alt="fortress9" class="item noselect fortress" src="./img/map/0/fortress.png" style="top: 339px; left: 237px;" onclick="attack(57)">
+            <img id="item58" alt="fortress10" class="item noselect fortress" src="./img/map/0/fortress.png" style="top: 832px; left: 237px;" onclick="attack(58)">
+            <img id="item59" alt="fortress11" class="item noselect fortress" src="./img/map/0/fortress.png" style="top: 936px; left: 341px;" onclick="attack(59)">
+            <img id="item60" alt="fortress12" class="item noselect fortress" src="./img/map/0/fortress.png" style="top: 936px; left: 834px;" onclick="attack(60)">
+            <img id="item61" alt="fortress13" class="item noselect fortress" src="./img/map/0/fortress.png" style="top: 832px; left: 938px;" onclick="attack(61)">
+            <img id="item62" alt="fortress14" class="item noselect fortress" src="./img/map/0/fortress.png" style="top: 339px; left: 938px;" onclick="attack(62)">
+            <img id="item63" alt="fortress15" class="item noselect fortress" src="./img/map/0/fortress.png" style="top: 235px; left: 834px;" onclick="attack(63)">
+            <img id="item64" alt="fortress16" class="item noselect fortress" src="./img/map/0/fortress.png" style="top: 235px; left: 341px;" onclick="attack(64)">
+            <img id="item65" alt="fortress17" class="item noselect fortress" src="./img/map/0/fortress.png" style="top: 501px; left: 422px;" onclick="attack(65)">
+            <img id="item66" alt="fortress18" class="item noselect fortress" src="./img/map/0/fortress.png" style="top: 669px; left: 422px;" onclick="attack(66)">
+            <img id="item67" alt="fortress19" class="item noselect fortress" src="./img/map/0/fortress.png" style="top: 750px; left: 503px;" onclick="attack(67)">
+            <img id="item68" alt="fortress20" class="item noselect fortress" src="./img/map/0/fortress.png" style="top: 750px; left: 671px;" onclick="attack(68)">
+            <img id="item69" alt="fortress21" class="item noselect fortress" src="./img/map/0/fortress.png" style="top: 660px; left: 753px;" onclick="attack(69)">
+            <img id="item70" alt="fortress22" class="item noselect fortress" src="./img/map/0/fortress.png" style="top: 501px; left: 753px;" onclick="attack(70)">
+            <img id="item71" alt="fortress23" class="item noselect fortress" src="./img/map/0/fortress.png" style="top: 420px; left: 671px;" onclick="attack(71)">
+            <img id="item72" alt="fortress24" class="item noselect fortress" src="./img/map/0/fortress.png" style="top: 420px; left: 503px;" onclick="attack(72)">
             
             <!-- POTION DEPOTS -->
-            <img id="item73" alt="potion1" class="item depot" src="./img/map/0/potion.png" style="top: 451px; left: 229px;" onclick="attack(73)">
-            <img id="item74" alt="potion2" class="item depot" src="./img/map/0/potion.png" style="top: 709px; left: 229px;" onclick="attack(74)">
-            <img id="item75" alt="potion3" class="item depot" src="./img/map/0/potion.png" style="top: 940px; left: 459px;" onclick="attack(75)">
-            <img id="item76" alt="potion4" class="item depot" src="./img/map/0/potion.png" style="top: 967px; left: 718px;" onclick="attack(76)">
-            <img id="item77" alt="potion5" class="item depot" src="./img/map/0/potion.png" style="top: 709px; left: 948px;" onclick="attack(77)">
-            <img id="item78" alt="potion6" class="item depot" src="./img/map/0/potion.png" style="top: 451px; left: 948px;" onclick="attack(78)">
-            <img id="item79" alt="potion7" class="item depot" src="./img/map/0/potion.png" style="top: 221px; left: 718px;" onclick="attack(79)">
-            <img id="item80" alt="potion8" class="item depot" src="./img/map/0/potion.png" style="top: 221px; left: 459px;" onclick="attack(80)">
+            <img id="item73" alt="potion1" class="item noselect depot" src="./img/map/0/potion.png" style="top: 451px; left: 229px;" onclick="attack(73)">
+            <img id="item74" alt="potion2" class="item noselect depot" src="./img/map/0/potion.png" style="top: 709px; left: 229px;" onclick="attack(74)">
+            <img id="item75" alt="potion3" class="item noselect depot" src="./img/map/0/potion.png" style="top: 940px; left: 459px;" onclick="attack(75)">
+            <img id="item76" alt="potion4" class="item noselect depot" src="./img/map/0/potion.png" style="top: 967px; left: 718px;" onclick="attack(76)">
+            <img id="item77" alt="potion5" class="item noselect depot" src="./img/map/0/potion.png" style="top: 709px; left: 948px;" onclick="attack(77)">
+            <img id="item78" alt="potion6" class="item noselect depot" src="./img/map/0/potion.png" style="top: 451px; left: 948px;" onclick="attack(78)">
+            <img id="item79" alt="potion7" class="item noselect depot" src="./img/map/0/potion.png" style="top: 221px; left: 718px;" onclick="attack(79)">
+            <img id="item80" alt="potion8" class="item noselect depot" src="./img/map/0/potion.png" style="top: 221px; left: 459px;" onclick="attack(80)">
             
             <!-- ARMOR DEPOTS -->
-            <img id="item81" alt="armor1" class="item depot" src="./img/map/0/armor.png" style="top: 271px; left: 121px;" onclick="attack(81)">
-            <img id="item82" alt="armor2" class="item depot" src="./img/map/0/armor.png" style="top: 764px; left: 121px;" onclick="attack(82)">
-            <img id="item83" alt="armor3" class="item depot" src="./img/map/0/armor.png" style="top: 1094px; left: 369px;" onclick="attack(83)">
-            <img id="item84" alt="armor4" class="item depot" src="./img/map/0/armor.png" style="top: 1094px; left: 862px;" onclick="attack(84)">
-            <img id="item85" alt="armor5" class="item depot" src="./img/map/0/armor.png" style="top: 891px; left: 1057px;" onclick="attack(85)">
-            <img id="item86" alt="armor6" class="item depot" src="./img/map/0/armor.png" style="top: 398px; left: 1057px;" onclick="attack(86)">
-            <img id="item87" alt="armor7" class="item depot" src="./img/map/0/armor.png" style="top: 113px; left: 899px;" onclick="attack(87)">
-            <img id="item88" alt="armor8" class="item depot" src="./img/map/0/armor.png" style="top: 113px; left: 405px;" onclick="attack(88)">
+            <img id="item81" alt="armor1" class="item noselect depot" src="./img/map/0/armor.png" style="top: 271px; left: 121px;" onclick="attack(81)">
+            <img id="item82" alt="armor2" class="item noselect depot" src="./img/map/0/armor.png" style="top: 764px; left: 121px;" onclick="attack(82)">
+            <img id="item83" alt="armor3" class="item noselect depot" src="./img/map/0/armor.png" style="top: 1094px; left: 369px;" onclick="attack(83)">
+            <img id="item84" alt="armor4" class="item noselect depot" src="./img/map/0/armor.png" style="top: 1094px; left: 862px;" onclick="attack(84)">
+            <img id="item85" alt="armor5" class="item noselect depot" src="./img/map/0/armor.png" style="top: 891px; left: 1057px;" onclick="attack(85)">
+            <img id="item86" alt="armor6" class="item noselect depot" src="./img/map/0/armor.png" style="top: 398px; left: 1057px;" onclick="attack(86)">
+            <img id="item87" alt="armor7" class="item noselect depot" src="./img/map/0/armor.png" style="top: 113px; left: 899px;" onclick="attack(87)">
+            <img id="item88" alt="armor8" class="item noselect depot" src="./img/map/0/armor.png" style="top: 113px; left: 405px;" onclick="attack(88)">
             
             <!-- WEAPON DEPOTS -->
-            <img id="item89" alt="weapon1" class="item depot" src="./img/map/0/weapon.png" style="top: 305px; left: 75px;" onclick="attack(89)">
-            <img id="item90" alt="weapon2" class="item depot" src="./img/map/0/weapon.png" style="top: 799px; left: 75px;" onclick="attack(90)">
-            <img id="item91" alt="weapon3" class="item depot" src="./img/map/0/weapon.png" style="top: 1049px; left: 405px;" onclick="attack(91)">
-            <img id="item92" alt="weapon4" class="item depot" src="./img/map/0/weapon.png" style="top: 1049px; left: 899px;" onclick="attack(92)">
-            <img id="item93" alt="weapon5" class="item depot" src="./img/map/0/weapon.png" style="top: 855px; left: 1103px;" onclick="attack(93)">
-            <img id="item94" alt="weapon6" class="item depot" src="./img/map/0/weapon.png" style="top: 362px; left: 1103px;" onclick="attack(94)">
-            <img id="item95" alt="weapon7" class="item depot" src="./img/map/0/weapon.png" style="top: 67px; left: 862px;" onclick="attack(95)">
-            <img id="item96" alt="weapon8" class="item depot" src="./img/map/0/weapon.png" style="top: 67px; left: 369px;" onclick="attack(96)">
+            <img id="item89" alt="weapon1" class="item noselect depot" src="./img/map/0/weapon.png" style="top: 305px; left: 75px;" onclick="attack(89)">
+            <img id="item90" alt="weapon2" class="item noselect depot" src="./img/map/0/weapon.png" style="top: 799px; left: 75px;" onclick="attack(90)">
+            <img id="item91" alt="weapon3" class="item noselect depot" src="./img/map/0/weapon.png" style="top: 1049px; left: 405px;" onclick="attack(91)">
+            <img id="item92" alt="weapon4" class="item noselect depot" src="./img/map/0/weapon.png" style="top: 1049px; left: 899px;" onclick="attack(92)">
+            <img id="item93" alt="weapon5" class="item noselect depot" src="./img/map/0/weapon.png" style="top: 855px; left: 1103px;" onclick="attack(93)">
+            <img id="item94" alt="weapon6" class="item noselect depot" src="./img/map/0/weapon.png" style="top: 362px; left: 1103px;" onclick="attack(94)">
+            <img id="item95" alt="weapon7" class="item noselect depot" src="./img/map/0/weapon.png" style="top: 67px; left: 862px;" onclick="attack(95)">
+            <img id="item96" alt="weapon8" class="item noselect depot" src="./img/map/0/weapon.png" style="top: 67px; left: 369px;" onclick="attack(96)">
             
             <!-- TACK DEPOTS -->
-            <img id="item97" alt="tack1" class="item depot" src="./img/map/0/tack.png" style="top: 362px; left: 75px;" onclick="attack(97)">
-            <img id="item98" alt="tack2" class="item depot" src="./img/map/0/tack.png" style="top: 855px; left: 75px;" onclick="attack(98)">
-            <img id="item99" alt="tack3" class="item depot" src="./img/map/0/tack.png" style="top: 1094px; left: 315px;" onclick="attack(99)">
-            <img id="item100" alt="tack4" class="item depot" src="./img/map/0/tack.png" style="top: 1094px; left: 809px;" onclick="attack(100)">
-            <img id="item101" alt="tack5" class="item depot" src="./img/map/0/tack.png" style="top: 800px; left: 1102px;" onclick="attack(101)">
-            <img id="item102" alt="tack6" class="item depot" src="./img/map/0/tack.png" style="top: 307px; left: 1102px;" onclick="attack(102)">
-            <img id="item103" alt="tack7" class="item depot" src="./img/map/0/tack.png" style="top: 67px; left: 809px;" onclick="attack(103)">
-            <img id="item104" alt="tack8" class="item depot" src="./img/map/0/tack.png" style="top: 67px; left: 315px;" onclick="attack(104)">
+            <img id="item97" alt="tack1" class="item noselect depot" src="./img/map/0/tack.png" style="top: 362px; left: 75px;" onclick="attack(97)">
+            <img id="item98" alt="tack2" class="item noselect depot" src="./img/map/0/tack.png" style="top: 855px; left: 75px;" onclick="attack(98)">
+            <img id="item99" alt="tack3" class="item noselect depot" src="./img/map/0/tack.png" style="top: 1094px; left: 315px;" onclick="attack(99)">
+            <img id="item100" alt="tack4" class="item noselect depot" src="./img/map/0/tack.png" style="top: 1094px; left: 809px;" onclick="attack(100)">
+            <img id="item101" alt="tack5" class="item noselect depot" src="./img/map/0/tack.png" style="top: 800px; left: 1102px;" onclick="attack(101)">
+            <img id="item102" alt="tack6" class="item noselect depot" src="./img/map/0/tack.png" style="top: 307px; left: 1102px;" onclick="attack(102)">
+            <img id="item103" alt="tack7" class="item noselect depot" src="./img/map/0/tack.png" style="top: 67px; left: 809px;" onclick="attack(103)">
+            <img id="item104" alt="tack8" class="item noselect depot" src="./img/map/0/tack.png" style="top: 67px; left: 315px;" onclick="attack(104)">
             
             <!-- HERB DEPOTS -->
-            <img id="item105" alt="herb1" class="item depot" src="./img/map/0/herb.png" style="top: 398px; left: 121px;" onclick="attack(105)">
-            <img id="item106" alt="herb2" class="item depot" src="./img/map/0/herb.png" style="top: 891px; left: 121px;" onclick="attack(106)">
-            <img id="item107" alt="herb3" class="item depot" src="./img/map/0/herb.png" style="top: 1049px; left: 279px;" onclick="attack(107)">
-            <img id="item108" alt="herb4" class="item depot" src="./img/map/0/herb.png" style="top: 1049px; left: 772px;" onclick="attack(108)">
-            <img id="item109" alt="herb5" class="item depot" src="./img/map/0/herb.png" style="top: 764px; left: 1057px;" onclick="attack(109)">
-            <img id="item110" alt="herb6" class="item depot" src="./img/map/0/herb.png" style="top: 271px; left: 1057px;" onclick="attack(110)">
-            <img id="item111" alt="herb7" class="item depot" src="./img/map/0/herb.png" style="top: 113px; left: 772px;" onclick="attack(111)">
-            <img id="item112" alt="herb8" class="item depot" src="./img/map/0/herb.png" style="top: 113px; left: 279px;" onclick="attack(112)">
+            <img id="item105" alt="herb1" class="item noselect depot" src="./img/map/0/herb.png" style="top: 398px; left: 121px;" onclick="attack(105)">
+            <img id="item106" alt="herb2" class="item noselect depot" src="./img/map/0/herb.png" style="top: 891px; left: 121px;" onclick="attack(106)">
+            <img id="item107" alt="herb3" class="item noselect depot" src="./img/map/0/herb.png" style="top: 1049px; left: 279px;" onclick="attack(107)">
+            <img id="item108" alt="herb4" class="item noselect depot" src="./img/map/0/herb.png" style="top: 1049px; left: 772px;" onclick="attack(108)">
+            <img id="item109" alt="herb5" class="item noselect depot" src="./img/map/0/herb.png" style="top: 764px; left: 1057px;" onclick="attack(109)">
+            <img id="item110" alt="herb6" class="item noselect depot" src="./img/map/0/herb.png" style="top: 271px; left: 1057px;" onclick="attack(110)">
+            <img id="item111" alt="herb7" class="item noselect depot" src="./img/map/0/herb.png" style="top: 113px; left: 772px;" onclick="attack(111)">
+            <img id="item112" alt="herb8" class="item noselect depot" src="./img/map/0/herb.png" style="top: 113px; left: 279px;" onclick="attack(112)">
             
             <!-- SMALL MERCHANTS -->
-            <img id="item113" alt="smerchant1" class="item smerchant" src="./img/map/0/merchant.png" style="top: 51px; left: 123px;" onclick="attack(113)">
-            <img id="item114" alt="smerchant2" class="item smerchant" src="./img/map/0/merchant.png" style="top: 530px; left: 60px;" onclick="attack(114)">
-            <img id="item115" alt="smerchant3" class="item smerchant" src="./img/map/0/merchant.png" style="top: 1050px; left: 51px;" onclick="attack(115)">
-            <img id="item116" alt="smerchant4" class="item smerchant" src="./img/map/0/merchant.png" style="top: 1109px; left: 539px;" onclick="attack(116)">
-            <img id="item117" alt="smerchant5" class="item smerchant" src="./img/map/0/merchant.png" style="top: 1123px; left: 1050px;" onclick="attack(117)">
-            <img id="item118" alt="smerchant6" class="item smerchant" src="./img/map/0/merchant.png" style="top: 530px; left: 1113px;" onclick="attack(118)">
-            <img id="item119" alt="smerchant7" class="item smerchant" src="./img/map/0/merchant.png" style="top: 123px; left: 1123px;" onclick="attack(119)">
-            <img id="item120" alt="smerchant8" class="item smerchant" src="./img/map/0/merchant.png" style="top: 65px; left: 634px;" onclick="attack(120)">
-            <img id="item121" alt="smerchant9" class="item smerchant" src="./img/map/0/merchant.png" style="top: 377px; left: 448px;" onclick="attack(121)">
-            <img id="item122" alt="smerchant10" class="item smerchant" src="./img/map/0/merchant.png" style="top: 449px; left: 376px;" onclick="attack(122)">
-            <img id="item123" alt="smerchant11" class="item smerchant" src="./img/map/0/merchant.png" style="top: 548px; left: 362px;" onclick="attack(123)">
-            <img id="item124" alt="smerchant12" class="item smerchant" src="./img/map/0/merchant.png" style="top: 626px; left: 362px;" onclick="attack(124)">
-            <img id="item125" alt="smerchant13" class="item smerchant" src="./img/map/0/merchant.png" style="top: 725px; left: 376px;" onclick="attack(125)">
-            <img id="item126" alt="smerchant14" class="item smerchant" src="./img/map/0/merchant.png" style="top: 798px; left: 448px;" onclick="attack(126)">
-            <img id="item127" alt="smerchant15" class="item smerchant" src="./img/map/0/merchant.png" style="top: 811px; left: 548px;" onclick="attack(127)">
-            <img id="item128" alt="smerchant16" class="item smerchant" src="./img/map/0/merchant.png" style="top: 811px; left: 626px;" onclick="attack(128)">
-            <img id="item129" alt="smerchant17" class="item smerchant" src="./img/map/0/merchant.png" style="top: 798px; left: 725px;" onclick="attack(129)">
-            <img id="item130" alt="smerchant18" class="item smerchant" src="./img/map/0/merchant.png" style="top: 725px; left: 797px;" onclick="attack(130)">
-            <img id="item131" alt="smerchant19" class="item smerchant" src="./img/map/0/merchant.png" style="top: 626px; left: 811px;" onclick="attack(131)">
-            <img id="item132" alt="smerchant20" class="item smerchant" src="./img/map/0/merchant.png" style="top: 548px; left: 811px;" onclick="attack(132)">
-            <img id="item133" alt="smerchant21" class="item smerchant" src="./img/map/0/merchant.png" style="top: 449px; left: 797px;" onclick="attack(133)">
-            <img id="item134" alt="smerchant22" class="item smerchant" src="./img/map/0/merchant.png" style="top: 377px; left: 725px;" onclick="attack(134)">
-            <img id="item135" alt="smerchant23" class="item smerchant" src="./img/map/0/merchant.png" style="top: 363px; left: 626px;" onclick="attack(135)">
-            <img id="item136" alt="smerchant24" class="item smerchant" src="./img/map/0/merchant.png" style="top: 363px; left: 548px;" onclick="attack(136)">
-            <img id="item137" alt="smerchant25" class="item smerchant" src="./img/map/0/merchant.png" style="top: 467px; left: 467px;" onclick="attack(137)">
-            <img id="item138" alt="smerchant26" class="item smerchant" src="./img/map/0/merchant.png" style="top: 587px; left: 457px;" onclick="attack(138)">
-            <img id="item139" alt="smerchant27" class="item smerchant" src="./img/map/0/merchant.png" style="top: 707px; left: 467px;" onclick="attack(139)">
-            <img id="item140" alt="smerchant28" class="item smerchant" src="./img/map/0/merchant.png" style="top: 716px; left: 587px;" onclick="attack(140)">
-            <img id="item141" alt="smerchant29" class="item smerchant" src="./img/map/0/merchant.png" style="top: 707px; left: 707px;" onclick="attack(141)">
-            <img id="item142" alt="smerchant30" class="item smerchant" src="./img/map/0/merchant.png" style="top: 587px; left: 716px;" onclick="attack(142)">
-            <img id="item143" alt="smerchant31" class="item smerchant" src="./img/map/0/merchant.png" style="top: 467px; left: 707px;" onclick="attack(143)">
-            <img id="item144" alt="smerchant32" class="item smerchant" src="./img/map/0/merchant.png" style="top: 458px; left: 587px;" onclick="attack(144)">
+            <img id="item113" alt="smerchant1" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 51px; left: 123px;" onclick="attack(113)">
+            <img id="item114" alt="smerchant2" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 530px; left: 60px;" onclick="attack(114)">
+            <img id="item115" alt="smerchant3" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 1050px; left: 51px;" onclick="attack(115)">
+            <img id="item116" alt="smerchant4" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 1109px; left: 539px;" onclick="attack(116)">
+            <img id="item117" alt="smerchant5" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 1123px; left: 1050px;" onclick="attack(117)">
+            <img id="item118" alt="smerchant6" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 530px; left: 1113px;" onclick="attack(118)">
+            <img id="item119" alt="smerchant7" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 123px; left: 1123px;" onclick="attack(119)">
+            <img id="item120" alt="smerchant8" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 65px; left: 634px;" onclick="attack(120)">
+            <img id="item121" alt="smerchant9" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 377px; left: 448px;" onclick="attack(121)">
+            <img id="item122" alt="smerchant10" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 449px; left: 376px;" onclick="attack(122)">
+            <img id="item123" alt="smerchant11" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 548px; left: 362px;" onclick="attack(123)">
+            <img id="item124" alt="smerchant12" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 626px; left: 362px;" onclick="attack(124)">
+            <img id="item125" alt="smerchant13" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 725px; left: 376px;" onclick="attack(125)">
+            <img id="item126" alt="smerchant14" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 798px; left: 448px;" onclick="attack(126)">
+            <img id="item127" alt="smerchant15" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 811px; left: 548px;" onclick="attack(127)">
+            <img id="item128" alt="smerchant16" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 811px; left: 626px;" onclick="attack(128)">
+            <img id="item129" alt="smerchant17" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 798px; left: 725px;" onclick="attack(129)">
+            <img id="item130" alt="smerchant18" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 725px; left: 797px;" onclick="attack(130)">
+            <img id="item131" alt="smerchant19" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 626px; left: 811px;" onclick="attack(131)">
+            <img id="item132" alt="smerchant20" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 548px; left: 811px;" onclick="attack(132)">
+            <img id="item133" alt="smerchant21" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 449px; left: 797px;" onclick="attack(133)">
+            <img id="item134" alt="smerchant22" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 377px; left: 725px;" onclick="attack(134)">
+            <img id="item135" alt="smerchant23" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 363px; left: 626px;" onclick="attack(135)">
+            <img id="item136" alt="smerchant24" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 363px; left: 548px;" onclick="attack(136)">
+            <img id="item137" alt="smerchant25" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 467px; left: 467px;" onclick="attack(137)">
+            <img id="item138" alt="smerchant26" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 587px; left: 457px;" onclick="attack(138)">
+            <img id="item139" alt="smerchant27" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 707px; left: 467px;" onclick="attack(139)">
+            <img id="item140" alt="smerchant28" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 716px; left: 587px;" onclick="attack(140)">
+            <img id="item141" alt="smerchant29" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 707px; left: 707px;" onclick="attack(141)">
+            <img id="item142" alt="smerchant30" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 587px; left: 716px;" onclick="attack(142)">
+            <img id="item143" alt="smerchant31" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 467px; left: 707px;" onclick="attack(143)">
+            <img id="item144" alt="smerchant32" class="item noselect smerchant" src="./img/map/0/merchant.png" style="top: 458px; left: 587px;" onclick="attack(144)">
             
             <!-- MEDIUM MERCHANTS -->
-            <img id="item145" alt="mmerchant1" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 157px; left: 237px;" onclick="attack(145)">
-            <img id="item146" alt="mmerchant2" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 238px; left: 156px;" onclick="attack(146)">
-            <img id="item147" alt="mmerchant3" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 427px; left: 156px;" onclick="attack(147)">
-            <img id="item148" alt="mmerchant4" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 740px; left: 156px;" onclick="attack(148)">
-            <img id="item149" alt="mmerchant5" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 930px; left: 156px;" onclick="attack(149)">
-            <img id="item150" alt="mmerchant6" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 1011px; left: 237px;" onclick="attack(150)">
-            <img id="item151" alt="mmerchant7" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 1011px; left: 472px;" onclick="attack(151)">
-            <img id="item152" alt="mmerchant8" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 1011px; left: 739px;" onclick="attack(152)">
-            <img id="item153" alt="mmerchant9" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 1011px; left: 929px;" onclick="attack(153)">
-            <img id="item154" alt="mmerchant10" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 930px; left: 1011px;" onclick="attack(154)">
-            <img id="item155" alt="mmerchant11" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 740px; left: 1011px;" onclick="attack(155)">
-            <img id="item156" alt="mmerchant12" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 427px; left: 1011px;" onclick="attack(156)">
-            <img id="item157" alt="mmerchant13" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 238px; left: 1011px;" onclick="attack(157)">
-            <img id="item158" alt="mmerchant14" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 157px; left: 929px;" onclick="attack(158)">
-            <img id="item159" alt="mmerchant15" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 157px; left: 739px;" onclick="attack(159)">
-            <img id="item160" alt="mmerchant16" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 157px; left: 427px;" onclick="attack(160)">
+            <img id="item145" alt="mmerchant1" class="item noselect mmerchant" src="./img/map/0/merchant.png" style="top: 157px; left: 237px;" onclick="attack(145)">
+            <img id="item146" alt="mmerchant2" class="item noselect mmerchant" src="./img/map/0/merchant.png" style="top: 238px; left: 156px;" onclick="attack(146)">
+            <img id="item147" alt="mmerchant3" class="item noselect mmerchant" src="./img/map/0/merchant.png" style="top: 427px; left: 156px;" onclick="attack(147)">
+            <img id="item148" alt="mmerchant4" class="item noselect mmerchant" src="./img/map/0/merchant.png" style="top: 740px; left: 156px;" onclick="attack(148)">
+            <img id="item149" alt="mmerchant5" class="item noselect mmerchant" src="./img/map/0/merchant.png" style="top: 930px; left: 156px;" onclick="attack(149)">
+            <img id="item150" alt="mmerchant6" class="item noselect mmerchant" src="./img/map/0/merchant.png" style="top: 1011px; left: 237px;" onclick="attack(150)">
+            <img id="item151" alt="mmerchant7" class="item noselect mmerchant" src="./img/map/0/merchant.png" style="top: 1011px; left: 472px;" onclick="attack(151)">
+            <img id="item152" alt="mmerchant8" class="item noselect mmerchant" src="./img/map/0/merchant.png" style="top: 1011px; left: 739px;" onclick="attack(152)">
+            <img id="item153" alt="mmerchant9" class="item noselect mmerchant" src="./img/map/0/merchant.png" style="top: 1011px; left: 929px;" onclick="attack(153)">
+            <img id="item154" alt="mmerchant10" class="item noselect mmerchant" src="./img/map/0/merchant.png" style="top: 930px; left: 1011px;" onclick="attack(154)">
+            <img id="item155" alt="mmerchant11" class="item noselect mmerchant" src="./img/map/0/merchant.png" style="top: 740px; left: 1011px;" onclick="attack(155)">
+            <img id="item156" alt="mmerchant12" class="item noselect mmerchant" src="./img/map/0/merchant.png" style="top: 427px; left: 1011px;" onclick="attack(156)">
+            <img id="item157" alt="mmerchant13" class="item noselect mmerchant" src="./img/map/0/merchant.png" style="top: 238px; left: 1011px;" onclick="attack(157)">
+            <img id="item158" alt="mmerchant14" class="item noselect mmerchant" src="./img/map/0/merchant.png" style="top: 157px; left: 929px;" onclick="attack(158)">
+            <img id="item159" alt="mmerchant15" class="item noselect mmerchant" src="./img/map/0/merchant.png" style="top: 157px; left: 739px;" onclick="attack(159)">
+            <img id="item160" alt="mmerchant16" class="item noselect mmerchant" src="./img/map/0/merchant.png" style="top: 157px; left: 427px;" onclick="attack(160)">
             
             <!-- LARGE MERCHANTS -->
-            <img id="item161" alt="lmerchant1" class="item lmerchant" src="./img/map/0/merchant.png" style="top: 467px; left: 294px;" onclick="attack(161)">
-            <img id="item162" alt="lmerchant2" class="item lmerchant" src="./img/map/0/merchant.png" style="top: 689px; left: 294px;" onclick="attack(162)">
-            <img id="item163" alt="lmerchant3" class="item lmerchant" src="./img/map/0/merchant.png" style="top: 861px; left: 466px;" onclick="attack(163)">
-            <img id="item164" alt="lmerchant4" class="item lmerchant" src="./img/map/0/merchant.png" style="top: 861px; left: 688px;" onclick="attack(164)">
-            <img id="item165" alt="lmerchant5" class="item lmerchant" src="./img/map/0/merchant.png" style="top: 689px; left: 860px;" onclick="attack(165)">
-            <img id="item166" alt="lmerchant6" class="item lmerchant" src="./img/map/0/merchant.png" style="top: 467px; left: 860px;" onclick="attack(166)">
-            <img id="item167" alt="lmerchant7" class="item lmerchant" src="./img/map/0/merchant.png" style="top: 295px; left: 688px;" onclick="attack(167)">
-            <img id="item168" alt="lmerchant8" class="item lmerchant" src="./img/map/0/merchant.png" style="top: 295px; left: 466px;" onclick="attack(168)">
+            <img id="item161" alt="lmerchant1" class="item noselect lmerchant" src="./img/map/0/merchant.png" style="top: 467px; left: 294px;" onclick="attack(161)">
+            <img id="item162" alt="lmerchant2" class="item noselect lmerchant" src="./img/map/0/merchant.png" style="top: 689px; left: 294px;" onclick="attack(162)">
+            <img id="item163" alt="lmerchant3" class="item noselect lmerchant" src="./img/map/0/merchant.png" style="top: 861px; left: 466px;" onclick="attack(163)">
+            <img id="item164" alt="lmerchant4" class="item noselect lmerchant" src="./img/map/0/merchant.png" style="top: 861px; left: 688px;" onclick="attack(164)">
+            <img id="item165" alt="lmerchant5" class="item noselect lmerchant" src="./img/map/0/merchant.png" style="top: 689px; left: 860px;" onclick="attack(165)">
+            <img id="item166" alt="lmerchant6" class="item noselect lmerchant" src="./img/map/0/merchant.png" style="top: 467px; left: 860px;" onclick="attack(166)">
+            <img id="item167" alt="lmerchant7" class="item noselect lmerchant" src="./img/map/0/merchant.png" style="top: 295px; left: 688px;" onclick="attack(167)">
+            <img id="item168" alt="lmerchant8" class="item noselect lmerchant" src="./img/map/0/merchant.png" style="top: 295px; left: 466px;" onclick="attack(168)">
             
             <!-- SMALL MILITARY -->
-            <img id="item169" alt="smilitary1" class="item smilitary" src="./img/map/0/military.png" style="top: 123px; left: 55px;" onclick="attack(169)">
-            <img id="item170" alt="smilitary2" class="item smilitary" src="./img/map/0/military.png" style="top: 643px; left: 65px;" onclick="attack(170)">
-            <img id="item171" alt="smilitary3" class="item smilitary" src="./img/map/0/military.png" style="top: 1122px; left: 128px;" onclick="attack(171)">
-            <img id="item172" alt="smilitary4" class="item smilitary" src="./img/map/0/military.png" style="top: 1108px; left: 639px;" onclick="attack(172)">
-            <img id="item173" alt="smilitary5" class="item smilitary" src="./img/map/0/military.png" style="top: 1050px; left: 1127px;" onclick="attack(173)">
-            <img id="item174" alt="smilitary6" class="item smilitary" src="./img/map/0/military.png" style="top: 643px; left: 1118px;" onclick="attack(174)">
-            <img id="item175" alt="smilitary7" class="item smilitary" src="./img/map/0/military.png" style="top: 50px; left: 1055px;" onclick="attack(175)">
-            <img id="item176" alt="smilitary8" class="item smilitary" src="./img/map/0/military.png" style="top: 64px; left: 543px;" onclick="attack(176)">
+            <img id="item169" alt="smilitary1" class="item noselect smilitary" src="./img/map/0/military.png" style="top: 123px; left: 55px;" onclick="attack(169)">
+            <img id="item170" alt="smilitary2" class="item noselect smilitary" src="./img/map/0/military.png" style="top: 643px; left: 65px;" onclick="attack(170)">
+            <img id="item171" alt="smilitary3" class="item noselect smilitary" src="./img/map/0/military.png" style="top: 1122px; left: 128px;" onclick="attack(171)">
+            <img id="item172" alt="smilitary4" class="item noselect smilitary" src="./img/map/0/military.png" style="top: 1108px; left: 639px;" onclick="attack(172)">
+            <img id="item173" alt="smilitary5" class="item noselect smilitary" src="./img/map/0/military.png" style="top: 1050px; left: 1127px;" onclick="attack(173)">
+            <img id="item174" alt="smilitary6" class="item noselect smilitary" src="./img/map/0/military.png" style="top: 643px; left: 1118px;" onclick="attack(174)">
+            <img id="item175" alt="smilitary7" class="item noselect smilitary" src="./img/map/0/military.png" style="top: 50px; left: 1055px;" onclick="attack(175)">
+            <img id="item176" alt="smilitary8" class="item noselect smilitary" src="./img/map/0/military.png" style="top: 64px; left: 543px;" onclick="attack(176)">
             
             <!-- MEDIUM MILITARY -->
-            <img id="item177" alt="mmilitary1" class="item mmilitary" src="./img/map/0/military.png" style="top: 83px; left: 179px;" onclick="attack(177)">
-            <img id="item178" alt="mmilitary2" class="item mmilitary" src="./img/map/0/military.png" style="top: 173px; left: 89px;" onclick="attack(178)">
-            <img id="item179" alt="mmilitary3" class="item mmilitary" src="./img/map/0/military.png" style="top: 481px; left: 89px;" onclick="attack(179)">
-            <img id="item180" alt="mmilitary4" class="item mmilitary" src="./img/map/0/military.png" style="top: 685px; left: 89px;" onclick="attack(180)">
-            <img id="item181" alt="mmilitary5" class="item mmilitary" src="./img/map/0/military.png" style="top: 992px; left: 89px;" onclick="attack(181)">
-            <img id="item182" alt="mmilitary6" class="item mmilitary" src="./img/map/0/military.png" style="top: 1082px; left: 179px;" onclick="attack(182)">
-            <img id="item183" alt="mmilitary7" class="item mmilitary" src="./img/map/0/military.png" style="top: 1082px; left: 496px;" onclick="attack(183)">
-            <img id="item184" alt="mmilitary8" class="item mmilitary" src="./img/map/0/military.png" style="top: 1082px; left: 682px;" onclick="attack(184)">
-            <img id="item185" alt="mmilitary9" class="item mmilitary" src="./img/map/0/military.png" style="top: 1082px; left: 998px;" onclick="attack(185)">
-            <img id="item186" alt="mmilitary10" class="item mmilitary" src="./img/map/0/military.png" style="top: 992px; left: 1089px;" onclick="attack(186)">
-            <img id="item187" alt="mmilitary11" class="item mmilitary" src="./img/map/0/military.png" style="top: 685px; left: 1089px;" onclick="attack(187)">
-            <img id="item188" alt="mmilitary12" class="item mmilitary" src="./img/map/0/military.png" style="top: 481px; left: 1089px;" onclick="attack(188)">
-            <img id="item189" alt="mmilitary13" class="item mmilitary" src="./img/map/0/military.png" style="top: 173px; left: 1089px;" onclick="attack(189)">
-            <img id="item190" alt="mmilitary14" class="item mmilitary" src="./img/map/0/military.png" style="top: 83px; left: 998px;" onclick="attack(190)">
-            <img id="item191" alt="mmilitary15" class="item mmilitary" src="./img/map/0/military.png" style="top: 83px; left: 682px;" onclick="attack(191)">
-            <img id="item192" alt="mmilitary16" class="item mmilitary" src="./img/map/0/military.png" style="top: 83px; left: 496px;" onclick="attack(192)">
-            <img id="item193" alt="mmilitary17" class="item mmilitary" src="./img/map/0/military.png" style="top: 291px; left: 297px;" onclick="attack(193)">
-            <img id="item194" alt="mmilitary18" class="item mmilitary" src="./img/map/0/military.png" style="top: 875px; left: 297px;" onclick="attack(194)">
-            <img id="item195" alt="mmilitary19" class="item mmilitary" src="./img/map/0/military.png" style="top: 875px; left: 881px;" onclick="attack(195)">
-            <img id="item196" alt="mmilitary20" class="item mmilitary" src="./img/map/0/military.png" style="top: 291px; left: 881px;" onclick="attack(196)">
+            <img id="item177" alt="mmilitary1" class="item noselect mmilitary" src="./img/map/0/military.png" style="top: 83px; left: 179px;" onclick="attack(177)">
+            <img id="item178" alt="mmilitary2" class="item noselect mmilitary" src="./img/map/0/military.png" style="top: 173px; left: 89px;" onclick="attack(178)">
+            <img id="item179" alt="mmilitary3" class="item noselect mmilitary" src="./img/map/0/military.png" style="top: 481px; left: 89px;" onclick="attack(179)">
+            <img id="item180" alt="mmilitary4" class="item noselect mmilitary" src="./img/map/0/military.png" style="top: 685px; left: 89px;" onclick="attack(180)">
+            <img id="item181" alt="mmilitary5" class="item noselect mmilitary" src="./img/map/0/military.png" style="top: 992px; left: 89px;" onclick="attack(181)">
+            <img id="item182" alt="mmilitary6" class="item noselect mmilitary" src="./img/map/0/military.png" style="top: 1082px; left: 179px;" onclick="attack(182)">
+            <img id="item183" alt="mmilitary7" class="item noselect mmilitary" src="./img/map/0/military.png" style="top: 1082px; left: 496px;" onclick="attack(183)">
+            <img id="item184" alt="mmilitary8" class="item noselect mmilitary" src="./img/map/0/military.png" style="top: 1082px; left: 682px;" onclick="attack(184)">
+            <img id="item185" alt="mmilitary9" class="item noselect mmilitary" src="./img/map/0/military.png" style="top: 1082px; left: 998px;" onclick="attack(185)">
+            <img id="item186" alt="mmilitary10" class="item noselect mmilitary" src="./img/map/0/military.png" style="top: 992px; left: 1089px;" onclick="attack(186)">
+            <img id="item187" alt="mmilitary11" class="item noselect mmilitary" src="./img/map/0/military.png" style="top: 685px; left: 1089px;" onclick="attack(187)">
+            <img id="item188" alt="mmilitary12" class="item noselect mmilitary" src="./img/map/0/military.png" style="top: 481px; left: 1089px;" onclick="attack(188)">
+            <img id="item189" alt="mmilitary13" class="item noselect mmilitary" src="./img/map/0/military.png" style="top: 173px; left: 1089px;" onclick="attack(189)">
+            <img id="item190" alt="mmilitary14" class="item noselect mmilitary" src="./img/map/0/military.png" style="top: 83px; left: 998px;" onclick="attack(190)">
+            <img id="item191" alt="mmilitary15" class="item noselect mmilitary" src="./img/map/0/military.png" style="top: 83px; left: 682px;" onclick="attack(191)">
+            <img id="item192" alt="mmilitary16" class="item noselect mmilitary" src="./img/map/0/military.png" style="top: 83px; left: 496px;" onclick="attack(192)">
+            <img id="item193" alt="mmilitary17" class="item noselect mmilitary" src="./img/map/0/military.png" style="top: 291px; left: 297px;" onclick="attack(193)">
+            <img id="item194" alt="mmilitary18" class="item noselect mmilitary" src="./img/map/0/military.png" style="top: 875px; left: 297px;" onclick="attack(194)">
+            <img id="item195" alt="mmilitary19" class="item noselect mmilitary" src="./img/map/0/military.png" style="top: 875px; left: 881px;" onclick="attack(195)">
+            <img id="item196" alt="mmilitary20" class="item noselect mmilitary" src="./img/map/0/military.png" style="top: 291px; left: 881px;" onclick="attack(196)">
             
             <!-- LARGE MILITARY -->
-            <img id="item197" alt="lmilitary1" class="item lmilitary" src="./img/map/0/military.png" style="top: 375px; left: 383px;" onclick="attack(197)">
-            <img id="item198" alt="lmilitary2" class="item lmilitary" src="./img/map/0/military.png" style="top: 576px; left: 302px;" onclick="attack(198)">
-            <img id="item199" alt="lmilitary3" class="item lmilitary" src="./img/map/0/military.png" style="top: 778px; left: 383px;" onclick="attack(199)">
-            <img id="item200" alt="lmilitary4" class="item lmilitary" src="./img/map/0/military.png" style="top: 859px; left: 585px;" onclick="attack(200)">
-            <img id="item201" alt="lmilitary5" class="item lmilitary" src="./img/map/0/military.png" style="top: 778px; left: 786px;" onclick="attack(201)">
-            <img id="item202" alt="lmilitary6" class="item lmilitary" src="./img/map/0/military.png" style="top: 576px; left: 867px;" onclick="attack(202)">
-            <img id="item203" alt="lmilitary7" class="item lmilitary" src="./img/map/0/military.png" style="top: 375px; left: 786px;" onclick="attack(203)">
-            <img id="item204" alt="lmilitary8" class="item lmilitary" src="./img/map/0/military.png" style="top: 293px; left: 585px;" onclick="attack(204)">
+            <img id="item197" alt="lmilitary1" class="item noselect lmilitary" src="./img/map/0/military.png" style="top: 375px; left: 383px;" onclick="attack(197)">
+            <img id="item198" alt="lmilitary2" class="item noselect lmilitary" src="./img/map/0/military.png" style="top: 576px; left: 302px;" onclick="attack(198)">
+            <img id="item199" alt="lmilitary3" class="item noselect lmilitary" src="./img/map/0/military.png" style="top: 778px; left: 383px;" onclick="attack(199)">
+            <img id="item200" alt="lmilitary4" class="item noselect lmilitary" src="./img/map/0/military.png" style="top: 859px; left: 585px;" onclick="attack(200)">
+            <img id="item201" alt="lmilitary5" class="item noselect lmilitary" src="./img/map/0/military.png" style="top: 778px; left: 786px;" onclick="attack(201)">
+            <img id="item202" alt="lmilitary6" class="item noselect lmilitary" src="./img/map/0/military.png" style="top: 576px; left: 867px;" onclick="attack(202)">
+            <img id="item203" alt="lmilitary7" class="item noselect lmilitary" src="./img/map/0/military.png" style="top: 375px; left: 786px;" onclick="attack(203)">
+            <img id="item204" alt="lmilitary8" class="item noselect lmilitary" src="./img/map/0/military.png" style="top: 293px; left: 585px;" onclick="attack(204)">
         </div>
         <br><br>
     </body>
