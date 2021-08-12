@@ -137,7 +137,7 @@ html {
 }
 
 .tooltip .tooltiptext {
-    max-width: 200px;
+    min-width: 200px;
     white-space: nowrap;
     background-color: black;
     color: #fff;

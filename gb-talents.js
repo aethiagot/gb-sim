@@ -189,8 +189,8 @@ function getTotalHealth() {
 
 function getResilienceLimit() {
     var res = role==ROLE_OFFENSIVE?140:role==ROLE_DEFENSIVE?160:100;
-    res += 4 * val[19];
-    return res;
+    var bonus = 4 * val[19];
+    return res + res * bonus/100;
 }
 
 function getResilienceBattle() {
