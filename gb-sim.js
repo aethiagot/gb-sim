@@ -561,27 +561,35 @@ function showTooltip(id) {
         var resleft = resmax;
         if (map[0] == map[id]){
             dist = (Math.round(getPathDistance(id,0) * 100 + Number.EPSILON ) / 100);
-            time = getTime(dist,map[id]);
-            resleft -= getResilienceLost(time);
-            res += $("#i0").attr("alt") + ":&nbsp;" + dist + "km, " + getTimeStr(time) + " (" + resmax + "-" + Math.max(0,resleft) + ").<br>";
+            if (dist > 0) {
+                time = getTime(dist,map[id]);
+                resleft -= getResilienceLost(time);
+                res += $("#i0").attr("alt") + ":&nbsp;" + dist + "km, " + getTimeStr(time) + " (" + resmax + "-" + Math.max(0,resleft) + ").<br>";
+            }
         }
         if (map[id] != 0) {
             dist = (Math.round(getPathDistance(id,map[id]) * 100 + Number.EPSILON ) / 100);
-            time = getTime(dist,map[id]);
-            resleft -= getResilienceLost(time);
-            res += $("#i"+map[id]).attr("alt") + ":&nbsp;" + dist + "km, " + getTimeStr(time) + " (" + resmax + "-" + Math.max(0,resleft) + ").<br>";
+            if (dist > 0) {
+                time = getTime(dist,map[id]);
+                resleft -= getResilienceLost(time);
+                res += $("#i"+map[id]).attr("alt") + ":&nbsp;" + dist + "km, " + getTimeStr(time) + " (" + resmax + "-" + Math.max(0,resleft) + ").<br>";
+            }
         }
     }
     $(".fortress").each(function() {
         var id2 = parseInt(($(this)[0].id).slice(1));
         if (id != id2 && map[id] == map[id2]){
             var dist = (Math.round(getPathDistance(id,id2) * 100 + Number.EPSILON ) / 100);
-            var time = getTime(dist,map[id]);
-            var resmax = getResilienceMax();
-            var resleft = resmax - getResilienceLost(time);
-            res += $(this).attr("alt") + ":&nbsp;" + dist + "km, " + getTimeStr(time) + " (" + resmax + "-" + Math.max(0,resleft) + ").<br>";
+            if (dist > 0) {
+                var time = getTime(dist,map[id]);
+                var resmax = getResilienceMax();
+                var resleft = resmax - getResilienceLost(time);
+                res += $(this).attr("alt") + ":&nbsp;" + dist + "km, " + getTimeStr(time) + " (" + resmax + "-" + Math.max(0,resleft) + ").<br>";
+            }
         }
     });
+    if (res == "")
+        res = "No path available for current<br>owner and talent settings."
     $("#tData").html(res);
     $("#tContainer").show();
     $("#tData").show();
