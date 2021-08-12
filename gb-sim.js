@@ -30,11 +30,11 @@ var score = [74200,0,0,0,0,0,0,0,0];
 var names = true;
 
 function initialize() {
-    /*
+    
     window.addEventListener('contextmenu', function (e) { 
         e.preventDefault(); 
     }, false);
-    */
+    
     const idx = document.URL.indexOf('?');
     if (idx != -1) {
         var imports = (document.URL.substring(idx+1,document.URL.length)).split("&");
