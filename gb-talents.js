@@ -1,12 +1,13 @@
-var ROLE_NONE = 0;
-var ROLE_OFFENSIVE = 1;
-var ROLE_DEFENSIVE = 2;
-var ROLE_LOGISTICS = 3;
+const ROLE_NONE = 0;
+const ROLE_OFFENSIVE = 1;
+const ROLE_DEFENSIVE = 2;
+const ROLE_LOGISTICS = 3;
 
-var costs = [ 250, 200, 130, 200, 130, 200, 130, 380, 250, 150, 250, 150, 250, 150, 500, 200, 200, 200, 200, 400, 200, 800 ];
-var links = [ null, 0, 0, 1, 2, 3, 4, 6, 7, 7, 8, 9, 10, 11, 13, 14, 14, 15, 16, 17, 18, 20 ];
-var min = [ 0, 1, 1, 3, 3, 3, 3, 3, 1, 1, 3, 3, 3, 3, 3, 1, 1, 3, 3, 3, 3, 3 ];
-var max = [ 1, 5, 5, 5, 5, 5, 5, 1, 5, 5, 5, 5, 5, 5, 1, 5, 5, 5, 5, 5, 5, 1 ];
+const costs = [ 250, 200, 130, 200, 130, 200, 130, 380, 250, 150, 250, 150, 250, 150, 500, 200, 200, 200, 200, 400, 200, 800 ];
+const links = [ null, 0, 0, 1, 2, 3, 4, 6, 7, 7, 8, 9, 10, 11, 13, 14, 14, 15, 16, 17, 18, 20 ];
+const min = [ 0, 1, 1, 3, 3, 3, 3, 3, 1, 1, 3, 3, 3, 3, 3, 1, 1, 3, 3, 3, 3, 3 ];
+const max = [ 1, 5, 5, 5, 5, 5, 5, 1, 5, 5, 5, 5, 5, 5, 1, 5, 5, 5, 5, 5, 5, 1 ];
+
 var val = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ];
 var role = ROLE_NONE;
 
@@ -15,7 +16,7 @@ function initialize() {
         e.preventDefault(); 
     }, false);
     
-    var idx = document.URL.indexOf('?');
+    const idx = document.URL.indexOf('?');
     if (idx != -1) {
         var talents = document.URL.substring(idx+4, document.URL.length);
         role = parseInt(talents[0]);
@@ -31,7 +32,7 @@ function initialize() {
 }
 
 function updateData() {
-    var role_char = role==ROLE_OFFENSIVE?'o':role==ROLE_DEFENSIVE?'d':role==ROLE_LOGISTICS?'l':'';
+    const role_char = role==ROLE_OFFENSIVE?'o':role==ROLE_DEFENSIVE?'d':role==ROLE_LOGISTICS?'l':'';
     var data;
 
     /* General data */

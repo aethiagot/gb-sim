@@ -108,8 +108,6 @@ html {
     color: white;
     font-family: 'Marcellus SC', serif;
     text-align: center;
-    width: 100px;
-    height: 30px;
     padding-top: 5px;
     cursor: pointer;
 }
@@ -127,4 +125,29 @@ html {
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 
+}
+
+/* From https://www.w3schools.com/css/css_tooltip.asp */
+.tooltip { 
+    position: absolute;
+    display: none;
+    border-bottom: 1px dotted black;
+    top: 800px;
+    left: 500px;
+}
+
+.tooltip .tooltiptext {
+    max-width: 200px;
+    white-space: nowrap;
+    background-color: black;
+    color: #fff;
+    text-align: left;
+    padding:6px 10px 6px 10px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    margin-top: -70px;
+    margin-left: -50px;
 }
