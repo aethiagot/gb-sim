@@ -14,27 +14,35 @@ const ROLE_OFFENSIVE = 1;
 const ROLE_DEFENSIVE = 2;
 const ROLE_LOGISTICS = 3;
 
+const GLOW_NONE = 0;
+const GLOW_BASE = 1;
+const GLOW_SHORTEST = 2;
+
 const costs = [250,200,130,200,130,200,130,380,250,150,250,150,250,150,500,200,200,200,200,400,200,800];
 const linksT = [null,0,0,1,2,3,4,6,7,7,8,9,10,11,13,14,14,15,16,17,18,20];
 const min = [0,1,1,3,3,3,3,3,1,1,3,3,3,3,3,1,1,3,3,3,3,3];
 const max = [1,5,5,5,5,5,5,1,5,5,5,5,5,5,1,5,5,5,5,5,5,1];
-const linksM = [[41,42,43,44,45,46,47,48],[113,169],[114,170],[115,171],[116,172],[117,173],[118,174],[119,175],[120,176],[113,169],[114,170],[115,171],[116,172],[117,173],[118,174],[119,175],[120,176],[64,80,168,193],[57,73,161,193],[58,74,162,194],[59,75,163,194],[60,76,164,195],[61,77,165,195],[62,78,166,196],[63,79,167,196],[64,145,56],[57,146,49],[57,147,49],[58,148,50],[58,149,50],[59,150,51],[59,151,51],[60,152,52],[60,153,52],[61,154,53],[61,155,53],[62,156,54],[62,157,54],[63,158,55],[63,159,55],[64,160,56],[72,0],[65,0],[66,0],[67,0],[68,0],[69,0],[70,0],[71,0],[26,27,81,89,97,105],[28,29,82,90,98,106],[30,31,83,91,99,107],[32,33,84,92,100,108],[34,35,85,93,101,109],[36,37,86,94,102,110],[38,39,87,95,103,111],[25,40,88,96,104,112],[18,26,27,193],[19,28,29,194],[20,30,31,194],[21,32,33,195],[22,34,35,195],[23,36,37,196],[24,38,39,196],[17,25,40,193],[122,123,137,138,161,42],[124,125,138,139,162,43],[126,127,139,140,163,44],[128,129,140,141,164,45],[130,131,141,142,165,46],[132,133,142,143,166,47],[134,135,143,144,167,48],[121,136,137,144,168,41],[18],[19],[20],[21],[22],[23],[24],[17],[49],[50],[51],[52],[53],[54],[55],[56],[49],[50],[51],[52],[53],[54],[55],[56],[49],[50],[51],[52],[53],[54],[55],[56],[49],[50],[51],[52],[53],[54],[55],[56],[1,9,177],[2,10,179],[3,11,181],[4,12,183],[5,13,185],[6,14,188],[7,15,189],[8,16,191],[72,197],[65,197],[65,198],[66,198],[66,199],[67,199],[67,200],[68,200],[68,201],[69,201],[69,202],[70,202],[70,203],[71,203],[71,204],[72,204],[65,72],[65,66],[66,67],[67,68],[68,69],[69,70],[70,71],[71,72],[25,177],[26,178],[27,179],[28,180],[29,181],[30,182],[31,183],[32,184],[33,185],[34,186],[35,187],[36,188],[37,189],[38,190],[39,191],[40,192],[18,65],[19,66],[20,67],[21,68],[22,69],[23,70],[24,71],[17,72],[1,9,178],[2,10,180],[3,11,182],[4,12,184],[5,13,186],[6,14,187],[7,15,190],[8,16,192],[113,145],[146,169],[114,147],[148,170],[115,149],[171,150],[116,151],[152,172],[117,153],[154,173],[155,174],[118,156],[119,157],[158,175],[120,159],[160,176],[17,18,57,64,197],[19,20,58,59,199],[21,22,60,61,201],[23,24,62,63,203],[121,122,193],[123,124],[125,126,194],[127,128],[129,130,195],[131,132],[133,134,196],[135,136]];
+const linksM = [[41,42,43,44,45,46,47,48],[113,169],[114,170],[115,171],[116,172],[117,173],[118,174],[119,175],[120,176],[113,169],[114,170],[115,171],[116,172],[117,173],[118,174],[119,175],[120,176],[64,80,168,193],[57,73,161,193],[58,74,162,194],[59,75,163,194],[60,76,164,195],[61,77,165,195],[62,78,166,196],[63,79,167,196],[64,145,56],[57,146,49],[57,147,49],[58,148,50],[58,149,50],[59,150,51],[59,151,51],[60,152,52],[60,153,52],[61,154,53],[61,155,53],[62,156,54],[62,157,54],[63,158,55],[63,159,55],[64,160,56],[0,72],[0,65],[0,66],[0,67],[0,68],[0,69],[0,70],[0,71],[26,27,81,89,97,105],[28,29,82,90,98,106],[30,31,83,91,99,107],[32,33,84,92,100,108],[34,35,85,93,101,109],[36,37,86,94,102,110],[38,39,87,95,103,111],[25,40,88,96,104,112],[18,26,27,193],[19,28,29,194],[20,30,31,194],[21,32,33,195],[22,34,35,195],[23,36,37,196],[24,38,39,196],[17,25,40,193],[122,123,137,138,161,42],[124,125,138,139,162,43],[126,127,139,140,163,44],[128,129,140,141,164,45],[130,131,141,142,165,46],[132,133,142,143,166,47],[134,135,143,144,167,48],[121,136,137,144,168,41],[18],[19],[20],[21],[22],[23],[24],[17],[49],[50],[51],[52],[53],[54],[55],[56],[49],[50],[51],[52],[53],[54],[55],[56],[49],[50],[51],[52],[53],[54],[55],[56],[49],[50],[51],[52],[53],[54],[55],[56],[1,9,177],[2,10,179],[3,11,181],[4,12,183],[5,13,185],[6,14,188],[7,15,189],[8,16,191],[72,197],[65,197],[65,198],[66,198],[66,199],[67,199],[67,200],[68,200],[68,201],[69,201],[69,202],[70,202],[70,203],[71,203],[71,204],[72,204],[65,72],[65,66],[66,67],[67,68],[68,69],[69,70],[70,71],[71,72],[25,177],[26,178],[27,179],[28,180],[29,181],[30,182],[31,183],[32,184],[33,185],[34,186],[35,187],[36,188],[37,189],[38,190],[39,191],[40,192],[18,65],[19,66],[20,67],[21,68],[22,69],[23,70],[24,71],[17,72],[1,9,178],[2,10,180],[3,11,182],[4,12,184],[5,13,186],[6,14,187],[7,15,190],[8,16,192],[113,145],[146,169],[114,147],[148,170],[115,149],[171,150],[116,151],[152,172],[117,153],[154,173],[155,174],[118,156],[119,157],[158,175],[120,159],[160,176],[17,18,57,64,197],[19,20,58,59,199],[21,22,60,61,201],[23,24,62,63,203],[121,122,193],[123,124],[125,126,194],[127,128],[129,130,195],[131,132],[133,134,196],[135,136]];
 const influence = [3000,0,0,0,0,0,0,0,0,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,400,400,400,400,400,400,400,400,400,400,400,400,400,400,400,400,400,400,400,400,400,400,400,400,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,700,700,700,700,700,700,700,700,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,400,400,400,400,400,400,400,400,400,400,400,400,400,400,400,400,700,700,700,700,700,700,700,700,200,200,200,200,200,200,200,200,400,400,400,400,400,400,400,400,400,400,400,400,400,400,400,400,700,700,700,700,700,700,700,700,700,700,700,700];
 const colors = ["#F1F1F1","#DE517B","#E9823F","#84EB86","#CE7ED6","#E4222E","#F1BF4A","#7BEBD6","#9FD5FC"];
-
+    
 var role = ROLE_NONE;
 var talents = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var prev = [0,1,2,3,4,5,6,7,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var map = [0,1,2,3,4,5,6,7,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var score = [74200,0,0,0,0,0,0,0,0];
 var names = true;
+var canvas;
+var ctx;
 
 function initialize() {
     
-    window.addEventListener('contextmenu', function (e) { 
+    window.addEventListener('ctxmenu', function (e) { 
         e.preventDefault(); 
     }, false);
     
+    canvas = document.getElementById("myCanvas");
+    ctx = canvas.getContext("2d");
     const idx = document.URL.indexOf('?');
     if (idx != -1) {
         var imports = (document.URL.substring(idx+1,document.URL.length)).split("&");
@@ -367,8 +375,6 @@ function toggleMapNames() {
 }
 
 function refreshCanvas() {
-    var canvas = document.getElementById("myCanvas");
-    var ctx = canvas.getContext("2d");
     ctx.clearRect(0,0,canvas.width,canvas.height);
     for (var i = 0; i < linksM.length; i++) {
         var l = linksM[i];
@@ -387,8 +393,6 @@ function drawMapName(id) {
     var w = ele.width();
     var h = ele.height();
     var str = ele.attr("alt");
-    var canvas = document.getElementById("myCanvas");
-    var ctx = canvas.getContext("2d");
     var mod = 10;
     if (id == GREEN || id == PURPLE || id == RED)
         mod = 3;
@@ -408,7 +412,7 @@ function getColor(i1,i2) {
     return "#F1F1F1";
 }
 
-function drawMapLink(i1, i2) {
+function drawMapLink(i1, i2, glow) { //glow is optional to mark shortest paths
     var ele1 = $("#i"+i1);
     var ele2 = $("#i"+i2);
     var pos1 = ele1.position();
@@ -418,14 +422,28 @@ function drawMapLink(i1, i2) {
     var h1 = ele1.height();
     var h2 = ele2.height();
     
-    var canvas = document.getElementById("myCanvas");
-    var ctx = canvas.getContext("2d");
     ctx.beginPath();
     ctx.strokeStyle = "#202020";
     ctx.lineWidth = 5;
     ctx.moveTo(pos1.left + w1/2,pos1.top + h1/2);
     ctx.lineTo(pos2.left + w2/2, pos2.top + h2/2);
     ctx.stroke();
+    if (glow > GLOW_NONE){ 
+        //Not using shadowBlur, it's too light
+        //ctx.shadowBlur = 4;
+        //ctx.shadowColor = "#FFFFFF";
+        if (glow == GLOW_BASE){
+            ctx.strokeStyle = "#000000";
+            ctx.lineWidth = 11;
+        }
+        else { //GLOW_SHORTEST
+            ctx.strokeStyle = "#FFFFFF";
+            ctx.lineWidth = 7;
+        }
+        ctx.moveTo(pos1.left + w1/2,pos1.top + h1/2);
+        ctx.lineTo(pos2.left + w2/2, pos2.top + h2/2);
+        ctx.stroke();
+    }
     ctx.strokeStyle = getColor(i1,i2);
     ctx.lineWidth = 3;
     ctx.moveTo(pos1.left + w1/2,pos1.top + h1/2);
@@ -493,18 +511,13 @@ function getDistance(i1,i2) {
     return Math.trunc((Math.sqrt(Math.pow((x1-x2),2) + Math.pow((y1-y2),2)))/RATIO);
 }
 
-function getPathDistance(i1,i2) {
-    var path = findPath(i1,i2);
+function getPathDistance(path) {
     var res = 0;
-    //var str = "";
     if (path.length > 0) {
-        //str += $("#i"+path[0]).attr("alt") + "\n";
         for(var i = 1; i < path.length; i++) {
             res += getDistance(path[i-1],path[i]);
-            //str += $("#i"+path[i]).attr("alt")+ "\n";
         }
     }
-    //console.log(str);
     return res;
 }
 
@@ -554,42 +567,60 @@ function getTimeStr(time) {
 
 function showTooltip(id) {
     var res = "";
-    if (id != 0){
-        var dist = 0;
-        var time = 0;
-        var resmax = getResilienceMax();
-        var resleft = resmax;
-        if (map[0] == map[id]){
-            dist = (Math.round(getPathDistance(id,0) * 100 + Number.EPSILON ) / 100);
-            if (dist > 0) {
-                time = getTime(dist,map[id]);
-                resleft -= getResilienceLost(time);
-                res += $("#i0").attr("alt") + ":&nbsp;" + dist + "km, " + getTimeStr(time) + " (" + resmax + "-" + Math.max(0,resleft) + ").<br>";
-            }
+    var shortest = [Infinity,null];
+    var base = [];
+    
+    var dist = 0;
+    var time = 0;
+    var path = [];
+    var resmax = getResilienceMax();
+    var resleft = resmax;
+    if (map[0] == map[id]){ //Guessing you can deploy from the Glorious City and current faction owns it
+        path = findPath(id,0);
+        dist = (Math.round(getPathDistance(path) * 100 + Number.EPSILON ) / 100);
+        if (dist > 0) {
+            time = getTime(dist,map[id]);
+            resleft -= getResilienceLost(time);
+            res += $("#i0").attr("alt") + ":&nbsp;" + dist + "km, " + getTimeStr(time) + " (" + resmax + "-" + Math.max(0,resleft) + ").<br>";
+            if (dist < shortest[0])
+                shortest = [dist,path];
         }
-        if (map[id] != 0) {
-            dist = (Math.round(getPathDistance(id,map[id]) * 100 + Number.EPSILON ) / 100);
-            if (dist > 0) {
-                time = getTime(dist,map[id]);
-                resleft -= getResilienceLost(time);
-                res += $("#i"+map[id]).attr("alt") + ":&nbsp;" + dist + "km, " + getTimeStr(time) + " (" + resmax + "-" + Math.max(0,resleft) + ").<br>";
-            }
+    }
+    if (map[id] != 0) { //Building is owned by a players' faction so we compute the shortest distance from base and draw its path outlined in black
+        path = findPath(id,map[id]);
+        dist = (Math.round(getPathDistance(path) * 100 + Number.EPSILON ) / 100);
+        if (dist > 0) {
+            time = getTime(dist,map[id]);
+            resleft -= getResilienceLost(time);
+            res += $("#i"+map[id]).attr("alt") + ":&nbsp;" + dist + "km, " + getTimeStr(time) + " (" + resmax + "-" + Math.max(0,resleft) + ").<br>";
+            if (dist < shortest[0])
+                shortest = [dist,path];
+            for(var i = 1; i < path.length; i++)
+                drawMapLink(path[i-1],path[i],GLOW_BASE);
         }
     }
     $(".fortress").each(function() {
         var id2 = parseInt(($(this)[0].id).slice(1));
         if (id != id2 && map[id] == map[id2]){
-            var dist = (Math.round(getPathDistance(id,id2) * 100 + Number.EPSILON ) / 100);
+            var path = findPath(id,id2);
+            var dist = (Math.round(getPathDistance(path) * 100 + Number.EPSILON ) / 100);
             if (dist > 0) {
                 var time = getTime(dist,map[id]);
                 var resmax = getResilienceMax();
                 var resleft = resmax - getResilienceLost(time);
                 res += $(this).attr("alt") + ":&nbsp;" + dist + "km, " + getTimeStr(time) + " (" + resmax + "-" + Math.max(0,resleft) + ").<br>";
+                if (dist < shortest[0])
+                    shortest = [dist,path];
             }
+            
         }
     });
     if (res == "")
         res = "No path available for current<br>owner and talent settings."
+    else { //Draw shortest path outlined in white
+        for(var i = 1; i < shortest[1].length; i++)
+            drawMapLink(shortest[1][i-1],shortest[1][i],GLOW_SHORTEST);
+    }
     $("#tData").html(res);
     $("#tContainer").show();
     $("#tData").show();
@@ -602,9 +633,11 @@ function showTooltip(id) {
 function hideTooltip() {
     $("#tContainer").hide();
     $("#tData").hide();
+    refreshCanvas();
 }
    
 function findPath(id1,id2) { 
+    //var walk_blocked = ((role == ROLE_DEFENSIVE) && talents[21]);
     //Guessing they did a simple BFS search and not Dijkstra
     var res = [[id1]];
     var visited = [];
