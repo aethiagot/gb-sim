@@ -434,7 +434,7 @@ function drawMapLink(i1, i2, glow) { //glow is optional to mark shortest paths
         //ctx.shadowColor = "#FFFFFF";
         if (glow == GLOW_BASE){
             ctx.strokeStyle = "#000000";
-            ctx.lineWidth = 11;
+            ctx.lineWidth = 9;
         }
         else { //GLOW_SHORTEST
             ctx.strokeStyle = "#FFFFFF";
