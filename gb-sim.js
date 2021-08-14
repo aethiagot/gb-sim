@@ -662,35 +662,34 @@ function getMapId() {
 
 function dijkstra(id) {
     var walk_blocked = (role == ROLE_DEFENSIVE && talents[21]); //We don't care about transporting routes and only defensive players can walk through enemy territory with the proper talents.
-    var distance = new Array(205);
+    var res = new Array(205); //distance, prev
     var fixed = new Array(205);
     var num_fixed = 0;
-    var min_dist, u, v;
+    var min, u, v;
     
-    for (var i = 0; i < map.length; i++) {
-        distance[i] = [Infinity,[]];
+    for (var i = 0; i < map.length; i++){
+        res[i] = [Infinity,-1];
         fixed[i] = false;
     }
-    distance[id][0] = 0;
-    distance[id][1] = id;
+    res[id] = [0,id];
     
     while(num_fixed < map.length) {
-        min_dist = Infinity;
+        min = Infinity;
         u = 0;
         for(v = 0; v < map.length; v++)
-            if (!fixed[v] && distance[v][0] < min_dist) {
-                min_dist = distance[v][0];
+            if (!fixed[v] && res[v][0] < min) {
+                min = res[v][0];
                 u = v;
             }
         fixed[u] = true;
         num_fixed++;
         for(i = 0; i < linksM[u].length; i++) {
             var weight = (!walk_blocked && (map[u] != map[linksM[u][i]]))?Infinity:getDistance(u,linksM[u][i]);
-            if (!fixed[linksM[u][i]] && distance[linksM[u][i]][0] > distance[u][0] + weight){
-                distance[linksM[u][i]][0] = distance[u][0] + weight;
-                distance[linksM[u][i]][1] = u;
+            if (!fixed[linksM[u][i]] && res[linksM[u][i]][0] > res[u][0] + weight){
+                res[linksM[u][i]][0] = res[u][0] + weight;
+                res[linksM[u][i]][1] = u;
             }
         }
     }
-    return distance;
+    return res;
 }
