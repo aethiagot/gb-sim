@@ -34,10 +34,11 @@ var score = [74200,0,0,0,0,0,0,0,0];
 var names = true;
 var canvas;
 var ctx;
+var shortestPaths;
 
 function initialize() {
     
-    window.addEventListener('ctxmenu', function (e) { 
+    window.addEventListener('contextmenu', function (e) { 
         e.preventDefault(); 
     }, false);
     
@@ -433,11 +434,11 @@ function drawMapLink(i1, i2, glow) { //glow is optional to mark shortest paths
         //ctx.shadowBlur = 4;
         //ctx.shadowColor = "#FFFFFF";
         if (glow == GLOW_BASE){
-            ctx.strokeStyle = "#000000";
-            ctx.lineWidth = 9;
+            ctx.strokeStyle = "#FFFFFF";
+            ctx.lineWidth = 7;
         }
         else { //GLOW_SHORTEST
-            ctx.strokeStyle = "#FFFFFF";
+            ctx.strokeStyle = "#FFFD37";
             ctx.lineWidth = 7;
         }
         ctx.moveTo(pos1.left + w1/2,pos1.top + h1/2);
@@ -511,16 +512,6 @@ function getDistance(i1,i2) {
     return Math.trunc((Math.sqrt(Math.pow((x1-x2),2) + Math.pow((y1-y2),2)))/RATIO);
 }
 
-function getPathDistance(path) {
-    var res = 0;
-    if (path.length > 0) {
-        for(var i = 1; i < path.length; i++) {
-            res += getDistance(path[i-1],path[i]);
-        }
-    }
-    return res;
-}
-
 function getSpeedBonus(faction) {
     var bonus = 0;
     
@@ -566,45 +557,37 @@ function getTimeStr(time) {
 }
 
 function showTooltip(id) {
+    if (id == 0 && map[id] == 0){
+        hideTooltip();
+        return;
+    }
+    
     var res = "";
     var shortest = [Infinity,null];
-    var base = [];
-    
-    var dist = 0;
     var time = 0;
-    var path = [];
     var resmax = getResilienceMax();
     var resleft = resmax;
-    if (map[0] == map[id]){ //Guessing you can deploy from the Glorious City and current faction owns it
-        path = findPath(id,0);
-        dist = (Math.round(getPathDistance(path) * 100 + Number.EPSILON ) / 100);
-        if (dist > 0) {
-            time = getTime(dist,map[id]);
-            resleft -= getResilienceLost(time);
-            res += $("#i0").attr("alt") + ":&nbsp;" + dist + "km, " + getTimeStr(time) + " (" + resmax + "-" + Math.max(0,resleft) + ").<br>";
-            if (dist < shortest[0])
-                shortest = [dist,path];
-        }
+    
+    shortestPaths = dijkstra(id);
+    
+    var dist = (Math.round(shortestPaths[map[id]][0] * 100 + Number.EPSILON ) / 100);
+    if (dist > 0 && dist < Infinity) {
+        var path = rebuildPath(id,map[id]);
+        time = getTime(dist,map[id]);
+        resleft -= getResilienceLost(time);
+        res += $("#i"+map[id]).attr("alt") + ":&nbsp;" + dist + "km, " + getTimeStr(time) + " (" + resmax + "-" + Math.max(0,resleft) + ").<br>";
+        if (dist < shortest[0])
+            shortest = [dist,path];
+        for(var i = 1; i < path.length; i++)
+            drawMapLink(path[i-1],path[i],GLOW_BASE);
     }
-    if (map[id] != 0) { //Building is owned by a players' faction so we compute the shortest distance from base and draw its path outlined in black
-        path = findPath(id,map[id]);
-        dist = (Math.round(getPathDistance(path) * 100 + Number.EPSILON ) / 100);
-        if (dist > 0) {
-            time = getTime(dist,map[id]);
-            resleft -= getResilienceLost(time);
-            res += $("#i"+map[id]).attr("alt") + ":&nbsp;" + dist + "km, " + getTimeStr(time) + " (" + resmax + "-" + Math.max(0,resleft) + ").<br>";
-            if (dist < shortest[0])
-                shortest = [dist,path];
-            for(var i = 1; i < path.length; i++)
-                drawMapLink(path[i-1],path[i],GLOW_BASE);
-        }
-    }
+    
     $(".fortress").each(function() {
         var id2 = parseInt(($(this)[0].id).slice(1));
         if (id != id2 && map[id] == map[id2]){
-            var path = findPath(id,id2);
-            var dist = (Math.round(getPathDistance(path) * 100 + Number.EPSILON ) / 100);
-            if (dist > 0) {
+            var dist = (Math.round(shortestPaths[id2][0] * 100 + Number.EPSILON ) / 100);
+            if (dist > 0 && dist < Infinity) {
+                var path = rebuildPath(id,id2);
                 var time = getTime(dist,map[id]);
                 var resmax = getResilienceMax();
                 var resleft = resmax - getResilienceLost(time);
@@ -636,32 +619,15 @@ function hideTooltip() {
     refreshCanvas();
 }
    
-function findPath(id1,id2) { 
-    //var walk_blocked = ((role == ROLE_DEFENSIVE) && talents[21]);
-    //Guessing they did a simple BFS search and not Dijkstra
-    var res = [[id1]];
-    var visited = [];
-    var found = false;
-    
-    while(res.length > 0 && !found) {
-        var aux = res.shift();
-        var last = aux[aux.length - 1];
-        visited.push(last);
-        var neighbors = linksM[last];
-        for(var i = 0; i < neighbors.length; i++){
-            if ((map[neighbors[i]] == map[id1]) && (visited.indexOf(neighbors[i]) == -1)) {
-                if (neighbors[i] == id2){
-                    aux.push(id2);
-                    found = true;
-                    break; 
-                }
-                var aux2 = [...aux];
-                aux2.push(neighbors[i]);
-                res.push(aux2);
-            }
-        }
+function rebuildPath(id1,id2) { 
+    //Needs to compute Dijkstra previously
+    var res = [];
+    while(id2 != id1) {
+        res.push(id2);
+        id2 = shortestPaths[id2][1];
     }
-    return aux.reverse();
+    res.push(id1);
+    return res.reverse();
 }
 
 function updateURL() {
@@ -692,4 +658,39 @@ function getMapId() {
     for(var i = 0; i < map.length; i++)
         res += map[i];
     return res;
+}
+
+function dijkstra(id) {
+    var walk_blocked = (role == ROLE_DEFENSIVE && talents[21]); //We don't care about transporting routes and only defensive players can walk through enemy territory with the proper talents.
+    var distance = new Array(205);
+    var fixed = new Array(205);
+    var num_fixed = 0;
+    var min_dist, u, v;
+    
+    for (var i = 0; i < map.length; i++) {
+        distance[i] = [Infinity,[]];
+        fixed[i] = false;
+    }
+    distance[id][0] = 0;
+    distance[id][1] = id;
+    
+    while(num_fixed < map.length) {
+        min_dist = Infinity;
+        u = 0;
+        for(v = 0; v < map.length; v++)
+            if (!fixed[v] && distance[v][0] < min_dist) {
+                min_dist = distance[v][0];
+                u = v;
+            }
+        fixed[u] = true;
+        num_fixed++;
+        for(i = 0; i < linksM[u].length; i++) {
+            var weight = (!walk_blocked && (map[u] != map[linksM[u][i]]))?Infinity:getDistance(u,linksM[u][i]);
+            if (!fixed[linksM[u][i]] && distance[linksM[u][i]][0] > distance[u][0] + weight){
+                distance[linksM[u][i]][0] = distance[u][0] + weight;
+                distance[linksM[u][i]][1] = u;
+            }
+        }
+    }
+    return distance;
 }
