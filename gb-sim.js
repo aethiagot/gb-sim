@@ -567,7 +567,7 @@ function showTooltip(id) {
     
     shortestPaths = dijkstra(id);
     
-    var dist = (Math.round(shortestPaths[map[id]][0] * 100 + Number.EPSILON ) / 100);
+    var dist = shortestPaths[map[id]][0];
     if (dist > 0 && dist < Infinity) {
         var path = rebuildPath(id,map[id]);
         time = getTime(dist,map[id]);
@@ -582,7 +582,7 @@ function showTooltip(id) {
     $(".fortress").each(function() {
         var id2 = parseInt(($(this)[0].id).slice(1));
         if (id != id2 && map[id] == map[id2]){
-            var dist = (Math.round(shortestPaths[id2][0] * 100 + Number.EPSILON ) / 100);
+            var dist = shortestPaths[id2][0];
             if (dist > 0 && dist < Infinity) {
                 var path = rebuildPath(id,id2);
                 var time = getTime(dist,map[id]);
