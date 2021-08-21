@@ -36,11 +36,11 @@ var ctx;
 var shortestPaths;
 
 function initialize() {
-    
+    /*
     window.addEventListener('contextmenu', function (e) { 
         e.preventDefault(); 
     }, false);
-    
+    */
     canvas = document.getElementById("myCanvas");
     ctx = canvas.getContext("2d");
     const idx = document.URL.indexOf('?');
@@ -519,10 +519,6 @@ function getSpeedBonus(faction) {
         if (map[id2] == faction)
             bonus += 10;
     }
-    
-    //Talent bonus
-    if(role == ROLE_OFFENSIVE || role == ROLE_DEFENSIVE)
-        bonus += 5 * (talents[1] + talents[15]);
     return bonus;
 }
 
@@ -537,12 +533,15 @@ function getResilienceMax(){
 }
 
 function getResilienceLost(time) {
-    return Math.trunc(time/5);
+    //Talent bonus
+    var bonus = getResilienceMovement();
+    return Math.trunc(time * bonus/5);
 }
 
 function getTime(distance,faction) {
     var modifier = 1 + (getSpeedBonus(faction)/100);
-    return (distance / modifier);
+    var time = distance / modifier;
+    return Math.floor(time / 60)*60 + Math.trunc(time % 60);
 }
 
 function getTimeStr(time) {
@@ -564,14 +563,15 @@ function showTooltip(id) {
     var time = 0;
     var resmax = getResilienceMax();
     var resleft = resmax;
-    
+    var lost = 0;
     shortestPaths = dijkstra(id);
     
     var dist = shortestPaths[map[id]][0];
     if (dist > 0 && dist < Infinity) {
         var path = rebuildPath(id,map[id]);
         time = getTime(dist,map[id]);
-        resleft -= getResilienceLost(time);
+        lost = getResilienceLost(time);
+        resleft = Math.trunc(resleft - lost);
         res += $("#i"+map[id]).attr("alt") + ":&nbsp;" + dist + "km, " + getTimeStr(time) + " (" + resmax + "-" + Math.max(0,resleft) + ").<br>";
         if (dist < shortest[0])
             shortest = [dist,path];
@@ -587,7 +587,8 @@ function showTooltip(id) {
                 var path = rebuildPath(id,id2);
                 var time = getTime(dist,map[id]);
                 var resmax = getResilienceMax();
-                var resleft = resmax - getResilienceLost(time);
+                var lost = getResilienceLost(time);
+                var resleft = Math.trunc(resmax - lost);;
                 res += $(this).attr("alt") + ":&nbsp;" + dist + "km, " + getTimeStr(time) + " (" + resmax + "-" + Math.max(0,resleft) + ").<br>";
                 if (dist < shortest[0])
                     shortest = [dist,path];
