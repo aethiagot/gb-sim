@@ -389,19 +389,27 @@ function removeTalent(mode,id) {
 
 /*** MAP ***/
 function toggleMapDistances() {
-    if (!show_distances)
-        $("#bDistancesMap").html("Hide Distances");
-    else
-        $("#bDistancesMap").html("Show Distances");
+    if (!show_distances) {
+        $("#bDistancesMap1").html("Hide Distances");
+        $("#bDistancesMap2").html("Hide Distances");
+    }
+    else {
+        $("#bDistancesMap1").html("Show Distances");
+        $("#bDistancesMap2").html("Show Distances");
+    }
     show_distances = !show_distances;
     refreshCanvas();
 }
 
 function toggleMapNames() {
-    if (!show_names)
-        $("#bNamesMap").html("Hide Names");
-    else
-        $("#bNamesMap").html("Show Names");
+    if (!show_names){
+        $("#bNamesMap1").html("Hide Names");
+        $("#bNamesMap2").html("Hide Names");
+    }
+    else {
+        $("#bNamesMap1").html("Show Names");
+        $("#bNamesMap2").html("Show Names");
+    }
     show_names = !show_names;
     refreshCanvas();
 }
