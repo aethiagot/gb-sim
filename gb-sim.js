@@ -19,7 +19,7 @@
     all images belong to the rightful owners.
 */
 
-const WHITE = 0;      //Glory Faction
+const WHITE = 0;      // Glory Faction
 const PINK = 1;       // Shadow Faction
 const ORANGE = 2;     // Lordsbane Faction
 const GREEN = 3;      // Ages Faction
