@@ -1,3 +1,23 @@
+/*
+    Glorious Battle K20's simulator
+    Copyright (C) 2021  [BoL] Aethia
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+    
+    No copyright infringement intended, some text descriptions and pics belong to the rightful owners.
+*/
+
 const WHITE = 0;      //Glory Faction
 const PINK = 1;       // Shadow Faction
 const ORANGE = 2;     // Lordsbane Faction
@@ -36,11 +56,11 @@ var ctx;
 var shortestPaths;
 
 function initialize() {
-    /*
+    
     window.addEventListener('contextmenu', function (e) { 
         e.preventDefault(); 
     }, false);
-    */
+    
     canvas = document.getElementById("myCanvas");
     ctx = canvas.getContext("2d");
     const idx = document.URL.indexOf('?');
