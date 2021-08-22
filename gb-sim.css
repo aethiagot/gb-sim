@@ -112,6 +112,19 @@ html {
     margin-top: 50px;
 }
 
+.dataC {
+    position: relative;
+    border: 0px solid white;
+    width: 1200px;
+    margin: 0 auto;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
 .tier {
     display: flex;
     position: relative;
