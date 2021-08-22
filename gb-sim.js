@@ -15,7 +15,8 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
     
-    No copyright infringement intended, some text descriptions and pics belong to the rightful owners.
+    No copyright infringement intended, some text descriptions and 
+    all images belong to the rightful owners.
 */
 
 const WHITE = 0;      //Glory Faction
@@ -81,6 +82,7 @@ function initialize() {
                 j--;
             }
         }
+        
         /* Map */
         imports[1] = imports[1].slice(2);
         for(var i = 0; i < imports[1].length; i++) {
