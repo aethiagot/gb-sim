@@ -640,7 +640,7 @@ function getDistance(i1,i2) {
 }
 
 function getSpeedBonus(faction) {
-    var bonus = 0;
+    var bonus = (role == ROLE_OFFENSIVE)?30:0;
     
     //Map bonus
     var elems = document.getElementsByClassName("tack");
