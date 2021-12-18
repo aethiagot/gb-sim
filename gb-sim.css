@@ -1,5 +1,5 @@
 /*
-    Glorious Battle K20's simulator
+    Glorious Battle K265's simulator
     Copyright (C) 2021  [BoL] Aethia
 
     This program is free software: you can redistribute it and/or modify
