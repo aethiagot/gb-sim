@@ -665,7 +665,7 @@ function getResilienceMax(){
 function getResilienceLost(time) {
     //Talent bonus
     var bonus = getResilienceMovement();
-    return Math.trunc(time * bonus/8); //Was 5s in Seasons 0 & 1.
+    return Math.trunc(time * bonus/8);
 }
 
 function getTime(distance,faction) {
