@@ -76,11 +76,11 @@ var ctx;
 var shortestPaths;
 
 function initialize() {
-    
+    /*
     window.addEventListener('contextmenu', function (e) { 
         e.preventDefault(); 
     }, false);
-    
+    */
     canvas = document.getElementById("myCanvas");
     ctx = canvas.getContext("2d");
     const idx = document.URL.indexOf('?');
@@ -174,6 +174,15 @@ function updateFactionsData() {
         $("#data_influence_faction_" + i).text(factions[winners[0][i]]);
         $("#data_influence_faction_" + i).css('color',colors[winners[0][i]]);
         $("#data_influence_points_" + i).text((winners[1][i]).toLocaleString());
+    }
+    
+    if (winners[0][0] != 0) {
+        $("#faction_1st").show();
+        $("#faction_1st").show();
+    }
+    else {
+        $("#faction_1st").hide();
+        $("#faction_1st").hide();
     }
     
     if (winners[1][1] > 0) {
