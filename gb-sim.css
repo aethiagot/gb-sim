@@ -167,6 +167,19 @@ html {
     text-align: center;
 }
 
+.scroll-img {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display:block;
+    margin:auto;
+    -moz-box-shadow: 0 0 25px #F08654;
+    -webkit-box-shadow: 0 0 25px #F08654;
+    box-shadow: 0 0 25px #F08654;
+    border: 4px solid #FFD384;
+    cursor: pointer;
+}
+
 .talent-img {
     position: relative;
     width: 80px;

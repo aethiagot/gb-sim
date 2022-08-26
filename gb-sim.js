@@ -69,6 +69,7 @@ var talents = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var prev = [0,1,2,3,4,5,6,7,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var map = [0,1,2,3,4,5,6,7,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var score = [74200,0,0,0,0,0,0,0,0];
+var double_time = false;
 var show_names = true;
 var show_distances = false;
 var canvas;
@@ -76,11 +77,11 @@ var ctx;
 var shortestPaths;
 
 function initialize() {
-    /*
+    
     window.addEventListener('contextmenu', function (e) { 
         e.preventDefault(); 
     }, false);
-    */
+    
     canvas = document.getElementById("myCanvas");
     ctx = canvas.getContext("2d");
     const idx = document.URL.indexOf('?');
@@ -280,7 +281,10 @@ function getQueues() {
 }
 
 function getMarchingSpeed() {
-    return role==ROLE_OFFENSIVE?30:0;
+    var res = (role==ROLE_OFFENSIVE?30:0);
+    if (double_time)
+        res += 30;
+    return res;
 }
 
 function getArmySize() {
@@ -440,6 +444,19 @@ function checkRole(mode) {
             break;
     }
     return res;
+}
+
+function toggleDoubleTime() {
+    double_time = !double_time;
+    if (double_time) {
+        $("#DT1").removeClass("disabled");
+        $("#DT2").removeClass("disabled");
+    }
+    else {
+        $("#DT1").addClass("disabled");
+        $("#DT2").addClass("disabled");
+    }
+    updateTalentsData();
 }
 
 function addTalent(mode,id) {
@@ -728,7 +745,7 @@ function getDistance(i1,i2) {
 }
 
 function getSpeedBonus(faction) {
-    var bonus = (role == ROLE_OFFENSIVE)?30:0;
+    var bonus = getMarchingSpeed();
     
     //Map bonus
     var elems = document.getElementsByClassName("tack");
