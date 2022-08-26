@@ -70,6 +70,7 @@ var prev = [0,1,2,3,4,5,6,7,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 var map = [0,1,2,3,4,5,6,7,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var score = [74200,0,0,0,0,0,0,0,0];
 var double_time = false;
+var show_talents = false;
 var show_names = true;
 var show_distances = false;
 var canvas;
@@ -404,6 +405,22 @@ function resetTalents() {
         $("#VL"+i).text("0");
     }
     updateTalentsData();
+}
+
+function toggleTalents() {
+    show_talents = !show_talents;
+    if (show_talents) {
+        $("#containerTalents").show();
+        $("#containerTalentsTitle").show();
+        $("#bShowTalents1").text("Hide Talents");
+        $("#bShowTalents2").text("Hide Talents");
+    }
+   else {
+        $("#containerTalents").hide();
+        $("#containerTalentsTitle").hide();
+        $("#bShowTalents1").text("Show Talents");
+        $("#bShowTalents2").text("Show Talents");
+   }
 }
 
 function checkDependencies(id) {
