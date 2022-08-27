@@ -738,6 +738,7 @@ function resetMap() {
     map[0] = 0;
     prev[0] = 0;
     refreshBuilding(0);
+    score = [74200,0,0,0,0,0,0,0,0];
     updateURL();
     refreshCanvas();
 }
