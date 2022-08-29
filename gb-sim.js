@@ -135,7 +135,7 @@ function updateTalentsData() {
     /* Transport & Trading */
     data = getTransportCapacity();
     $("#data_transport_supplies").text((data).toLocaleString());
-    $("#data_transport_points").text((2*(data/10000)).toLocaleString());
+    $("#data_transport_points").text((data/7000).toLocaleString());
     data = getTransportSpeed();
     $("#datal_transport_speed").text((data).toLocaleString());
     data = getTradingEfficiency();
