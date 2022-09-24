@@ -1,6 +1,6 @@
 <!--
-    All-Out War Brotherhood of Light's simulator
-    Copyright (C) 2022  [BoL] Aethia
+    Glorious Battle K265's simulator
+    Copyright (C) 2021  [BoL] Aethia
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -22,505 +22,1216 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>All-Out War Brotherhood of Light's Simulator</title>
+        <title>Glorious Battle K265's Simulator</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
         <meta http-equiv="Pragma" content="no-cache" />
         <meta http-equiv="Expires" content="0" />
     
-        <link rel="stylesheet" type="text/css" href="aw-sim.css?v=1.18">
+        <link rel="stylesheet" type="text/css" href="gb-sim.css?v=1.25">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Marcellus+SC" rel="stylesheet">
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script type="text/javascript" charset="utf-8" src="aw-sim.js?v=1.18"></script>
+        <script type="text/javascript" charset="utf-8" src="gb-sim.js?v=1.25"></script>
     </head>
 
     <body onload="initialize()">
-        <div style="text-align: center; padding-top: 20px;">
-            <span class="title">ALL-OUT WAR</span>
+        <div style="text-align: center; padding-top: 20px; padding-bottom: 40px;">
+            <span class="title">GLORIOUS BATTLE</span>
             <br>
-            <span class="subtitle">Brotherhood of Light</span>
-            <br>
-            <span class="subsubtitle">K265 - [BoL]</span>
-            <br>
-            <div id="recruitment">
-                <h3 class="recruit">Hey you!<br>
-                    <img class="chat" src="./img/chat/1/1.png"></h3>
-                <h3 class="recruit">Yes, yes, you there...<br>
-                    <img class="chat" src="./img/chat/1/8.png"></h3>
-                <h3 class="recruit">Are you feeling lonely?<br>
-                    <img class="chat" src="./img/chat/0/13.png"></h3>
-                <h3 class="recruit">Do you have T4 and +400M power?<br>
-                    <img class="chat" src="./img/chat/2/2.png"></h3>
-                <h3 class="recruit">Are you able to kill 5xRL4 per day?<br>
-                    <img class="chat" src="./img/chat/3/4.png"></h3>
-                <h3 class="recruit">Did you figure already what's this about?<br>
-                    <img class="chat" src="./img/chat/2/9.png"></h3>
-                <h3 class="recruit">(please say yes, we need smart people)<br>
-                    <img class="chat" src="./img/chat/1/3.png"></h3>
-                <h3 class="recruit">But most important...<br>
-                    <img class="chat" src="./img/chat/1/8.png"></h3>
-                <h3 class="recruit">Do you want some new friends?<br><img class="chat" src="./img/chat/1/1.png">&nbsp;<img class="chat" src="./img/chat/3/8.png">&nbsp;<img class="chat" src="./img/chat/2/1.png"></h3>
-                <h3 class="recruit">Come join BoL!<br>
-                    <img class="chat" src="./img/chat/1/6.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/2/1.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/3/6.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/1/2.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/3/2.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/2/2.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/3/6.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/1/1.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/2/6.png">
-                </h3>
-                <h3 class="recruit">We have a Canadian duke...<br>
-                    <img class="chat" src="./img/chat/3/8.png">
-                </h3>
-                <h3 class="recruit">What could possibly go wrong?<br>
-                    <img class="chat" src="./img/chat/3/9.png">
-                </h3>
-                <h3 class="recruit">(actually a lot, but I don't want to spoil you)<br>
-                    <img class="chat" src="./img/chat/3/7.png">
-                </h3>
-                <h3 class="recruit">We also have Germans, English, Americans, French...<br>
-                    <img class="chat" src="./img/chat/1/6.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/3/6.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/2/6.png">
-                </h3>
-                <h3 class="recruit">You name it, we have it!<br>
-                    <img class="chat" src="./img/chat/2/8.png">
-                </h3>
-                <h3 class="recruit">Well not Dutchies, they left<br>
-                    <img class="chat" src="./img/chat/1/5.png">
-                </h3>
-                <h3 class="recruit">But Corbo still roams our discord<br>
-                    <img class="chat" src="./img/chat/1/3.png">
-                </h3>
-                <h3 class="recruit">So part of him is still with us<br>
-                    <img class="chat" src="./img/chat/1/0.png">
-                </h3>
-                <h3 class="recruit">That asshole...<br>
-                    <img class="chat" src="./img/chat/1/7.png">
-                </h3>
-                <h3 class="recruit">I'm joking Corbo, we like you (please don't zero me)<br>
-                    <img class="chat" src="./img/chat/1/1.png">
-                </h3>
-                <h3 class="recruit">It's Wish's fault, he made me write that<br>
-                    <img class="chat" src="./img/chat/1/5.png">
-                </h3>
-                <h3 class="recruit">Anyway, what was I saying?<br>
-                    <img class="chat" src="./img/chat/1/9.png">
-                </h3>
-                <h3 class="recruit">Oh, yes... <br>
-                    <img class="chat" src="./img/chat/1/8.png">
-                </h3>
-                <h3 class="recruit">Join BoL!<br>
-                    <img class="chat" src="./img/chat/1/6.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/2/1.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/3/6.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/1/2.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/3/8.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/2/2.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/3/6.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/1/1.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/2/6.png">
-                </h3>
-                <h3 class="recruit">Better today than tomorrow<br>
-                    <img class="chat" src="./img/chat/1/8.png">
-                </h3>
-                <h3 class="recruit">We have a food-porn channel<br>
-                    <img class="chat" src="./img/chat/3/1.png">
-                </h3>
-                <h3 class="recruit">And even some cooking contests<br>
-                    <img class="chat" src="./img/chat/3/0.png">
-                </h3>
-                <h3 class="recruit">Well, actually one, in singular<br>
-                    <img class="chat" src="./img/chat/3/8.png">
-                </h3>
-                <h3 class="recruit">Which I totally rocked of course<br>
-                    <img class="chat" src="./img/chat/1/8.png">
-                </h3>
-                <h3 class="recruit">That reminds me, I hate you Golddust<br>
-                    <img class="chat" src="./img/chat/1/7.png">
-                </h3>
-                <h3 class="recruit">You always post your dinners when I'm hungry<br>
-                    <img class="chat" src="./img/chat/1/0.png">
-                </h3>
-                <h3 class="recruit">We don't have a "not-food"-porn channel<br>
-                    <img class="chat" src="./img/chat/1/4.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/3/4.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/2/4.png">
-                </h3>
-                <h3 class="recruit">We're family friendly...<br>
-                    <img class="chat" src="./img/chat/1/8.png">
-                </h3>
-                <h3 class="recruit">...<br>
-                    <img class="chat" src="./img/chat/1/3.png">
-                </h3>
-                <h3 class="recruit">Yes, we're fam... ahahhahaHAHAHAA...<br>
-                    <img class="chat" src="./img/chat/1/3.png">
-                </h3>
-                <h3 class="recruit">... sigh... Just a second, I need to finish ROFLing about that last thing<br>
-                    <img class="chat" src="./img/chat/1/8.png">
-                </h3>
-                <h3 class="recruit">Yeah, I'm sure we have some pervs too (+18)<br>
-                    <img class="chat" src="./img/chat/3/7.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/3/7.png">
-                </h3>
-                <h3 class="recruit">I have a couple of names in mind already<br>
-                    <img class="chat" src="./img/chat/3/3.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/3/0.png">
-                </h3>
-                <h3 class="recruit">:eggplant:<br>
-                    <img class="chat" src="./img/chat/eggplant.png">
-                </h3>
-                <h3 class="recruit">We don't need more so don't come here if you're that needed<br>
-                    <img class="chat" src="./img/chat/1/2.png">
-                </h3>
-                <h3 class="recruit">This all reminds me that I almost forgot our main asset!<br>
-                    <img class="chat" src="./img/chat/2/8.png">
-                </h3>
-                <h3 class="recruit">No, not you Scarlet, the other one<br>
-                    <img class="chat" src="./img/chat/2/0.png">
-                </h3>
-                <h3 class="recruit">Beniiiiiiiiiiiiiiiiiiiiiii!!!<br>
-                    <img class="chat" src="./img/chat/2/1.png">
-                </h3>
-                <h3 class="recruit">Not N3O's B3nni<br>
-                    <img class="chat" src="./img/chat/3/9.png">
-                </h3>
-                <h3 class="recruit">I'm sure he's a nice guy (please don't zero me either)<br>
-                    <img class="chat" src="./img/chat/1/3.png">
-                </h3>
-                <h3 class="recruit">But nothing compared to our Beni<br>
-                    <img class="chat" src="./img/chat/2/1.png">
-                </h3>
-                <h3 class="recruit">Speaking of N3O... hi Elfy! I miss GB... or not<br>
-                    <img class="chat" src="./img/chat/1/8.png">
-                </h3>
-                <h3 class="recruit">Anyway, back to Beni, you will love her!<br>
-                    <img class="chat" src="./img/chat/1/1.png">
-                </h3>
-                <h3 class="recruit">We all do. Her and Vas.<br>
-                    <img class="chat" src="./img/chat/1/1.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/3/1.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/2/1.png">
-                </h3>
-                <h3 class="recruit">She's Brazillian, you know?<br>
-                    <img class="chat" src="./img/chat/2/9.png">
-                </h3>
-                <h3 class="recruit">Wink, wink<br>
-                    <img class="chat" src="./img/chat/2/7.png">
-                </h3>
-                <h3 class="recruit">I should speak about Aes too<br>
-                    <img class="chat" src="./img/chat/3/8.png">
-                </h3>
-                <h3 class="recruit">Since he will be the main user of this tool I guess<br>
-                    <img class="chat" src="./img/chat/3/9.png">
-                </h3>
-                <h3 class="recruit">He's very nice and calmed<br>
-                    <img class="chat" src="./img/chat/3/8.png">
-                </h3>
-                <h3 class="recruit">So much that sometimes I want to strangle him<br>
-                    <img class="chat" src="./img/chat/3/4.png">
-                </h3>
-                <h3 class="recruit">But in a good way, we're all friends here (join us!)<br>
-                    <img class="chat" src="./img/chat/1/6.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/2/1.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/3/6.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/1/2.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/3/4.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/2/2.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/3/6.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/1/1.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/2/6.png">
-                </h3>
-                <h3 class="recruit">Did I say Join BoL already?<br>
-                    <img class="chat" src="./img/chat/1/8.png">
-                </h3>
-                <h3 class="recruit">Well, that's all, I'm off to think about...<br>
-                    <img class="chat" src="./img/chat/1/1.png">
-                </h3>
-                <h3 class="recruit">the f*cking 1804 useless villages they added to this event...<br>
-                    <img class="chat" src="./img/chat/1/7.png">
-                </h3>
-                <h3 class="recruit">and how the hell am I going to add them to the tool<br>
-                    <img class="chat" src="./img/chat/1/5.png">
-                </h3>
-                <h3 class="recruit">Have fun!<br>
-                    <img class="chat" src="./img/chat/1/1.png">
-                </h3>
-                <h3 class="recruit">And join the Brotherhood of Light at K265!<br>
-                    <img class="chat" src="./img/chat/1/6.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/2/1.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/3/6.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/1/2.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/3/4.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/2/2.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/3/6.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/1/1.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/2/6.png">
-                </h3>
-                <h3 class="recruit">Also don't be a dick...<br>
-                    <img class="chat" src="./img/chat/1/2.png">
-                </h3>
-                <h3 class="recruit">This game is full of them!<br>
-                    <img class="chat" src="./img/chat/1/7.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/3/7.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/2/7.png">
-                </h3>
-                <h3 class="recruit">We don't need more...<br>
-                    <img class="chat" src="./img/chat/1/0.png">
-                </h3>
-                <h3 class="recruit">Bye!<br>
-                    <img class="chat" src="./img/chat/1/1.png">
-                </h3>
-                <h3 class="recruit">PS: If you're from the NY area and need a plumber<br>
-                    <img class="chat" src="./img/chat/3/9.png">
-                </h3>
-                <h3 class="recruit">We have one too!<br>
-                    <img class="chat" src="./img/chat/mario/0.png">
-                </h3>
-                <h3 class="recruit">A master plumber, also rich and good looking<br>
-                    <img class="chat" src="./img/chat/mario/1.png">
-                    <img class="chat" src="./img/chat/mario/2.png">
-                    <img class="chat" src="./img/chat/mario/3.png">
-                </h3>
-                <h3 class="recruit">And with big fingers!<br>
-                    <img class="chat" src="./img/chat/mario/4.png">
-                </h3>
-                <h3 class="recruit">Just don't ask me about that... his words, not mine<br>
-                    <img class="chat" src="./img/chat/1/3.png">
-                </h3>
-                <h3 class="recruit">But he's married<br>
-                    <img class="chat" src="./img/chat/mario/5.png">
-                </h3>
-                <h3 class="recruit">Or so he says...<br>
-                    <img class="chat" src="./img/chat/1/8.png">
-                </h3>
-                <h3 class="recruit">Ok, now for real, have fun trying to understand this event!<br>
-                    <img class="chat" src="./img/chat/1/1.png">
-                </h3>
-                <h3 class="recruit">And... I know you know what comes now...<br>
-                    <img class="chat" src="./img/chat/1/8.png">
-                </h3>
-                <h3 class="recruit">I also know that you know that I know...<br>
-                    <img class="chat" src="./img/chat/1/8.png">
-                </h3>
-                <h3 class="recruit">Join BoL!<br>
-                    <img class="chat" src="./img/chat/1/6.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/2/2.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/3/6.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/1/1.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/mario/0.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/2/1.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/3/6.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/1/2.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/2/6.png">
-                </h3>
-                <h3 class="recruit">Join BoL!<br>
-                    <img class="chat" src="./img/chat/1/6.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/2/2.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/3/6.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/1/1.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/mario/0.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/2/1.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/3/6.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/1/2.png">&nbsp;&nbsp;
-                    <img class="chat" src="./img/chat/2/6.png">
-                </h3>
-                <h3 class="recruit"></h3>
-            </div>
+            <span class="subtitle">K265's Simulator</span>
         </div>
-        <div class="dataS" style="margin-bottom: 5px;">
+        <div id="talentCalculator">
+            <div class="dataT" style="margin-bottom: 5px;">
+                <div style="display: flex;">
+                    <div style="float: left; width: 400px; min-width: 400px; max-width: 400px; margin-left: -40px;">
+                        Glory Points:&nbsp;<span id="data_glory_points">0</span><br>
+                        Number of Queues:&nbsp;<span id="data_queues">2</span><br>
+                        Marching Speed:&nbsp;+<span id="data_marching_speed">0</span>%<br>
+                        Army Size:&nbsp;+<span id="data_army_size">0</span><br>
+                    </div>
+                    <div style="float: right; width: 400px; min-width: 400px; max-width: 400px;">
+                        Transport Capacity:&nbsp;<span id="data_transport_supplies">120000</span> supplies (<span id="data_transport_points"></span> points)<br>
+                        Transport Speed:&nbsp;+<span id="datal_transport_speed">0</span>%<br>
+                        Trading Efficiency:&nbsp;+<span id="data_trading_efficiency">0</span>%<br>
+                        Trading Time:&nbsp;<span id="data_trading_time">8h</span><br>
+                    </div>
+                </div>
+                <br>
+                <div style="display: flex;">
+                    <div style="float: left; width: 400px; min-width: 400px; max-width: 400px; margin-left: -40px;">
+                        <div id="data_offensive" style="display: none;"> <!-- OFFENSIVE -->
+                            Total attack<span class="offensive"> when attacking</span>:&nbsp;+<span id="datao_attack">20</span>%<br>
+                            Total defense<span class="offensive"> when attacking</span>:&nbsp;+<span id="datao_defense">20</span>%<br>
+                            Total health<span class="offensive"> when attacking</span>:&nbsp;+<span id="datao_health">20</span>%<br>
+                            <br>
+                            Enemy Casualty rate<span class="offensive"> when attacking</span>:&nbsp;+<span id="datao_enemy_casualty">0</span>%<br>
+                            Allied Casualty rate<span class="offensive"> when attacking</span>:&nbsp;-<span id="datao_allied_casualty">0</span>%<br>
+                        </div>
+                        <div id="data_defensive" style="display: none;"> <!-- DEFENSIVE -->
+                            Total attack<span class="defensive"> when defending</span>:&nbsp;+<span id="datad_attack">25</span>%<br>
+                            Total defense<span class="defensive"> when defending</span>:&nbsp;+<span id="datad_defense">25</span>%<br>
+                            Total health<span class="defensive"> when defending</span>:&nbsp;+<span id="datad_health">25</span>%<br>
+                            <br>
+                            Enemy Casualty rate<span class="defensive"> when defending</span>:&nbsp;+<span id="datad_enemy_casualty">0</span>%<br>
+                            Allied Casualty rate<span class="defensive"> when defending</span>:&nbsp;-<span id="datad_allied_casualty">0</span>%<br>
+                        </div>
+                        <div id="data_logistics" style="float: right; width: 400px; min-width: 400px; max-width: 400px;"> <!-- LOGISTICS -->
+                            Total attack<span id="ee0" class="logistics ee"> when Altisio kills them all</span>:&nbsp;+<span id="datal_attack">0</span>%<br>
+                            Total defense<span id="ee1" class="logistics ee"> when Altisio kills them all</span>:&nbsp;+<span id="datal_defense">0</span>%<br>
+                            Total health<span id="ee2" class="logistics ee"> when Altisio kills them all</span>:&nbsp;+<span id="datal_health">0</span>%<br>
+                            <br>
+                            Enemy Casualty rate<span id="ee3" class="logistics ee"> when Altisio kills them all</span>:&nbsp;+<span id="datal_enemy_casualty">0</span>%<br>
+                            Allied Casualty rate<span id="ee4" class="logistics ee"> when Altisio kills them all</span>:&nbsp;-<span id="datal_allied_casualty">0</span>%<br>
+                        </div>
+                    </div>
+                    <div style="float: right; width: 400px; min-width: 400px; max-width: 400px;">
+                        <div style="float: right; width: 400px; min-width: 400px; max-width: 400px;">
+                            Resilience Limit:&nbsp;<span id="data_resilience_limit">100</span><br>
+                            Resilience lost in Battle:&nbsp;<span id="data_resilience_battle">15</span><br>
+                            Resilience lost in Movement:&nbsp;<span id="data_resilience_move">1</span> every 8 seconds<br>
+                            <br>
+                        </div>
+                        <div style="float: right; width: 400px; min-width: 400px; max-width: 400px;">
+                            <span id="faction_1st">1st:&nbsp;<span id="data_influence_faction_0">0</span> with <span id="data_influence_points_0">0</span> points<br></span>
+                            <span id="faction_2nd" style="display: none;">2nd:&nbsp;<span id="data_influence_faction_1">0</span> with <span id="data_influence_points_1">0</span> points<br></span>
+                            <span id="faction_3rd" style="display: none;">3rd:&nbsp;<span id="data_influence_faction_2">0</span> with <span id="data_influence_points_2">0</span> points<br></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="containerTalentsTitle" class="dataT" style="display: none; text-align: center; position: relative; width: 1190px; padding: 20px; margin-bottom: 5px;">
+                <span class="subsubtitle">Talent Calculator</span>
+                <div class="myButton" style="position: absolute; bottom: 10px; left: 0px; width: 140px; height: 30px;" onclick="resetTalents()">Reset</div>
+                <div id="bShowTalents1" class="myButton" style="position: absolute; bottom: 10px; right: 0px; width: 140px; height: 30px;" onclick="toggleTalents()">Hide Talents</div>
+                <br>
+                <div style="font-size: 13px; margin-bottom: -5px; margin-top: 10px;">
+                    <span>Left-click to increase unlocked talents by 1 point. Right-click to decrease talents by 1 point.</span>
+                </div>
+            </div>
+            <div id="containerTalents" class="containerTalents" style="display: none;">
+                <!--- OFFENSIVE --->
+                <div id="panelO" class="panel offensive-glow" style="margin-left: 0px;"> 
+                    <div class="role-title offensive-text-glow">Offensive Administration</div>
+                    <div class="tier">
+                        <div class="tier-center">
+                            <div class="tooltipT">
+                                <img id="O0" class="talent-img disabled" src="./img/talents/0.png" alt="Queue Expansion" oncontextmenu="removeTalent(ROLE_OFFENSIVE,0)" onclick="addTalent(ROLE_OFFENSIVE,0)">
+                                <span class="tooltiptextT">Increases Glorious Battle Marching Queue by 1.</span>
+                            </div>
+                            <div class="talent-name">Queue Expansion</div>
+                            <div class="talent-points"><span id="VO0">0</span> / 1</div>
+                        </div>
+                    </div>
+                    
+                    <div id="EO0" class="tier-edges-center-top disabled">
+                        <div style="position: absolute; top: 4px; left: 182px; border: 2px solid #FFD384; height: 20px;"></div>
+                        <div style="position: absolute; top: 20px; left: 92px; width: 190px; height: 20px; border-top: 4px solid #FFD384; border-left: 4px solid #FFD384; border-right: 4px solid #FFD384;"></div>
+                    </div>
+                    
+                    <div class="tier">
+                        <div class="tier-left">
+                            <div class="tooltipT">
+                                <img id="O1" class="talent-img disabled" src="./img/talents/1.png" alt="Swift Cavalry" oncontextmenu="removeTalent(ROLE_OFFENSIVE,1)" onclick="addTalent(ROLE_OFFENSIVE,1)">
+                                <span class="tooltiptextT">Reduces Resilience Lost in Movement by 5%.</span>
+                            </div>
+                            <div class="talent-name">Swift Cavalry</div>
+                            <div class="talent-points"><span id="VO1">0</span> / 5</div>
+                        </div>
+                        <div class="tier-right">
+                            <div class="tooltipT">
+                                <img id="O2" class="talent-img disabled" src="./img/talents/2.png" alt="Army Assault" oncontextmenu="removeTalent(ROLE_OFFENSIVE,2)" onclick="addTalent(ROLE_OFFENSIVE,2)">
+                                <span class="tooltiptextT">Increases Total Attack when Attacking by 4%.</span>
+                            </div>
+                            <div class="talent-name">Army Assault</div>
+                            <div class="talent-points"><span id="VO2">0</span> / 5</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tier-edges-sides">
+                        <div id="EO1" class="disabled" style="position: absolute; top: 5px; left: 90px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                        <div id="EO2" class="disabled" style="position: absolute; top: 5px; left: 276px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                    </div>
+                    
+                    <div class="tier">
+                        <div class="tier-left">
+                            <div class="tooltipT">
+                                <img id="O3" class="talent-img disabled" src="./img/talents/3.png" alt="Battle-hardened" oncontextmenu="removeTalent(ROLE_OFFENSIVE,3)" onclick="addTalent(ROLE_OFFENSIVE,3)">
+                                <span class="tooltiptextT">Reduces Resilience Lost in Victory by 5%.</span>
+                            </div>
+                            <div class="talent-name">Battle-hardened</div>
+                            <div class="talent-points"><span id="VO3">0</span> / 5</div>
+                        </div>
+                        <div class="tier-right">
+                            <div class="tooltipT">
+                                <img id="O4" class="talent-img disabled" src="./img/talents/4.png" alt="Army Solid Defense" oncontextmenu="removeTalent(ROLE_OFFENSIVE,4)" onclick="addTalent(ROLE_OFFENSIVE,4)">
+                                <span class="tooltiptextT">Increases Total Defense when Attacking by 4%.</span>
+                            </div>
+                            <div class="talent-name">Army Solid Defense</div>
+                            <div class="talent-points"><span id="VO4">0</span> / 5</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tier-edges-sides">
+                        <div id="EO3" class="disabled" style="position: absolute; top: 5px; left: 90px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                        <div id="EO4" class="disabled" style="position: absolute; top: 5px; left: 276px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                    </div>
+                    
+                    <div class="tier">
+                        <div class="tier-left">
+                            <div class="tooltipT">
+                                <img id="O5" class="talent-img disabled" src="./img/talents/5.png" alt="Strong Army Advancing" oncontextmenu="removeTalent(ROLE_OFFENSIVE,5)" onclick="addTalent(ROLE_OFFENSIVE,5)">
+                                <span class="tooltiptextT">Increases Enemy Casualty Rate when Attacking by 2%.</span>
+                            </div>
+                            <div class="talent-name">Strong Army Advancing</div>
+                            <div class="talent-points"><span id="VO5">0</span> / 5</div>
+                        </div>
+                        <div class="tier-right">
+                            <div class="tooltipT">
+                                <img id="O6" class="talent-img disabled" src="./img/talents/6.png" alt="Army Protection" oncontextmenu="removeTalent(ROLE_OFFENSIVE,6)" onclick="addTalent(ROLE_OFFENSIVE,6)">
+                                <span class="tooltiptextT">Increases Total Health when Attacking 4%.</span>
+                            </div>
+                            <div class="talent-name">Army Protection</div>
+                            <div class="talent-points"><span id="VO6">0</span> / 5</div>
+                        </div>
+                    </div>
+                    
+                    <div id="EO6" class="tier-edges-center-bottom disabled">
+                        <div style="position: absolute; top: 4px; left: 182px; width: 95px; height: 20px; border-bottom: 4px solid #FFD384; border-right: 4px solid #FFD384;"></div>
+                        <div style="position: absolute; top: 20px; left: 182px; border: 2px solid #FFD384; height: 20px;"></div>
+                    </div>
+    
+                    <div class="tier">
+                        <div class="tier-center">
+                            <div class="tooltipT">
+                                <img id="O7" class="talent-img disabled" src="./img/talents/0.png" alt="Queue Expansion" oncontextmenu="removeTalent(ROLE_OFFENSIVE,7)" onclick="addTalent(ROLE_OFFENSIVE,7)">
+                                <span class="tooltiptextT">Increases Glorious Battle Marching Queue by 1.</span>
+                            </div>
+                            <div class="talent-name">Queue Expansion</div>
+                            <div class="talent-points"><span id="VO7">0</span> / 1</div>
+                        </div>
+                    </div>
+    
+                    <div id="EO7" class="tier-edges-center-top disabled">
+                        <div style="position: absolute; top: 4px; left: 182px; border: 2px solid #FFD384; height: 20px;"></div>
+                        <div style="position: absolute; top: 20px; left: 92px; width: 190px; height: 20px; border-top: 4px solid #FFD384; border-left: 4px solid #FFD384; border-right: 4px solid #FFD384;"></div>
+                    </div>
+    
+                    <div class="tier">
+                        <div class="tier-left">
+                            <div class="tooltipT">
+                                <img id="O8" class="talent-img disabled" src="./img/talents/7.png" alt="First Aid" oncontextmenu="removeTalent(ROLE_OFFENSIVE,8)" onclick="addTalent(ROLE_OFFENSIVE,8)">
+                                <span class="tooltiptextT">Reduces Allied Casualty Rate when Attacking by 2%.</span>
+                            </div>
+                            <div class="talent-name">First Aid</div>
+                            <div class="talent-points"><span id="VO8">0</span> / 5</div>
+                        </div>
+                        <div class="tier-right">
+                            <div class="tooltipT">
+                                <img id="O9" class="talent-img disabled" src="./img/talents/2.png" alt="Army Assault" oncontextmenu="removeTalent(ROLE_OFFENSIVE,9)" onclick="addTalent(ROLE_OFFENSIVE,9)">
+                                <span class="tooltiptextT">Increases Total Attack when Attacking by 4%.</span>
+                            </div>
+                            <div class="talent-name">Army Assault</div>
+                            <div class="talent-points"><span id="VO9">0</span> / 5</div>
+                        </div>
+                    </div>
+    
+                    <div class="tier-edges-sides">
+                        <div id="EO8" class="disabled" style="position: absolute; top: 5px; left: 90px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                        <div id="EO9" class="disabled" style="position: absolute; top: 5px; left: 276px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                    </div>
+    
+                    <div class="tier">
+                        <div class="tier-left">
+                            <div class="tooltipT">
+                                <img id="O10" class="talent-img disabled" src="./img/talents/5.png" alt="Strong Army Advancing" oncontextmenu="removeTalent(ROLE_OFFENSIVE,10)" onclick="addTalent(ROLE_OFFENSIVE,10)">
+                                <span class="tooltiptextT">Increases Enemy Casualty Rate when Attacking by 2%.</span>
+                            </div>
+                            <div class="talent-name">Strong Army Advancing</div>
+                            <div class="talent-points"><span id="VO10">0</span> / 5</div>
+                        </div>
+                        <div class="tier-right">
+                            <div class="tooltipT">
+                                <img id="O11" class="talent-img disabled" src="./img/talents/4.png" alt="Army Solid Defense" oncontextmenu="removeTalent(ROLE_OFFENSIVE,11)" onclick="addTalent(ROLE_OFFENSIVE,11)">
+                                <span class="tooltiptextT">Increases Total Defense when Attacking by 4%.</span>
+                            </div>
+                            <div class="talent-name">Army Solid Defense</div>
+                            <div class="talent-points"><span id="VO11">0</span> / 5</div>
+                        </div>
+                    </div>
+    
+                    <div class="tier-edges-sides">
+                        <div id="EO10" class="disabled" style="position: absolute; top: 5px; left: 90px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                        <div id="EO11" class="disabled" style="position: absolute; top: 5px; left: 276px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                    </div>
+                    
+                    <div class="tier">
+                        <div class="tier-left">
+                            <div class="tooltipT">
+                                <img id="O12" class="talent-img disabled" src="./img/talents/8.png" alt="Troops Expansion" oncontextmenu="removeTalent(ROLE_OFFENSIVE,12)" onclick="addTalent(ROLE_OFFENSIVE,12)">
+                                <span class="tooltiptextT">Increases Glorious Battle Army Size by 20000.</span>
+                            </div>
+                            <div class="talent-name">Troops Expansion</div>
+                            <div class="talent-points"><span id="VO12">0</span> / 5</div>
+                        </div>
+                        <div class="tier-right">
+                            <div class="tooltipT">
+                                <img id="O13" class="talent-img disabled" src="./img/talents/6.png" alt="Army Protection" oncontextmenu="removeTalent(ROLE_OFFENSIVE,13)" onclick="addTalent(ROLE_OFFENSIVE,13)">
+                                <span class="tooltiptextT">Increases Total Health when Attacking 4%.</span>
+                            </div>
+                            <div class="talent-name">Army Protection</div>
+                            <div class="talent-points"><span id="VO13">0</span> / 5</div>
+                        </div>
+                    </div>
+    
+                    <div id="EO13" class="tier-edges-center-bottom disabled">
+                        <div style="position: absolute; top: 4px; left: 182px; width: 95px; height: 20px; border-bottom: 4px solid #FFD384; border-right: 4px solid #FFD384;"></div>
+                        <div style="position: absolute; top: 20px; left: 182px; border: 2px solid #FFD384; height: 20px;"></div>
+                    </div>
+    
+                    <div class="tier">
+                        <div class="tier-center">
+                            <div class="tooltipT">
+                                <img id="O14" class="talent-img disabled" src="./img/talents/0.png" alt="Queue Expansion" oncontextmenu="removeTalent(ROLE_OFFENSIVE,14)" onclick="addTalent(ROLE_OFFENSIVE,14)">
+                                <span class="tooltiptextT">Increases Glorious Battle Marching Queue by 1.</span>
+                            </div>
+                            <div class="talent-name">Queue Expansion</div>
+                            <div class="talent-points"><span id="VO14">0</span> / 1</div>
+                        </div>
+                    </div>
+    
+                    <div id="EO14" class="tier-edges-center-top disabled">
+                        <div style="position: absolute; top: 4px; left: 182px; border: 2px solid #FFD384; height: 20px;"></div>
+                        <div style="position: absolute; top: 20px; left: 92px; width: 190px; height: 20px; border-top: 4px solid #FFD384; border-left: 4px solid #FFD384; border-right: 4px solid #FFD384;"></div>
+                    </div>
+                    
+                    <div class="tier">
+                        <div class="tier-left">
+                            <div class="tooltipT">
+                                <img id="O15" class="talent-img disabled" src="./img/talents/1.png" alt="Swift Cavalry" oncontextmenu="removeTalent(ROLE_OFFENSIVE,15)" onclick="addTalent(ROLE_OFFENSIVE,15)">
+                                <span class="tooltiptextT">Reduces Resilience Lost in Movement by 5%.</span>
+                            </div>
+                            <div class="talent-name">Swift Cavalry</div>
+                            <div class="talent-points"><span id="VO15">0</span> / 5</div>
+                        </div>
+                        <div class="tier-right">
+                            <div class="tooltipT">
+                                <img id="O16" class="talent-img disabled" src="./img/talents/2.png" alt="Army Assault" oncontextmenu="removeTalent(ROLE_OFFENSIVE,16)" onclick="addTalent(ROLE_OFFENSIVE,16)">
+                                <span class="tooltiptextT">Increases Total Attack when Attacking by 4%.</span>
+                            </div>
+                            <div class="talent-name">Army Assault</div>
+                            <div class="talent-points"><span id="VO16">0</span> / 5</div>
+                        </div>
+                    </div>
+    
+                    <div class="tier-edges-sides">
+                        <div id="EO15" class="disabled" style="position: absolute; top: 5px; left: 90px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                        <div id="EO16" class="disabled" style="position: absolute; top: 5px; left: 276px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                    </div>
+                    
+                    <div class="tier">
+                        <div class="tier-left">
+                            <div class="tooltipT">
+                                <img id="O17" class="talent-img disabled" src="./img/talents/3.png" alt="Battle-hardened" oncontextmenu="removeTalent(ROLE_OFFENSIVE,17)" onclick="addTalent(ROLE_OFFENSIVE,17)">
+                                <span class="tooltiptextT">Reduces Resilience Lost in Victory by 5%.</span>
+                            </div>
+                            <div class="talent-name">Battle-hardened</div>
+                            <div class="talent-points"><span id="VO17">0</span> / 5</div>
+                        </div>
+                        <div class="tier-right">
+                            <div class="tooltipT">
+                                <img id="O18" class="talent-img disabled" src="./img/talents/4.png" alt="Army Solid Defense" oncontextmenu="removeTalent(ROLE_OFFENSIVE,18)" onclick="addTalent(ROLE_OFFENSIVE,18)">
+                                <span class="tooltiptextT">Increases Total Defense when Attacking by 4%.</span>
+                            </div>
+                            <div class="talent-name">Army Solid Defense</div>
+                            <div class="talent-points"><span id="VO18">0</span> / 5</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tier-edges-sides">
+                        <div id="EO17" class="disabled" style="position: absolute; top: 5px; left: 90px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                        <div id="EO18" class="disabled" style="position: absolute; top: 5px; left: 276px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                    </div>
+    
+                    <div class="tier">
+                        <div class="tier-left">
+                            <div class="tooltipT">
+                                <img id="O19" class="talent-img disabled" src="./img/talents/9.png" alt="Inspired and Impassioned" oncontextmenu="removeTalent(ROLE_OFFENSIVE,19)" onclick="addTalent(ROLE_OFFENSIVE,19)">
+                                <span class="tooltiptextT">Increases Resilience Limit by 4%.</span>
+                            </div>
+                            <div class="talent-name">Inspired and Impassioned</div>
+                            <div class="talent-points"><span id="VO19">0</span> / 5</div>
+                        </div>
+                        <div class="tier-right">
+                            <div class="tooltipT">
+                                <img id="O20" class="talent-img disabled" src="./img/talents/6.png" alt="Army Protection" oncontextmenu="removeTalent(ROLE_OFFENSIVE,20)" onclick="addTalent(ROLE_OFFENSIVE,20)">
+                                <span class="tooltiptextT">Increases Total Health when Attacking 4%.</span>
+                            </div>
+                            <div class="talent-name">Army Protection</div>
+                            <div class="talent-points"><span id="VO20">0</span> / 5</div>
+                        </div>
+                    </div>
+                    
+                    <div id="EO20" class="tier-edges-center-bottom disabled">
+                        <div style="position: absolute; top: 4px; left: 182px; width: 95px; height: 20px; border-bottom: 4px solid #FFD384; border-right: 4px solid #FFD384;"></div>
+                        <div style="position: absolute; top: 20px; left: 182px; border: 2px solid #FFD384; height: 20px;"></div>
+                    </div>
+    
+                    <div class="tier">
+                        <div class="tier-center">
+                            <div class="tooltipT">
+                                <img id="O21" class="talent-img disabled" src="./img/talents/10.png" alt="Violent Destruction" oncontextmenu="removeTalent(ROLE_OFFENSIVE,21)" onclick="addTalent(ROLE_OFFENSIVE,21)">
+                                <span class="tooltiptextT">Durability Destroyed by Battle Victory.</span>
+                            </div>
+                            <div class="talent-name">Violent Destruction</div>
+                            <div class="talent-points"><span id="VO21">0</span> / 1</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--- DEFENSIVE --->
+                <div id="panelD" class="panel defensive-glow" style="margin-left: 30px; margin-right: 30px;">
+                    <div class="role-title defensive-text-glow">Defensive Administration</div>
+                    <div class="tier">
+                        <div class="tier-center">
+                            <div class="tooltipT">
+                                <img id="D0" class="talent-img disabled" src="./img/talents/0.png" alt="Queue Expansion" oncontextmenu="removeTalent(ROLE_DEFENSIVE,0)" onclick="addTalent(ROLE_DEFENSIVE,0)">
+                                <span class="tooltiptextT">Increases Glorious Battle Marching Queue by 1.</span>
+                            </div>
+                            <div class="talent-name">Queue Expansion</div>
+                            <div class="talent-points"><span id="VD0">0</span> / 1</div>
+                        </div>
+                    </div>
+                    
+                    <div id="ED0" class="tier-edges-center-top disabled">
+                        <div style="position: absolute; top: 4px; left: 182px; border: 2px solid #FFD384; height: 20px;"></div>
+                        <div style="position: absolute; top: 20px; left: 92px; width: 190px; height: 20px; border-top: 4px solid #FFD384; border-left: 4px solid #FFD384; border-right: 4px solid #FFD384;"></div>
+                    </div>
+                    
+                    <div class="tier">
+                        <div class="tier-left">
+                            <div class="tooltipT">
+                                <img id="D1" class="talent-img disabled" src="./img/talents/1.png" alt="Swift Cavalry" oncontextmenu="removeTalent(ROLE_DEFENSIVE,1)" onclick="addTalent(ROLE_DEFENSIVE,1)">
+                                <span class="tooltiptextT">Reduces Resilience Lost in Movement by 5%.</span>
+                            </div>
+                            <div class="talent-name">Swift Cavalry</div>
+                            <div class="talent-points"><span id="VD1">0</span> / 5</div>
+                        </div>
+                        <div class="tier-right">
+                            <div class="tooltipT">
+                                <img id="D2" class="talent-img disabled" src="./img/talents/2.png" alt="Army Assault" oncontextmenu="removeTalent(ROLE_DEFENSIVE,2)" onclick="addTalent(ROLE_DEFENSIVE,2)">
+                                <span class="tooltiptextT">Increases Total Attack when Defending by 4%.</span>
+                            </div>
+                            <div class="talent-name">Army Assault</div>
+                            <div class="talent-points"><span id="VD2">0</span> / 5</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tier-edges-sides">
+                        <div id="ED1" class="disabled" style="position: absolute; top: 5px; left: 90px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                        <div id="ED2" class="disabled" style="position: absolute; top: 5px; left: 276px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                    </div>
+                    
+                    <div class="tier">
+                        <div class="tier-left">
+                            <div class="tooltipT">
+                                <img id="D3" class="talent-img disabled" src="./img/talents/3.png" alt="Battle-hardened" oncontextmenu="removeTalent(ROLE_DEFENSIVE,3)" onclick="addTalent(ROLE_DEFENSIVE,3)">
+                                <span class="tooltiptextT">Reduces Resilience Lost in Victory by 5%.</span>
+                            </div>
+                            <div class="talent-name">Battle-hardened</div>
+                            <div class="talent-points"><span id="VD3">0</span> / 5</div>
+                        </div>
+                        <div class="tier-right">
+                            <div class="tooltipT">
+                                <img id="D4" class="talent-img disabled" src="./img/talents/4.png" alt="Army Solid Defense" oncontextmenu="removeTalent(ROLE_DEFENSIVE,4)" onclick="addTalent(ROLE_DEFENSIVE,4)">
+                                <span class="tooltiptextT">Increases Total Defense when Defending by 4%.</span>
+                            </div>
+                            <div class="talent-name">Army Solid Defense</div>
+                            <div class="talent-points"><span id="VD4">0</span> / 5</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tier-edges-sides">
+                        <div id="ED3" class="disabled" style="position: absolute; top: 5px; left: 90px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                        <div id="ED4" class="disabled" style="position: absolute; top: 5px; left: 276px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                    </div>
+                    
+                    <div class="tier">
+                        <div class="tier-left">
+                            <div class="tooltipT">
+                                <img id="D5" class="talent-img disabled" src="./img/talents/5.png" alt="Strong Army Advancing" oncontextmenu="removeTalent(ROLE_DEFENSIVE,5)" onclick="addTalent(ROLE_DEFENSIVE,5)">
+                                <span class="tooltiptextT">Increases Enemy Casualty Rate when Defending by 2%.</span>
+                            </div>
+                            <div class="talent-name">Strong Army Advancing</div>
+                            <div class="talent-points"><span id="VD5">0</span> / 5</div>
+                        </div>
+                        <div class="tier-right">
+                            <div class="tooltipT">
+                                <img id="D6" class="talent-img disabled" src="./img/talents/6.png" alt="Army Protection" oncontextmenu="removeTalent(ROLE_DEFENSIVE,6)" onclick="addTalent(ROLE_DEFENSIVE,6)">
+                                <span class="tooltiptextT">Increases Total Health when Defending 4%.</span>
+                            </div>
+                            <div class="talent-name">Army Protection</div>
+                            <div class="talent-points"><span id="VD6">0</span> / 5</div>
+                        </div>
+                    </div>
+                    
+                    <div id="ED6" class="tier-edges-center-bottom disabled">
+                        <div style="position: absolute; top: 4px; left: 182px; width: 95px; height: 20px; border-bottom: 4px solid #FFD384; border-right: 4px solid #FFD384;"></div>
+                        <div style="position: absolute; top: 20px; left: 182px; border: 2px solid #FFD384; height: 20px;"></div>
+                    </div>
+    
+                    <div class="tier">
+                        <div class="tier-center">
+                            <div class="tooltipT">
+                                <img id="D7" class="talent-img disabled" src="./img/talents/0.png" alt="Queue Expansion" oncontextmenu="removeTalent(ROLE_DEFENSIVE,7)" onclick="addTalent(ROLE_DEFENSIVE,7)">
+                                <span class="tooltiptextT">Increases Glorious Battle Marching Queue by 1.</span>
+                            </div>
+                            <div class="talent-name">Queue Expansion</div>
+                            <div class="talent-points"><span id="VD7">0</span> / 1</div>
+                        </div>
+                    </div>
+    
+                    <div id="ED7" class="tier-edges-center-top disabled">
+                        <div style="position: absolute; top: 4px; left: 182px; border: 2px solid #FFD384; height: 20px;"></div>
+                        <div style="position: absolute; top: 20px; left: 92px; width: 190px; height: 20px; border-top: 4px solid #FFD384; border-left: 4px solid #FFD384; border-right: 4px solid #FFD384;"></div>
+                    </div>
+    
+                    <div class="tier">
+                        <div class="tier-left">
+                            <div class="tooltipT">
+                                <img id="D8" class="talent-img disabled" src="./img/talents/7.png" alt="First Aid" oncontextmenu="removeTalent(ROLE_DEFENSIVE,8)" onclick="addTalent(ROLE_DEFENSIVE,8)">
+                                <span class="tooltiptextT">Reduces Allied Casualty Rate when Defending by 2%.</span>
+                            </div>
+                            <div class="talent-name">First Aid</div>
+                            <div class="talent-points"><span id="VD8">0</span> / 5</div>
+                        </div>
+                        <div class="tier-right">
+                            <div class="tooltipT">
+                                <img id="D9" class="talent-img disabled" src="./img/talents/2.png" alt="Army Assault" oncontextmenu="removeTalent(ROLE_DEFENSIVE,9)" onclick="addTalent(ROLE_DEFENSIVE,9)">
+                                <span class="tooltiptextT">Increases Total Attack when Defending 4%.</span>
+                            </div>
+                            <div class="talent-name">Army Assault</div>
+                            <div class="talent-points"><span id="VD9">0</span> / 5</div>
+                        </div>
+                    </div>
+    
+                    <div class="tier-edges-sides">
+                        <div id="ED5" class="disabled" style="position: absolute; top: 5px; left: 90px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                        <div id="ED6" class="disabled" style="position: absolute; top: 5px; left: 276px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                    </div>
+    
+                    <div class="tier">
+                        <div class="tier-left">
+                            <div class="tooltipT">
+                                <img id="D10" class="talent-img disabled" src="./img/talents/5.png" alt="Strong Army Advancing" oncontextmenu="removeTalent(ROLE_DEFENSIVE,10)" onclick="addTalent(ROLE_DEFENSIVE,10)">
+                                <span class="tooltiptextT">Increases Enemy Casualty Rate when Defending by 2%.</span>
+                            </div>
+                            <div class="talent-name">Strong Army Advancing</div>
+                            <div class="talent-points"><span id="VD10">0</span> / 5</div>
+                        </div>
+                        <div class="tier-right">
+                            <div class="tooltipT">
+                                <img id="D11" class="talent-img disabled" src="./img/talents/4.png" alt="Army Solid Defense" oncontextmenu="removeTalent(ROLE_DEFENSIVE,11)" onclick="addTalent(ROLE_DEFENSIVE,11)">
+                                <span class="tooltiptextT">Increases Total Defense when Defending 4%.</span>
+                            </div>
+                            <div class="talent-name">Army Solid Defense</div>
+                            <div class="talent-points"><span id="VD11">0</span> / 5</div>
+                        </div>
+                    </div>
+    
+                    <div class="tier-edges-sides">
+                        <div id="ED10" class="disabled" style="position: absolute; top: 5px; left: 90px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                        <div id="ED11" class="disabled" style="position: absolute; top: 5px; left: 276px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                    </div>
+                    
+                    <div class="tier">
+                        <div class="tier-left">
+                            <div class="tooltipT">
+                                <img id="D12" class="talent-img disabled" src="./img/talents/8.png" alt="Troops Expansion" oncontextmenu="removeTalent(ROLE_DEFENSIVE,12)" onclick="addTalent(ROLE_DEFENSIVE,12)">
+                                <span class="tooltiptextT">Increases Glorious Battle Army Size by 20000.</span>
+                            </div>
+                            <div class="talent-name">Troops Expansion</div>
+                            <div class="talent-points"><span id="VD12">0</span> / 5</div>
+                        </div>
+                        <div class="tier-right">
+                            <div class="tooltipT">
+                                <img id="D13" class="talent-img disabled" src="./img/talents/6.png" alt="Army Protection" oncontextmenu="removeTalent(ROLE_DEFENSIVE,13)" onclick="addTalent(ROLE_DEFENSIVE,13)">
+                                <span class="tooltiptextT">Increases Total Health when Defending 4%.</span>
+                            </div>
+                            <div class="talent-name">Army Protection</div>
+                            <div class="talent-points"><span id="VD13">0</span> / 5</div>
+                        </div>
+                    </div>
+    
+                    <div id="ED13" class="tier-edges-center-bottom disabled">
+                        <div style="position: absolute; top: 4px; left: 182px; width: 95px; height: 20px; border-bottom: 4px solid #FFD384; border-right: 4px solid #FFD384;"></div>
+                        <div style="position: absolute; top: 20px; left: 182px; border: 2px solid #FFD384; height: 20px;"></div>
+                    </div>
+    
+                    <div class="tier">
+                        <div class="tier-center">
+                            <div class="tooltipT">
+                                <img id="D14" class="talent-img disabled" src="./img/talents/0.png" alt="Queue Expansion" oncontextmenu="removeTalent(ROLE_DEFENSIVE,14)" onclick="addTalent(ROLE_DEFENSIVE,14)">
+                                <span class="tooltiptextT">Increases Glorious Battle Marching Queue by 1.</span>
+                            </div>
+                            <div class="talent-name">Queue Expansion</div>
+                            <div class="talent-points"><span id="VD14">0</span> / 1</div>
+                        </div>
+                    </div>
+    
+                    <div id="ED14" class="tier-edges-center-top disabled">
+                        <div style="position: absolute; top: 4px; left: 182px; border: 2px solid #FFD384; height: 20px;"></div>
+                        <div style="position: absolute; top: 20px; left: 92px; width: 190px; height: 20px; border-top: 4px solid #FFD384; border-left: 4px solid #FFD384; border-right: 4px solid #FFD384;"></div>
+                    </div>
+                    
+                    <div class="tier">
+                        <div class="tier-left">
+                            <div class="tooltipT">
+                                <img id="D15" class="talent-img disabled" src="./img/talents/1.png" alt="Swift Cavalry" oncontextmenu="removeTalent(ROLE_DEFENSIVE,15)" onclick="addTalent(ROLE_DEFENSIVE,15)">
+                                <span class="tooltiptextT">Reduces Resilience Lost in Movement by 5%.</span>
+                            </div>
+                            <div class="talent-name">Swift Cavalry</div>
+                            <div class="talent-points"><span id="VD15">0</span> / 5</div>
+                        </div>
+                        <div class="tier-right">
+                            <div class="tooltipT">
+                                <img id="D16" class="talent-img disabled" src="./img/talents/2.png" alt="Army Assault" oncontextmenu="removeTalent(ROLE_DEFENSIVE,16)" onclick="addTalent(ROLE_DEFENSIVE,16)">
+                                <span class="tooltiptextT">Increases Total Attack when Defending 4%.</span>
+                            </div>
+                            <div class="talent-name">Army Assault</div>
+                            <div class="talent-points"><span id="VD16">0</span> / 5</div>
+                        </div>
+                    </div>
+    
+                    <div class="tier-edges-sides">
+                        <div id="ED15" class="disabled" style="position: absolute; top: 5px; left: 90px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                        <div id="ED16" class="disabled" style="position: absolute; top: 5px; left: 276px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                    </div>
+                    
+                    <div class="tier">
+                        <div class="tier-left">
+                            <div class="tooltipT">
+                                <img id="D17" class="talent-img disabled" src="./img/talents/3.png" alt="Battle-hardened" oncontextmenu="removeTalent(ROLE_DEFENSIVE,17)" onclick="addTalent(ROLE_DEFENSIVE,17)">
+                                <span class="tooltiptextT">Reduces Resilience Lost in Victory by 5%.</span>
+                            </div>
+                            <div class="talent-name">Battle-hardened</div>
+                            <div class="talent-points"><span id="VD17">0</span> / 5</div>
+                        </div>
+                        <div class="tier-right">
+                            <div class="tooltipT">
+                                <img id="D18" class="talent-img disabled" src="./img/talents/4.png" alt="Army Solid Defense" oncontextmenu="removeTalent(ROLE_DEFENSIVE,18)" onclick="addTalent(ROLE_DEFENSIVE,18)">
+                                <span class="tooltiptextT">Increases Total Defense when Defending 4%.</span>
+                            </div>
+                            <div class="talent-name">Army Solid Defense</div>
+                            <div class="talent-points"><span id="VD18">0</span> / 5</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tier-edges-sides">
+                        <div id="ED17" class="disabled" style="position: absolute; top: 5px; left: 90px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                        <div id="ED18" class="disabled" style="position: absolute; top: 5px; left: 276px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                    </div>
+    
+                    <div class="tier">
+                        <div class="tier-left">
+                            <div class="tooltipT">
+                                <img id="D19" class="talent-img disabled" src="./img/talents/9.png" alt="Inspired and Impassioned" onclick="addTalent(ROLE_DEFENSIVE,19)">
+                                <span class="tooltiptextT">Increases Resilience Limit by 4%.</span>
+                            </div>
+                            <div class="talent-name">Inspired and Impassioned</div>
+                            <div class="talent-points"><span id="VD19">0</span> / 5</div>
+                        </div>
+                        <div class="tier-right">
+                            <div class="tooltipT">
+                                <img id="D20" class="talent-img disabled" src="./img/talents/6.png" alt="Army Protection" oncontextmenu="removeTalent(ROLE_DEFENSIVE,20)" onclick="addTalent(ROLE_DEFENSIVE,20)">
+                                <span class="tooltiptextT">Increases Total Health when Defending 4%.</span>
+                            </div>
+                            <div class="talent-name">Army Protection</div>
+                            <div class="talent-points"><span id="VD20">0</span> / 5</div>
+                        </div>
+                    </div>
+                    
+                    <div id="ED20" class="tier-edges-center-bottom disabled">
+                        <div style="position: absolute; top: 4px; left: 182px; width: 95px; height: 20px; border-bottom: 4px solid #FFD384; border-right: 4px solid #FFD384;"></div>
+                        <div style="position: absolute; top: 20px; left: 182px; border: 2px solid #FFD384; height: 20px;"></div>
+                    </div>
+    
+                    <div class="tier">
+                        <div class="tier-center">
+                            <div class="tooltipT">
+                                <img id="D21" class="talent-img disabled" src="./img/talents/11.png" alt="Covert Operation" oncontextmenu="removeTalent(ROLE_DEFENSIVE,21)" onclick="addTalent(ROLE_DEFENSIVE,21)">
+                                <span class="tooltiptextT">Defend Allied Cities Ignoring Blocked Paths.</span>
+                            </div>
+                            <div class="talent-name">Covert Operation</div>
+                            <div class="talent-points"><span id="VD21">0</span> / 1</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--- LOGISTICS --->
+                <div id="panelL" class="panel logistics-glow"> 
+                    <div class="role-title logistics-text-glow">Logistics Administration</div>
+                    <div class="tier">
+                        <div class="tier-center">
+                            <div class="tooltipT">
+                                <img id="L0" class="talent-img disabled" src="./img/talents/0.png" alt="Queue Expansion" oncontextmenu="removeTalent(ROLE_LOGISTICS,0)" onclick="addTalent(ROLE_LOGISTICS,0)">
+                                <span class="tooltiptextT">Increases Glorious Battle Marching Queue by 1.</span>
+                            </div>
+                            <div class="talent-name">Queue Expansion</div>
+                            <div class="talent-points"><span id="VL0">0</span> / 1</div>
+                        </div>
+                    </div>
+                    
+                    <div id="EL0" class="tier-edges-center-top disabled">
+                        <div style="position: absolute; top: 4px; left: 182px; border: 2px solid #FFD384; height: 20px;"></div>
+                        <div style="position: absolute; top: 20px; left: 92px; width: 190px; height: 20px; border-top: 4px solid #FFD384; border-left: 4px solid #FFD384; border-right: 4px solid #FFD384;"></div>
+                    </div>
+                    
+                    <div class="tier">
+                        <div class="tier-left">
+                            <div class="tooltipT">
+                                <img id="L1" class="talent-img disabled" src="./img/talents/12.png" alt="Rapid Transport" oncontextmenu="removeTalent(ROLE_LOGISTICS,1)" onclick="addTalent(ROLE_LOGISTICS,1)">
+                                <span class="tooltiptextT">Increases Transport Speed by 4%.</span>
+                            </div>
+                            <div class="talent-name">Rapid Transport</div>
+                            <div class="talent-points"><span id="VL1">0</span> / 5</div>
+                        </div>
+                        <div class="tier-right">
+                            <div class="tooltipT">
+                                <img id="L2" class="talent-img disabled" src="./img/talents/12.png" alt="Rapid Transport" oncontextmenu="removeTalent(ROLE_LOGISTICS,2)" onclick="addTalent(ROLE_LOGISTICS,2)">
+                                <span class="tooltiptextT">Increases Transport Speed by 4%.</span>
+                            </div>
+                            <div class="talent-name">Rapid Transport</div>
+                            <div class="talent-points"><span id="VL2">0</span> / 5</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tier-edges-sides">
+                        <div id="EL1" class="disabled" style="position: absolute; top: 5px; left: 90px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                        <div id="EL2" class="disabled" style="position: absolute; top: 5px; left: 276px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                    </div>
+                    
+                    <div class="tier">
+                        <div class="tier-left">
+                            <div class="tooltipT">
+                                <img id="L3" class="talent-img disabled" src="./img/talents/13.png" alt="Transport Carrier" oncontextmenu="removeTalent(ROLE_LOGISTICS,3)" onclick="addTalent(ROLE_LOGISTICS,3)">
+                                <span class="tooltiptextT">Increases Transport Limit by 4%.</span>
+                            </div>
+                            <div class="talent-name">Transport Carrier</div>
+                            <div class="talent-points"><span id="VL3">0</span> / 5</div>
+                        </div>
+                        <div class="tier-right">
+                            <div class="tooltipT">
+                                <img id="L4" class="talent-img disabled" src="./img/talents/13.png" alt="Transport Carrier" oncontextmenu="removeTalent(ROLE_LOGISTICS,4)" onclick="addTalent(ROLE_LOGISTICS,4)">
+                                <span class="tooltiptextT">Increases Transport Limit by 4%.</span>
+                            </div>
+                            <div class="talent-name">Transport Carrier</div>
+                            <div class="talent-points"><span id="VL4">0</span> / 5</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tier-edges-sides">
+                        <div id="EL3" class="disabled" style="position: absolute; top: 5px; left: 90px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                        <div id="EL4" class="disabled" style="position: absolute; top: 5px; left: 276px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                    </div>
+                    
+                    <div class="tier">
+                        <div class="tier-left">
+                            <div class="tooltipT">
+                                <img id="L5" class="talent-img disabled" src="./img/talents/14.png" alt="Efficient Trading" oncontextmenu="removeTalent(ROLE_LOGISTICS,5)" onclick="addTalent(ROLE_LOGISTICS,5)">
+                                <span class="tooltiptextT">Increases Single Trading Time by 5%.</span>
+                            </div>
+                            <div class="talent-name">Efficient Trading</div>
+                            <div class="talent-points"><span id="VL5">0</span> / 5</div>
+                        </div>
+                        <div class="tier-right">
+                            <div class="tooltipT">
+                                <img id="L6" class="talent-img disabled" src="./img/talents/15.png" alt="Phenomenal Profit" oncontextmenu="removeTalent(ROLE_LOGISTICS,6)" onclick="addTalent(ROLE_LOGISTICS,6)">
+                                <span class="tooltiptextT">Increases Trading Efficiency by 5%.</span>
+                            </div>
+                            <div class="talent-name">Phenomenal Profit</div>
+                            <div class="talent-points"><span id="VL6">0</span> / 5</div>
+                        </div>
+                    </div>
+                    
+                    <div id="EL6" class="tier-edges-center-bottom disabled">
+                        <div style="position: absolute; top: 4px; left: 182px; width: 95px; height: 20px; border-bottom: 4px solid #FFD384; border-right: 4px solid #FFD384;"></div>
+                        <div style="position: absolute; top: 20px; left: 182px; border: 2px solid #FFD384; height: 20px;"></div>
+                    </div>
+    
+                    <div class="tier">
+                        <div class="tier-center">
+                            <div class="tooltipT">
+                                <img id="L7" class="talent-img disabled" src="./img/talents/0.png" alt="Queue Expansion" oncontextmenu="removeTalent(ROLE_LOGISTICS,7)" onclick="addTalent(ROLE_LOGISTICS,7)">
+                                <span class="tooltiptextT">Increases Glorious Battle Marching Queue by 1.</span>
+                            </div>
+                            <div class="talent-name">Queue Expansion</div>
+                            <div class="talent-points"><span id="VL7">0</span> / 1</div>
+                        </div>
+                    </div>
+    
+                    <div id="EL7" class="tier-edges-center-top disabled">
+                        <div style="position: absolute; top: 4px; left: 182px; border: 2px solid #FFD384; height: 20px;"></div>
+                        <div style="position: absolute; top: 20px; left: 92px; width: 190px; height: 20px; border-top: 4px solid #FFD384; border-left: 4px solid #FFD384; border-right: 4px solid #FFD384;"></div>
+                    </div>
+    
+                    <div class="tier">
+                        <div class="tier-left">
+                            <div class="tooltipT">
+                                <img id="L8" class="talent-img disabled" src="./img/talents/12.png" alt="Rapid Transport" oncontextmenu="removeTalent(ROLE_LOGISTICS,8)" onclick="addTalent(ROLE_LOGISTICS,8)">
+                                <span class="tooltiptextT">Increases Transport Speed by 4%.</span>
+                            </div>
+                            <div class="talent-name">Rapid Transport</div>
+                            <div class="talent-points"><span id="VL8">0</span> / 5</div>
+                        </div>
+                        <div class="tier-right">
+                            <div class="tooltipT">
+                                <img id="L9" class="talent-img disabled" src="./img/talents/12.png" alt="Rapid Transport" oncontextmenu="removeTalent(ROLE_LOGISTICS,9)" onclick="addTalent(ROLE_LOGISTICS,9)">
+                                <span class="tooltiptextT">Increases Transport Speed by 4%.</span>
+                            </div>
+                            <div class="talent-name">Rapid Transport</div>
+                            <div class="talent-points"><span id="VL9">0</span> / 5</div>
+                        </div>
+                    </div>
+    
+                    <div class="tier-edges-sides">
+                        <div id="EL8" class="disabled" style="position: absolute; top: 5px; left: 90px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                        <div id="EL9" class="disabled" style="position: absolute; top: 5px; left: 276px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                    </div>
+    
+                    <div class="tier">
+                        <div class="tier-left">
+                            <div class="tooltipT">
+                                <img id="L10" class="talent-img disabled" src="./img/talents/13.png" alt="Transport Carrier" oncontextmenu="removeTalent(ROLE_LOGISTICS,10)" onclick="addTalent(ROLE_LOGISTICS,10)">
+                                <span class="tooltiptextT">Increases Transport Limit by 4%.</span>
+                            </div>
+                            <div class="talent-name">Transport Carrier</div>
+                            <div class="talent-points"><span id="VL10">0</span> / 5</div>
+                        </div>
+                        <div class="tier-right">
+                            <div class="tooltipT">
+                                <img id="L11" class="talent-img disabled" src="./img/talents/13.png" alt="Transport Carrier" oncontextmenu="removeTalent(ROLE_LOGISTICS,11)" onclick="addTalent(ROLE_LOGISTICS,11)">
+                                <span class="tooltiptextT">Increases Transport Limit by 4%.</span>
+                            </div>
+                            <div class="talent-name">Transport Carrier</div>
+                            <div class="talent-points"><span id="VL11">0</span> / 5</div>
+                        </div>
+                    </div>
+    
+                    <div class="tier-edges-sides">
+                        <div id="EL10" class="disabled" style="position: absolute; top: 5px; left: 90px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                        <div id="EL11" class="disabled" style="position: absolute; top: 5px; left: 276px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                    </div>
+                    
+                    <div class="tier">
+                        <div class="tier-left">
+                            <div class="tooltipT">
+                                <img id="L12" class="talent-img disabled" src="./img/talents/14.png" alt="Efficient Trading" oncontextmenu="removeTalent(ROLE_LOGISTICS,12)" onclick="addTalent(ROLE_LOGISTICS,12)">
+                                <span class="tooltiptextT">Increases Single Trading Time by 5%.</span>
+                            </div>
+                            <div class="talent-name">Efficient Trading</div>
+                            <div class="talent-points"><span id="VL12">0</span> / 5</div>
+                        </div>
+                        <div class="tier-right">
+                            <div class="tooltipT">
+                                <img id="L13" class="talent-img disabled" src="./img/talents/15.png" alt="Phenomenal Profit" oncontextmenu="removeTalent(ROLE_LOGISTICS,13)" onclick="addTalent(ROLE_LOGISTICS,13)">
+                                <span class="tooltiptextT">Increases Trading Efficiency by 5%.</span>
+                            </div>
+                            <div class="talent-name">Phenomenal Profit</div>
+                            <div class="talent-points"><span id="VL13">0</span> / 5</div>
+                        </div>
+                    </div>
+    
+                    <div id="EL13" class="tier-edges-center-bottom disabled">
+                        <div style="position: absolute; top: 4px; left: 182px; width: 95px; height: 20px; border-bottom: 4px solid #FFD384; border-right: 4px solid #FFD384;"></div>
+                        <div style="position: absolute; top: 20px; left: 182px; border: 2px solid #FFD384; height: 20px;"></div>
+                    </div>
+    
+                    <div class="tier">
+                        <div class="tier-center">
+                            <div class="tooltipT">
+                                <img id="L14" class="talent-img disabled" src="./img/talents/0.png" alt="Queue Expansion" oncontextmenu="removeTalent(ROLE_LOGISTICS,14)" onclick="addTalent(ROLE_LOGISTICS,14)">
+                                <span class="tooltiptextT">Increases Glorious Battle Marching Queue by 1.</span>
+                            </div>
+                            <div class="talent-name">Queue Expansion</div>
+                            <div class="talent-points"><span id="VL14">0</span> / 1</div>
+                        </div>
+                    </div>
+    
+                    <div id="EL14" class="tier-edges-center-top disabled">
+                        <div style="position: absolute; top: 4px; left: 182px; border: 2px solid #FFD384; height: 20px;"></div>
+                        <div style="position: absolute; top: 20px; left: 92px; width: 190px; height: 20px; border-top: 4px solid #FFD384; border-left: 4px solid #FFD384; border-right: 4px solid #FFD384;"></div>
+                    </div>
+                    
+                    <div class="tier">
+                        <div class="tier-left">
+                            <div class="tooltipT">
+                                <img id="L15" class="talent-img disabled" src="./img/talents/7.png" alt="First Aid" oncontextmenu="removeTalent(ROLE_LOGISTICS,15)" onclick="addTalent(ROLE_LOGISTICS,15)">
+                                <span class="tooltiptextT">Reduces Allied Casualty Rate by 2%.</span>
+                            </div>
+                            <div class="talent-name">First Aid</div>
+                            <div class="talent-points"><span id="VL15">0</span> / 5</div>
+                        </div>
+                        <div class="tier-right">
+                            <div class="tooltipT">
+                                <img id="L16" class="talent-img disabled" src="./img/talents/12.png" alt="Rapid Transport" oncontextmenu="removeTalent(ROLE_LOGISTICS,16)" onclick="addTalent(ROLE_LOGISTICS,16)">
+                                <span class="tooltiptextT">Increases Transport Speed by 4%.</span>
+                            </div>
+                            <div class="talent-name">Rapid Transport</div>
+                            <div class="talent-points"><span id="VL16">0</span> / 5</div>
+                        </div>
+                    </div>
+    
+                    <div class="tier-edges-sides">
+                        <div id="EL15" class="disabled" style="position: absolute; top: 5px; left: 90px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                        <div id="EL16" class="disabled" style="position: absolute; top: 5px; left: 276px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                    </div>
+                    
+                    <div class="tier">
+                        <div class="tier-left">
+                            <div class="tooltipT">
+                                <img id="L17" class="talent-img disabled" src="./img/talents/7.png" alt="First Aid" oncontextmenu="removeTalent(ROLE_LOGISTICS,17)" onclick="addTalent(ROLE_LOGISTICS,17)">
+                                <span class="tooltiptextT">Reduces Allied Casualty Rate by 2%.</span>
+                            </div>
+                            <div class="talent-name">First Aid</div>
+                            <div class="talent-points"><span id="VL17">0</span> / 5</div>
+                        </div>
+                        <div class="tier-right">
+                            <div class="tooltipT">
+                                <img id="L18" class="talent-img disabled" src="./img/talents/13.png" alt="Transport Carrier" oncontextmenu="removeTalent(ROLE_LOGISTICS,18)" onclick="addTalent(ROLE_LOGISTICS,18)">
+                                <span class="tooltiptextT">Increases Transport Limit by 4%.</span>
+                            </div>
+                            <div class="talent-name">Transport Carrier</div>
+                            <div class="talent-points"><span id="VL18">0</span> / 5</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tier-edges-sides">
+                        <div id="EL17" class="disabled" style="position: absolute; top: 5px; left: 90px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                        <div id="EL18" class="disabled" style="position: absolute; top: 5px; left: 276px; width: 0px; height: 20px; border-left: 4px solid #FFD384;"></div>
+                    </div>
+    
+                    <div class="tier">
+                        <div class="tier-left">
+                            <div class="tooltipT">
+                                <img id="L19" class="talent-img disabled" src="./img/talents/9.png" alt="Inspired and Impassioned" oncontextmenu="removeTalent(ROLE_LOGISTICS,19)" onclick="addTalent(ROLE_LOGISTICS,19)">
+                                <span class="tooltiptextT">Increases Resilience Limit by 4%.</span>
+                            </div>
+                            <div class="talent-name">Inspired and Impassioned</div>
+                            <div class="talent-points"><span id="VL19">0</span> / 5</div>
+                        </div>
+                        <div class="tier-right">
+                            <div class="tooltipT">
+                                <img id="L20" class="talent-img disabled" src="./img/talents/15.png" alt="Phenomenal Profit" oncontextmenu="removeTalent(ROLE_LOGISTICS,20)" onclick="addTalent(ROLE_LOGISTICS,20)">
+                                <span class="tooltiptextT">Increases Trading Efficiency by 5%.</span>
+                            </div>
+                            <div class="talent-name">Phenomenal Profit</div>
+                            <div class="talent-points"><span id="VL20">0</span> / 5</div>
+                        </div>
+                    </div>
+                    
+                    <div id="EL20" class="tier-edges-center-bottom disabled">
+                        <div style="position: absolute; top: 4px; left: 182px; width: 95px; height: 20px; border-bottom: 4px solid #FFD384; border-right: 4px solid #FFD384;"></div>
+                        <div style="position: absolute; top: 20px; left: 182px; border: 2px solid #FFD384; height: 20px;"></div>
+                    </div>
+    
+                    <div class="tier">
+                        <div class="tier-center">
+                            <div class="tooltipT">
+                                <img id="L21" class="talent-img disabled" src="./img/talents/16.png" alt="Cavalry Spearhead" oncontextmenu="removeTalent(ROLE_LOGISTICS,21)" onclick="addTalent(ROLE_LOGISTICS,21)">
+                                <span class="tooltiptextT">Transport Resources Ignoring Blocked Paths.</span>
+                            </div>
+                            <div class="talent-name">Cavalry Spearhead</div>
+                            <div class="talent-points"><span id="VL21">0</span> / 1</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="dataM">
             <span class="subsubtitle">Strategy Board</span>
             <div id="bResetMap1" class="myButton" style="position: absolute; bottom: 50px; left: 0px; width: 140px; height: 30px;" onclick="resetMap()">Reset</div>
             <div id="bRandomMap1" class="myButton" style="position: absolute; bottom: 10px; left: 0px; width: 140px; height: 30px;" onclick="randomMap()">Random</div>
-            <div id="bVillagesMap1" class="myButton" style="position: absolute; bottom: 10px; right: 150px; width: 140px; height: 30px;" onclick="toggleMapVillages()">Show Villages</div>
-            <div id="bKingshipMap1" class="myButton" style="position: absolute; bottom: 50px; right: 0px; width: 140px; height: 30px;" onclick="toggleMapKingship()">Show Kingship</div>
+            <div id="bShowTalents2" class="myButton" style="position: absolute; bottom: 90px; right: 0px; width: 140px; height: 30px;" onclick="toggleTalents()">Show Talents</div>
+            <div id="bDistancesMap1" class="myButton" style="position: absolute; bottom: 50px; right: 0px; width: 140px; height: 30px;" onclick="toggleMapDistances()">Show Distances</div>
+            <div id="bDoubleTimeMarch1" style="position: absolute; bottom: 50px; left: 120px; width: 140px; height: 30px;">
+                <div class="tooltipT" style="cursor: pointer;">
+                    <img id="DT1" class="scroll-img disabled" src="./img/double_time.png" style="width: 70px; height: 70px;" alt="Double Time March" onclick="toggleDoubleTime()">
+                    <span class="tooltiptextT"><div class="talent-name">Double Time March</div>Increases Glorious Battle Marching Speed by 30% for 30 minutes.</span>
+                </div>
+                
+            </div>
             <div id="bNamesMap1" class="myButton" style="position: absolute; bottom: 10px; right: 0px; width: 140px; height: 30px;" onclick="toggleMapNames()">Hide Names</div>
             <div style="font-size: 13px; margin-bottom: -10px; margin-top: 5px;">
                 <span>Left-click on a building to change its owner between those factions that are connected to it.</span>
                 <br>
-                <span>Mouse over a building to see relevant information such as kingship, buffs or resources.</span>
+                <span>Hint: starting points are those buildings connected to each faction palace.</span>
+                <br><br>
+                <span>Mouse over a building to see relevant information about distances, reaching times and resilience changes.</span>
                 <br>
-                <span>Press N, V, K to show/hide city names, villages, and kingship respectively.</span>
+                <span>Hint: talents set in the calculator above and buildings taken in the map do apply.</span>
             </div>
         </div>
         <div id="mapSimulator">
         <div class="containerMap">
-            <img id="map" class="map" src="./img/map/map.jpg">
-            <img id="mapV" class="mapV" src="./img/map/names.png">
+            <img id="map" class="map" src="./img/map/map.png">
             <canvas id="myCanvas" class="canvas" width="1200" height="1200"></canvas>
             <div id="tContainer" class="tooltipM">
-                <span id="tData" class="tooltiptextM" style="white-space: nowrap; text-align: center; padding-bottom: 10px;"></span>
+                <span id="tData" class="tooltiptextM" style="margin-left: 5px; white-space: nowrap"></span>
             </div>
            
             <!-- BANNERS -->
-            <img id="i0" alt="Twin Dragon City" class="item banner" src="./img/map/0/banner.png" style="top: 569px; left: 569px; width: 62px;" onmouseout="hideTooltip()" onmouseover="showTooltip(0)" onclick="attack(0)">
-            <img id="i1" alt="Shadow Fortress" class="banner" src="./img/map/1/banner.png" style="top: 40px; left: 374px;" onmouseout="hideTooltip()" onmouseover="showTooltip(1)">
-            <img id="i2" alt="Lordsbane Fort" class="banner" src="./img/map/2/banner.png" style="top: 40px; left: 787px;" onmouseout="hideTooltip()" onmouseover="showTooltip(2)">
-            <img id="i3" alt="Tempest Keep" class="banner" src="./img/map/3/banner.png" style="top: 360px; left: 50px;" onmouseout="hideTooltip()" onmouseover="showTooltip(3)">
-            <img id="i4" alt="Hall of Ages" class="banner" src="./img/map/4/banner.png" style="top: 360px; left: 1111px;" onmouseout="hideTooltip()" onmouseover="showTooltip(4)">
-            <img id="i5" alt="Scarlet Palace" class="banner" src="./img/map/5/banner.png" style="top: 800px; left: 50px;" onmouseout="hideTooltip()" onmouseover="showTooltip(5)">
-            <img id="i6" alt="Longreach Castle" class="banner" src="./img/map/6/banner.png" style="top: 800px; left: 1111px;" onmouseout="hideTooltip()" onmouseover="showTooltip(6)">
-            <img id="i7" alt="Fortress of Frost" class="banner" src="./img/map/7/banner.png" style="top: 1120px; left: 374px;" onmouseout="hideTooltip()" onmouseover="showTooltip(7)">
-            <img id="i8" alt="City of Judgement" class="banner" src="./img/map/8/banner.png" style="top: 1120px; left: 787px;" onmouseout="hideTooltip()" onmouseover="showTooltip(8)">
-
-            <!-- FACTION STAGES -->
-            <img id="i9" alt="Stage 1" class="item gate" src="./img/map/0/gate.png" style="top: 77px; left: 500px;" onmouseout="hideTooltip()" onmouseover="showTooltip(9)" onclick="attack(9)">
-            <img id="i10" alt="Stage 2" class="item gate" src="./img/map/0/gate.png" style="top: 77px; left: 666px;" onmouseout="hideTooltip()" onmouseover="showTooltip(10)" onclick="attack(10)">
-            <img id="i11" alt="Stage 3" class="item gate" src="./img/map/0/gate.png" style="top: 514px; left: 1073px;" onmouseout="hideTooltip()" onmouseover="showTooltip(11)" onclick="attack(11)">
-            <img id="i12" alt="Stage 4" class="item gate" src="./img/map/0/gate.png" style="top: 667px; left: 1073px;" onmouseout="hideTooltip()" onmouseover="showTooltip(12)" onclick="attack(12)">
-            <img id="i13" alt="Stage 5" class="item gate" src="./img/map/0/gate.png" style="top: 1104px; left: 666px;" onmouseout="hideTooltip()" onmouseover="showTooltip(13)" onclick="attack(13)">
-            <img id="i14" alt="Stage 6" class="item gate" src="./img/map/0/gate.png" style="top: 1104px; left: 500px;" onmouseout="hideTooltip()" onmouseover="showTooltip(14)" onclick="attack(14)">
-            <img id="i15" alt="Stage 7" class="item gate" src="./img/map/0/gate.png" style="top: 667px; left: 93px;" onmouseout="hideTooltip()" onmouseover="showTooltip(15)" onclick="attack(15)">
-            <img id="i16" alt="Stage 8" class="item gate" src="./img/map/0/gate.png" style="top: 514px; left: 93px;" onmouseout="hideTooltip()" onmouseover="showTooltip(16)" onclick="attack(16)">
+            <img id="i0" alt="Glorious City" class="item banner" src="./img/map/0/banner.png" style="top: 569px; left: 569px;" onmouseout="hideTooltip()" onmouseover="showTooltip(0)" onclick="attack(0)">
+            <img id="i1" alt="Shadow Fortress" class="banner" src="./img/map/1/banner.png" style="top: 6px; left: 6px;">
+            <img id="i2" alt="Lordsbane Fort" class="banner" src="./img/map/2/banner.png" style="top: 568px; left: 6px;">
+            <img id="i3" alt="Tempest Keep" class="banner" src="./img/map/3/banner.png" style="top: 1132px; left: 6px;">
+            <img id="i4" alt="Hall of Ages" class="banner" src="./img/map/4/banner.png" style="top: 1132px; left: 570px;">
+            <img id="i5" alt="Scarlet Palace" class="banner" src="./img/map/5/banner.png" style="top: 1132px; left: 1132px;">
+            <img id="i6" alt="Longreach Castle" class="banner" src="./img/map/6/banner.png" style="top: 568px; left: 1132px;">
+            <img id="i7" alt="Fortress of Frost" class="banner" src="./img/map/7/banner.png" style="top: 6px; left: 1132px;">
+            <img id="i8" alt="City of Judgement" class="banner" src="./img/map/8/banner.png" style="top: 6px; left: 570px;">
             
-            <!-- MIDDLE STAGES -->
-            <img id="i17" alt="Stage 9" class="item gate" src="./img/map/0/gate.png" style="top: 187px; left: 583px;" onmouseout="hideTooltip()" onmouseover="showTooltip(17)" onclick="attack(17)">
-            <img id="i18" alt="Stage 10" class="item gate" src="./img/map/0/gate.png" style="top: 590px; left: 995px;" onmouseout="hideTooltip()" onmouseover="showTooltip(18)" onclick="attack(18)">
-            <img id="i19" alt="Stage 11" class="item gate" src="./img/map/0/gate.png" style="top: 994px; left: 583px;" onmouseout="hideTooltip()" onmouseover="showTooltip(19)" onclick="attack(19)">
-            <img id="i20" alt="Stage 12" class="item gate" src="./img/map/0/gate.png" style="top: 590px; left: 171px;" onmouseout="hideTooltip()" onmouseover="showTooltip(20)" onclick="attack(20)">
+            <!-- CARAVANS -->
+            <img id="i9" alt="Caravan Stop 1" class="item caravan" src="./img/map/0/caravan.png" style="top: 82px; left: 89px;" onmouseout="hideTooltip()" onmouseover="showTooltip(9)" onclick="attack(9)">
+            <img id="i10" alt="Caravan Stop 2" class="item caravan" src="./img/map/0/caravan.png" style="top: 581px; left: 85px;" onmouseout="hideTooltip()" onmouseover="showTooltip(10)" onclick="attack(10)">
+            <img id="i11" alt="Caravan Stop 3" class="item caravan" src="./img/map/0/caravan.png" style="top: 1081px; left: 89px;" onmouseout="hideTooltip()" onmouseover="showTooltip(11)" onclick="attack(11)">
+            <img id="i12" alt="Caravan Stop 4" class="item caravan" src="./img/map/0/caravan.png" style="top: 1018px; left: 589px;" onmouseout="hideTooltip()" onmouseover="showTooltip(12)" onclick="attack(12)">
+            <img id="i13" alt="Caravan Stop 5" class="item caravan" src="./img/map/0/caravan.png" style="top: 1081px; left: 1089px;" onmouseout="hideTooltip()" onmouseover="showTooltip(13)" onclick="attack(13)">
+            <img id="i14" alt="Caravan Stop 6" class="item caravan" src="./img/map/0/caravan.png" style="top: 581px; left: 1093px;" onmouseout="hideTooltip()" onmouseover="showTooltip(14)" onclick="attack(14)">
+            <img id="i15" alt="Caravan Stop 7" class="item caravan" src="./img/map/0/caravan.png" style="top: 82px; left: 1089px;" onmouseout="hideTooltip()" onmouseover="showTooltip(15)" onclick="attack(15)">
+            <img id="i16" alt="Caravan Stop 8" class="item caravan" src="./img/map/0/caravan.png" style="top: 145px; left: 589px;" onmouseout="hideTooltip()" onmouseover="showTooltip(16)" onclick="attack(16)">
+            <img id="i17" alt="Caravan Stop 9" class="item caravan" src="./img/map/0/caravan.png" style="top: 289px; left: 383px;" onmouseout="hideTooltip()" onmouseover="showTooltip(17)" onclick="attack(17)">
+            <img id="i18" alt="Caravan Stop 10" class="item caravan" src="./img/map/0/caravan.png" style="top: 375px; left: 297px;" onmouseout="hideTooltip()" onmouseover="showTooltip(18)" onclick="attack(18)">
+            <img id="i19" alt="Caravan Stop 11" class="item caravan" src="./img/map/0/caravan.png" style="top: 787px; left: 297px;" onmouseout="hideTooltip()" onmouseover="showTooltip(19)" onclick="attack(19)">
+            <img id="i20" alt="Caravan Stop 12" class="item caravan" src="./img/map/0/caravan.png" style="top: 873px; left: 383px;" onmouseout="hideTooltip()" onmouseover="showTooltip(20)" onclick="attack(20)">
+            <img id="i21" alt="Caravan Stop 13" class="item caravan" src="./img/map/0/caravan.png" style="top: 873px; left: 795px;" onmouseout="hideTooltip()" onmouseover="showTooltip(21)" onclick="attack(21)">
+            <img id="i22" alt="Caravan Stop 14" class="item caravan" src="./img/map/0/caravan.png" style="top: 787px; left: 881px;" onmouseout="hideTooltip()" onmouseover="showTooltip(22)" onclick="attack(22)">
+            <img id="i23" alt="Caravan Stop 15" class="item caravan" src="./img/map/0/caravan.png" style="top: 375px; left: 881px;" onmouseout="hideTooltip()" onmouseover="showTooltip(23)" onclick="attack(23)">
+            <img id="i24" alt="Caravan Stop 16" class="item caravan" src="./img/map/0/caravan.png" style="top: 289px; left: 795px;" onmouseout="hideTooltip()" onmouseover="showTooltip(24)" onclick="attack(24)">
             
-            <!-- STAGES -->
-            <img id="i21" alt="Stage 13" class="item gate" src="./img/map/0/gate.png" style="top: 184px; left: 410px;" onmouseout="hideTooltip()" onmouseover="showTooltip(21)" onclick="attack(21)">
-            <img id="i22" alt="Stage 14" class="item gate" src="./img/map/0/gate.png" style="top: 184px; left: 757px;" onmouseout="hideTooltip()" onmouseover="showTooltip(22)" onclick="attack(22)">
-            <img id="i23" alt="Stage 15" class="item gate" src="./img/map/0/gate.png" style="top: 417px; left: 992px;" onmouseout="hideTooltip()" onmouseover="showTooltip(23)" onclick="attack(23)">
-            <img id="i24" alt="Stage 16" class="item gate" src="./img/map/0/gate.png" style="top: 764px; left: 992px;" onmouseout="hideTooltip()" onmouseover="showTooltip(24)" onclick="attack(24)">
-            <img id="i25" alt="Stage 17" class="item gate" src="./img/map/0/gate.png" style="top: 997px; left: 757px;" onmouseout="hideTooltip()" onmouseover="showTooltip(25)" onclick="attack(25)">
-            <img id="i26" alt="Stage 18" class="item gate" src="./img/map/0/gate.png" style="top: 997px; left: 410px;" onmouseout="hideTooltip()" onmouseover="showTooltip(26)" onclick="attack(26)">
-            <img id="i27" alt="Stage 19" class="item gate" src="./img/map/0/gate.png" style="top: 764px; left: 175px;" onmouseout="hideTooltip()" onmouseover="showTooltip(27)" onclick="attack(27)">
-            <img id="i28" alt="Stage 20" class="item gate" src="./img/map/0/gate.png" style="top: 417px; left: 175px;" onmouseout="hideTooltip()" onmouseover="showTooltip(28)" onclick="attack(28)">
+            <!-- GATES -->
+            <img id="i25" alt="Shadow Gate 1" class="item gate" src="./img/map/0/gate.png" style="top: 202px; left: 281px;" onmouseout="hideTooltip()" onmouseover="showTooltip(25)" onclick="attack(25)">
+            <img id="i26" alt="Shadow Gate 2" class="item gate" src="./img/map/0/gate.png" style="top: 288px; left: 195px;" onmouseout="hideTooltip()" onmouseover="showTooltip(26)" onclick="attack(26)">
+            <img id="i27" alt="Lordsbane Gate 1" class="item gate" src="./img/map/0/gate.png" style="top: 397px; left: 195px;" onmouseout="hideTooltip()" onmouseover="showTooltip(27)" onclick="attack(27)">
+            <img id="i28" alt="Lordsbane Gate 2" class="item gate" src="./img/map/0/gate.png" style="top: 781px; left: 195px;" onmouseout="hideTooltip()" onmouseover="showTooltip(28)" onclick="attack(28)">
+            <img id="i29" alt="Tempest Gate 1" class="item gate" src="./img/map/0/gate.png" style="top: 890px; left: 195px;" onmouseout="hideTooltip()" onmouseover="showTooltip(29)" onclick="attack(29)">
+            <img id="i30" alt="Tempest Gate 2" class="item gate" src="./img/map/0/gate.png" style="top: 975px; left: 281px;" onmouseout="hideTooltip()" onmouseover="showTooltip(30)" onclick="attack(30)">
+            <img id="i31" alt="Ages Gate 1" class="item gate" src="./img/map/0/gate.png" style="top: 975px; left: 389px;" onmouseout="hideTooltip()" onmouseover="showTooltip(31)" onclick="attack(31)">
+            <img id="i32" alt="Ages Gate 2" class="item gate" src="./img/map/0/gate.png" style="top: 975px; left: 775px;" onmouseout="hideTooltip()" onmouseover="showTooltip(32)" onclick="attack(32)">
+            <img id="i33" alt="Scarlet Gate 1" class="item gate" src="./img/map/0/gate.png" style="top: 975px; left: 883px;" onmouseout="hideTooltip()" onmouseover="showTooltip(33)" onclick="attack(33)">
+            <img id="i34" alt="Scarlet Gate 2" class="item gate" src="./img/map/0/gate.png" style="top: 890px; left: 969px;" onmouseout="hideTooltip()" onmouseover="showTooltip(34)" onclick="attack(34)">
+            <img id="i35" alt="Longreach Gate 1" class="item gate" src="./img/map/0/gate.png" style="top: 781px; left: 969px;" onmouseout="hideTooltip()" onmouseover="showTooltip(35)" onclick="attack(35)">
+            <img id="i36" alt="Longreach Gate 2" class="item gate" src="./img/map/0/gate.png" style="top: 397px; left: 969px;" onmouseout="hideTooltip()" onmouseover="showTooltip(36)" onclick="attack(36)">
+            <img id="i37" alt="Frost Gate 1" class="item gate" src="./img/map/0/gate.png" style="top: 288px; left: 969px;" onmouseout="hideTooltip()" onmouseover="showTooltip(37)" onclick="attack(37)">
+            <img id="i38" alt="Frost Gate 2" class="item gate" src="./img/map/0/gate.png" style="top: 202px; left: 883px;" onmouseout="hideTooltip()" onmouseover="showTooltip(38)" onclick="attack(38)">
+            <img id="i39" alt="Justice Gate 1" class="item gate" src="./img/map/0/gate.png" style="top: 202px; left: 775px;" onmouseout="hideTooltip()" onmouseover="showTooltip(39)" onclick="attack(39)">
+            <img id="i40" alt="Justice Gate 2" class="item gate" src="./img/map/0/gate.png" style="top: 202px; left: 389px;" onmouseout="hideTooltip()" onmouseover="showTooltip(40)" onclick="attack(40)">
+            <img id="i41" alt="Glory Gate 1" class="item gate" src="./img/map/0/gate.png" style="top: 529px; left: 556px;" onmouseout="hideTooltip()" onmouseover="showTooltip(41)" onclick="attack(41)">
+            <img id="i42" alt="Glory Gate 2" class="item gate" src="./img/map/0/gate.png" style="top: 563px; left: 523px;" onmouseout="hideTooltip()" onmouseover="showTooltip(42)" onclick="attack(42)">
+            <img id="i43" alt="Glory Gate 3" class="item gate" src="./img/map/0/gate.png" style="top: 615px; left: 523px;" onmouseout="hideTooltip()" onmouseover="showTooltip(43)" onclick="attack(43)">
+            <img id="i44" alt="Glory Gate 4" class="item gate" src="./img/map/0/gate.png" style="top: 649px; left: 556px;" onmouseout="hideTooltip()" onmouseover="showTooltip(44)" onclick="attack(44)">
+            <img id="i45" alt="Glory Gate 5" class="item gate" src="./img/map/0/gate.png" style="top: 649px; left: 608px;" onmouseout="hideTooltip()" onmouseover="showTooltip(45)" onclick="attack(45)">
+            <img id="i46" alt="Glory Gate 6" class="item gate" src="./img/map/0/gate.png" style="top: 615px; left: 642px;" onmouseout="hideTooltip()" onmouseover="showTooltip(46)" onclick="attack(46)">
+            <img id="i47" alt="Glory Gate 7" class="item gate" src="./img/map/0/gate.png" style="top: 563px; left: 642px;" onmouseout="hideTooltip()" onmouseover="showTooltip(47)" onclick="attack(47)">
+            <img id="i48" alt="Glory Gate 8" class="item gate" src="./img/map/0/gate.png" style="top: 529px; left: 608px;" onmouseout="hideTooltip()" onmouseover="showTooltip(48)" onclick="attack(48)">
             
-            <!-- TWIN DRAGON STAGES -->
-            <img id="i29" alt="Stage 21" class="item gate" src="./img/map/0/gate.png" style="top: 504px; left: 543px;" onmouseout="hideTooltip()" onmouseover="showTooltip(29)" onclick="attack(29)">
-            <img id="i30" alt="Stage 22" class="item gate" src="./img/map/0/gate.png" style="top: 504px; left: 623px;" onmouseout="hideTooltip()" onmouseover="showTooltip(30)" onclick="attack(30)">
-            <img id="i31" alt="Stage 23" class="item gate" src="./img/map/0/gate.png" style="top: 550px; left: 670px;" onmouseout="hideTooltip()" onmouseover="showTooltip(31)" onclick="attack(31)">
-            <img id="i32" alt="Stage 24" class="item gate" src="./img/map/0/gate.png" style="top: 631px; left: 670px;" onmouseout="hideTooltip()" onmouseover="showTooltip(32)" onclick="attack(32)">
-            <img id="i33" alt="Stage 25" class="item gate" src="./img/map/0/gate.png" style="top: 677px; left: 623px;" onmouseout="hideTooltip()" onmouseover="showTooltip(33)" onclick="attack(33)">
-            <img id="i34" alt="Stage 26" class="item gate" src="./img/map/0/gate.png" style="top: 677px; left: 543px;" onmouseout="hideTooltip()" onmouseover="showTooltip(34)" onclick="attack(34)">
-            <img id="i35" alt="Stage 27" class="item gate" src="./img/map/0/gate.png" style="top: 631px; left: 496px;" onmouseout="hideTooltip()" onmouseover="showTooltip(35)" onclick="attack(35)">
-            <img id="i36" alt="Stage 28" class="item gate" src="./img/map/0/gate.png" style="top: 550px; left: 496px;" onmouseout="hideTooltip()" onmouseover="showTooltip(36)" onclick="attack(36)">
-
-            <!-- OTHER STAGES -->
-            <img id="i37" alt="Stage 29" class="item gate" src="./img/map/0/gate.png" style="top: 222px; left: 295px;" onmouseout="hideTooltip()" onmouseover="showTooltip(37)" onclick="attack(37)">
-            <img id="i38" alt="Stage 30" class="item gate" src="./img/map/0/gate.png" style="top: 302px; left: 215px;" onmouseout="hideTooltip()" onmouseover="showTooltip(38)" onclick="attack(38)">
-            <img id="i39" alt="Stage 31" class="item gate" src="./img/map/0/gate.png" style="top: 879px; left: 953px;" onmouseout="hideTooltip()" onmouseover="showTooltip(39)" onclick="attack(39)">
-            <img id="i40" alt="Stage 32" class="item gate" src="./img/map/0/gate.png" style="top: 959px; left: 873px;" onmouseout="hideTooltip()" onmouseover="showTooltip(40)" onclick="attack(40)">
-            <img id="i41" alt="Stage 33" class="item gate" src="./img/map/0/gate.png" style="top: 959px; left: 293px;" onmouseout="hideTooltip()" onmouseover="showTooltip(41)" onclick="attack(41)">
-            <img id="i42" alt="Stage 34" class="item gate" src="./img/map/0/gate.png" style="top: 879px; left: 213px;" onmouseout="hideTooltip()" onmouseover="showTooltip(42)" onclick="attack(42)">
-            <img id="i43" alt="Stage 35" class="item gate" src="./img/map/0/gate.png" style="top: 300px; left: 952px;" onmouseout="hideTooltip()" onmouseover="showTooltip(43)" onclick="attack(43)">
-            <img id="i44" alt="Stage 36" class="item gate" src="./img/map/0/gate.png" style="top: 221px; left: 871px;" onmouseout="hideTooltip()" onmouseover="showTooltip(44)" onclick="attack(44)">
-
-            <!-- POTION CITIES -->
-            <img id="i45" alt="Potion 1" class="item depot" src="./img/map/0/potion.png" style="top: 109px; left: 589px;" onmouseout="hideTooltip()" onmouseover="showTooltip(45)" onclick="attack(45)">
-            <img id="i46" alt="Potion 2" class="item depot" src="./img/map/0/potion.png" style="top: 582px; left: 99px;" onmouseout="hideTooltip()" onmouseover="showTooltip(46)" onclick="attack(46)">
-            <img id="i47" alt="Potion 3" class="item depot" src="./img/map/0/potion.png" style="top: 582px; left: 1079px;" onmouseout="hideTooltip()" onmouseover="showTooltip(47)" onclick="attack(47)">
-            <img id="i48" alt="Potion 4" class="item depot" src="./img/map/0/potion.png" style="top: 1056px; left: 589px;" onmouseout="hideTooltip()" onmouseover="showTooltip(48)" onclick="attack(48)">
+            <!-- FORTRESSES -->
+            <img id="i49" alt="Fortress 1" class="item fortress" src="./img/map/0/fortress.png" style="top: 339px; left: 119px;" onmouseout="hideTooltip()" onmouseover="showTooltip(49)" onclick="attack(49)">
+            <img id="i50" alt="Fortress 2" class="item fortress" src="./img/map/0/fortress.png" style="top: 832px; left: 119px;" onmouseout="hideTooltip()" onmouseover="showTooltip(50)" onclick="attack(50)">
+            <img id="i51" alt="Fortress 3" class="item fortress" src="./img/map/0/fortress.png" style="top: 1053px; left: 341px;" onmouseout="hideTooltip()" onmouseover="showTooltip(51)" onclick="attack(51)">
+            <img id="i52" alt="Fortress 4" class="item fortress" src="./img/map/0/fortress.png" style="top: 1053px; left: 834px;" onmouseout="hideTooltip()" onmouseover="showTooltip(52)" onclick="attack(52)">
+            <img id="i53" alt="Fortress 5" class="item fortress" src="./img/map/0/fortress.png" style="top: 832px; left: 1056px;" onmouseout="hideTooltip()" onmouseover="showTooltip(53)" onclick="attack(53)">
+            <img id="i54" alt="Fortress 6" class="item fortress" src="./img/map/0/fortress.png" style="top: 339px; left: 1056px;" onmouseout="hideTooltip()" onmouseover="showTooltip(54)" onclick="attack(54)">
+            <img id="i55" alt="Fortress 7" class="item fortress" src="./img/map/0/fortress.png" style="top: 117px; left: 834px;" onmouseout="hideTooltip()" onmouseover="showTooltip(55)" onclick="attack(55)">
+            <img id="i56" alt="Fortress 8" class="item fortress" src="./img/map/0/fortress.png" style="top: 117px; left: 341px;" onmouseout="hideTooltip()" onmouseover="showTooltip(56)" onclick="attack(56)">
+            <img id="i57" alt="Fortress 9" class="item fortress" src="./img/map/0/fortress.png" style="top: 339px; left: 237px;" onmouseout="hideTooltip()" onmouseover="showTooltip(57)" onclick="attack(57)">
+            <img id="i58" alt="Fortress 10" class="item fortress" src="./img/map/0/fortress.png" style="top: 832px; left: 237px;" onmouseout="hideTooltip()" onmouseover="showTooltip(58)" onclick="attack(58)">
+            <img id="i59" alt="Fortress 11" class="item fortress" src="./img/map/0/fortress.png" style="top: 936px; left: 341px;" onmouseout="hideTooltip()" onmouseover="showTooltip(59)" onclick="attack(59)">
+            <img id="i60" alt="Fortress 12" class="item fortress" src="./img/map/0/fortress.png" style="top: 936px; left: 834px;" onmouseout="hideTooltip()" onmouseover="showTooltip(60)" onclick="attack(60)">
+            <img id="i61" alt="Fortress 13" class="item fortress" src="./img/map/0/fortress.png" style="top: 832px; left: 938px;" onmouseout="hideTooltip()" onmouseover="showTooltip(61)" onclick="attack(61)">
+            <img id="i62" alt="Fortress 14" class="item fortress" src="./img/map/0/fortress.png" style="top: 339px; left: 938px;" onmouseout="hideTooltip()" onmouseover="showTooltip(62)" onclick="attack(62)">
+            <img id="i63" alt="Fortress 15" class="item fortress" src="./img/map/0/fortress.png" style="top: 235px; left: 834px;" onmouseout="hideTooltip()" onmouseover="showTooltip(63)" onclick="attack(63)">
+            <img id="i64" alt="Fortress 16" class="item fortress" src="./img/map/0/fortress.png" style="top: 235px; left: 341px;" onmouseout="hideTooltip()" onmouseover="showTooltip(64)" onclick="attack(64)">
+            <img id="i65" alt="Fortress 17" class="item fortress" src="./img/map/0/fortress.png" style="top: 501px; left: 422px;" onmouseout="hideTooltip()" onmouseover="showTooltip(65)" onclick="attack(65)">
+            <img id="i66" alt="Fortress 18" class="item fortress" src="./img/map/0/fortress.png" style="top: 669px; left: 422px;" onmouseout="hideTooltip()" onmouseover="showTooltip(66)" onclick="attack(66)">
+            <img id="i67" alt="Fortress 19" class="item fortress" src="./img/map/0/fortress.png" style="top: 750px; left: 503px;" onmouseout="hideTooltip()" onmouseover="showTooltip(67)" onclick="attack(67)">
+            <img id="i68" alt="Fortress 20" class="item fortress" src="./img/map/0/fortress.png" style="top: 750px; left: 671px;" onmouseout="hideTooltip()" onmouseover="showTooltip(68)" onclick="attack(68)">
+            <img id="i69" alt="Fortress 21" class="item fortress" src="./img/map/0/fortress.png" style="top: 661px; left: 753px;" onmouseout="hideTooltip()" onmouseover="showTooltip(69)" onclick="attack(69)">
+            <img id="i70" alt="Fortress 22" class="item fortress" src="./img/map/0/fortress.png" style="top: 501px; left: 753px;" onmouseout="hideTooltip()" onmouseover="showTooltip(70)" onclick="attack(70)">
+            <img id="i71" alt="Fortress 23" class="item fortress" src="./img/map/0/fortress.png" style="top: 420px; left: 671px;" onmouseout="hideTooltip()" onmouseover="showTooltip(71)" onclick="attack(71)">
+            <img id="i72" alt="Fortress 24" class="item fortress" src="./img/map/0/fortress.png" style="top: 420px; left: 503px;" onmouseout="hideTooltip()" onmouseover="showTooltip(72)" onclick="attack(72)">
             
-             <!-- RESOURCES CITIES -->
-            <img id="i49" alt="Resources 1" class="item depot" src="./img/map/0/herb.png" style="top: 343px; left: 656px;" onmouseout="hideTooltip()" onmouseover="showTooltip(49)" onclick="attack(49)">
-            <img id="i50" alt="Resources 2" class="item depot" src="./img/map/0/herb.png" style="top: 516px; left: 349px;" onmouseout="hideTooltip()" onmouseover="showTooltip(50)" onclick="attack(50)">
-            <img id="i51" alt="Resources 3" class="item depot" src="./img/map/0/herb.png" style="top: 647px; left: 830px;" onmouseout="hideTooltip()" onmouseover="showTooltip(51)" onclick="attack(51)">
-            <img id="i52" alt="Resources 4" class="item depot" src="./img/map/0/herb.png" style="top: 823px; left: 523px;" onmouseout="hideTooltip()" onmouseover="showTooltip(52)" onclick="attack(52)">
-
-            <!-- SMALL BLESSING CITIES -->
-            <img id="i53" alt="S. Blessing 1" class="item caravan" src="./img/map/0/caravan.png" style="top: 43px; left: 550px;" onmouseout="hideTooltip()" onmouseover="showTooltip(53)" onclick="attack(53)">
-            <img id="i54" alt="S. Blessing 2" class="item caravan" src="./img/map/0/caravan.png" style="top: 43px; left: 630px;" onmouseout="hideTooltip()" onmouseover="showTooltip(54)" onclick="attack(54)">
-            <img id="i55" alt="S. Blessing 3" class="item caravan" src="./img/map/0/caravan.png" style="top: 543px; left: 33px;" onmouseout="hideTooltip()" onmouseover="showTooltip(55)" onclick="attack(55)">
-            <img id="i56" alt="S. Blessing 4" class="item caravan" src="./img/map/0/caravan.png" style="top: 543px; left: 1147px;" onmouseout="hideTooltip()" onmouseover="showTooltip(56)" onclick="attack(56)">
-            <img id="i57" alt="S. Blessing 5" class="item caravan" src="./img/map/0/caravan.png" style="top: 623px; left: 33px;" onmouseout="hideTooltip()" onmouseover="showTooltip(57)" onclick="attack(57)">
-            <img id="i58" alt="S. Blessing 6" class="item caravan" src="./img/map/0/caravan.png" style="top: 623px; left: 1147px;" onmouseout="hideTooltip()" onmouseover="showTooltip(58)" onclick="attack(58)">
-            <img id="i59" alt="S. Blessing 7" class="item caravan" src="./img/map/0/caravan.png" style="top: 1123px; left: 550px;" onmouseout="hideTooltip()" onmouseover="showTooltip(59)" onclick="attack(59)">
-            <img id="i60" alt="S. Blessing 8" class="item caravan" src="./img/map/0/caravan.png" style="top: 1123px; left: 630px;" onmouseout="hideTooltip()" onmouseover="showTooltip(60)" onclick="attack(60)">
+            <!-- POTION DEPOTS -->
+            <img id="i73" alt="Potion Depot 1" class="item depot" src="./img/map/0/potion.png" style="top: 451px; left: 229px;" onmouseout="hideTooltip()" onmouseover="showTooltip(73)" onclick="attack(73)">
+            <img id="i74" alt="Potion Depot 2" class="item depot" src="./img/map/0/potion.png" style="top: 709px; left: 229px;" onmouseout="hideTooltip()" onmouseover="showTooltip(74)" onclick="attack(74)">
+            <img id="i75" alt="Potion Depot 3" class="item depot" src="./img/map/0/potion.png" style="top: 940px; left: 459px;" onmouseout="hideTooltip()" onmouseover="showTooltip(75)" onclick="attack(75)">
+            <img id="i76" alt="Potion Depot 4" class="item depot" src="./img/map/0/potion.png" style="top: 967px; left: 718px;" onmouseout="hideTooltip()" onmouseover="showTooltip(76)" onclick="attack(76)">
+            <img id="i77" alt="Potion Depot 5" class="item depot" src="./img/map/0/potion.png" style="top: 709px; left: 948px;" onmouseout="hideTooltip()" onmouseover="showTooltip(77)" onclick="attack(77)">
+            <img id="i78" alt="Potion Depot 6" class="item depot" src="./img/map/0/potion.png" style="top: 451px; left: 948px;" onmouseout="hideTooltip()" onmouseover="showTooltip(78)" onclick="attack(78)">
+            <img id="i79" alt="Potion Depot 7" class="item depot" src="./img/map/0/potion.png" style="top: 221px; left: 718px;" onmouseout="hideTooltip()" onmouseover="showTooltip(79)" onclick="attack(79)">
+            <img id="i80" alt="Potion Depot 8" class="item depot" src="./img/map/0/potion.png" style="top: 221px; left: 459px;" onmouseout="hideTooltip()" onmouseover="showTooltip(80)" onclick="attack(80)">
             
-            <!-- LARGE BLESSING CITIES -->
-            <img id="i61" alt="L. Blessing 1" class="item depot" src="./img/map/0/weapon.png" style="top: 343px; left: 523px;" onmouseout="hideTooltip()" onmouseover="showTooltip(61)" onclick="attack(61)">
-            <img id="i62" alt="L. Blessing 2" class="item depot" src="./img/map/0/weapon.png" style="top: 516px; left: 830px;" onmouseout="hideTooltip()" onmouseover="showTooltip(62)" onclick="attack(62)">
-            <img id="i63" alt="L. Blessing 3" class="item depot" src="./img/map/0/weapon.png" style="top: 647px; left: 349px;" onmouseout="hideTooltip()" onmouseover="showTooltip(63)" onclick="attack(63)">
-            <img id="i64" alt="L. Blessing 4" class="item depot" src="./img/map/0/weapon.png" style="top: 823px; left: 656px;" onmouseout="hideTooltip()" onmouseover="showTooltip(64)" onclick="attack(64)">
-
-            <!-- MILITARY CITIES -->
-            <img id="i65" alt="Military 1" class="item mmilitary" src="./img/map/0/military.png" style="top: 251px; left: 590px;" onmouseout="hideTooltip()" onmouseover="showTooltip(65)" onclick="attack(65)">
-            <img id="i66" alt="Military 2" class="item mmilitary" src="./img/map/0/military.png" style="top: 424px; left: 443px;" onmouseout="hideTooltip()" onmouseover="showTooltip(66)" onclick="attack(66)">
-            <img id="i67" alt="Military 3" class="item mmilitary" src="./img/map/0/military.png" style="top: 424px; left: 736px;" onmouseout="hideTooltip()" onmouseover="showTooltip(67)" onclick="attack(67)">
-            <img id="i68" alt="Military 4" class="item mmilitary" src="./img/map/0/military.png" style="top: 584px; left: 256px;" onmouseout="hideTooltip()" onmouseover="showTooltip(68)" onclick="attack(68)">
-            <img id="i69" alt="Military 5" class="item mmilitary" src="./img/map/0/military.png" style="top: 584px; left: 923px;" onmouseout="hideTooltip()" onmouseover="showTooltip(69)" onclick="attack(69)">
-            <img id="i70" alt="Military 6" class="item mmilitary" src="./img/map/0/military.png" style="top: 745px; left: 443px;" onmouseout="hideTooltip()" onmouseover="showTooltip(70)" onclick="attack(70)">
-            <img id="i71" alt="Military 7" class="item mmilitary" src="./img/map/0/military.png" style="top: 745px; left: 736px;" onmouseout="hideTooltip()" onmouseover="showTooltip(71)" onclick="attack(71)">
-            <img id="i72" alt="Military 8" class="item mmilitary" src="./img/map/0/military.png" style="top: 918px; left: 590px;" onmouseout="hideTooltip()" onmouseover="showTooltip(72)" onclick="attack(72)">
-
-            <!-- SMALL INDUSTRIAL CITIES -->
-            <img id="i73" alt="S. Industrial 1" class="item sindustrial" src="./img/map/0/house.png" style="top: 48px; left: 461px;" onmouseout="hideTooltip()" onmouseover="showTooltip(73)" onclick="attack(73)">
-            <img id="i74" alt="S. Industrial 2" class="item sindustrial" src="./img/map/0/house.png" style="top: 48px; left: 714px;" onmouseout="hideTooltip()" onmouseover="showTooltip(74)" onclick="attack(74)">
-            <img id="i75" alt="S. Industrial 3" class="item sindustrial" src="./img/map/0/house.png" style="top: 70px; left: 69px;" onmouseout="hideTooltip()" onmouseover="showTooltip(75)" onclick="attack(75)">
-            <img id="i76" alt="S. Industrial 4" class="item sindustrial" src="./img/map/0/house.png" style="top: 70px; left: 202px;" onmouseout="hideTooltip()" onmouseover="showTooltip(76)" onclick="attack(76)">
-            <img id="i77" alt="S. Industrial 5" class="item sindustrial" src="./img/map/0/house.png" style="top: 70px; left: 971px;" onmouseout="hideTooltip()" onmouseover="showTooltip(77)" onclick="attack(77)">
-            <img id="i78" alt="S. Industrial 6" class="item sindustrial" src="./img/map/0/house.png" style="top: 70px; left: 1104px;" onmouseout="hideTooltip()" onmouseover="showTooltip(78)" onclick="attack(78)">
-            <img id="i79" alt="S. Industrial 7" class="item sindustrial" src="./img/map/0/house.png" style="top: 164px; left: 242px;" onmouseout="hideTooltip()" onmouseover="showTooltip(79)" onclick="attack(79)">
-            <img id="i80" alt="S. Industrial 8" class="item sindustrial" src="./img/map/0/house.png" style="top: 164px; left: 931px;" onmouseout="hideTooltip()" onmouseover="showTooltip(80)" onclick="attack(80)">
-            <img id="i81" alt="S. Industrial 9" class="item sindustrial" src="./img/map/0/house.png" style="top: 203px; left: 69px;" onmouseout="hideTooltip()" onmouseover="showTooltip(81)" onclick="attack(81)">
-            <img id="i82" alt="S. Industrial 10" class="item sindustrial" src="./img/map/0/house.png" style="top: 203px; left: 1104px;" onmouseout="hideTooltip()" onmouseover="showTooltip(82)" onclick="attack(82)">
-            <img id="i83" alt="S. Industrial 11" class="item sindustrial" src="./img/map/0/house.png" style="top: 244px; left: 162px;" onmouseout="hideTooltip()" onmouseover="showTooltip(83)" onclick="attack(83)">
-            <img id="i84" alt="S. Industrial 12" class="item sindustrial" src="./img/map/0/house.png" style="top: 244px; left: 1011px;" onmouseout="hideTooltip()" onmouseover="showTooltip(84)" onclick="attack(84)">
-            <img id="i85" alt="S. Industrial 13" class="item sindustrial" src="./img/map/0/house.png" style="top: 475px; left: 57px;" onmouseout="hideTooltip()" onmouseover="showTooltip(85)" onclick="attack(85)">
-            <img id="i86" alt="S. Industrial 14" class="item sindustrial" src="./img/map/0/house.png" style="top: 475px; left: 1118px;" onmouseout="hideTooltip()" onmouseover="showTooltip(86)" onclick="attack(86)">
-            <img id="i87" alt="S. Industrial 15" class="item sindustrial" src="./img/map/0/house.png" style="top: 702px; left: 57px;" onmouseout="hideTooltip()" onmouseover="showTooltip(87)" onclick="attack(87)">
-            <img id="i88" alt="S. Industrial 16" class="item sindustrial" src="./img/map/0/house.png" style="top: 702px; left: 1118px;" onmouseout="hideTooltip()" onmouseover="showTooltip(88)" onclick="attack(88)">
-            <img id="i89" alt="S. Industrial 17" class="item sindustrial" src="./img/map/0/house.png" style="top: 932px; left: 163px;" onmouseout="hideTooltip()" onmouseover="showTooltip(89)" onclick="attack(89)">
-            <img id="i90" alt="S. Industrial 18" class="item sindustrial" src="./img/map/0/house.png" style="top: 932px; left: 1013px;" onmouseout="hideTooltip()" onmouseover="showTooltip(90)" onclick="attack(90)">
-            <img id="i91" alt="S. Industrial 19" class="item sindustrial" src="./img/map/0/house.png" style="top: 972px; left: 69px;" onmouseout="hideTooltip()" onmouseover="showTooltip(91)" onclick="attack(91)">
-            <img id="i92" alt="S. Industrial 20" class="item sindustrial" src="./img/map/0/house.png" style="top: 972px; left: 1106px;" onmouseout="hideTooltip()" onmouseover="showTooltip(92)" onclick="attack(92)">
-            <img id="i93" alt="S. Industrial 21" class="item sindustrial" src="./img/map/0/house.png" style="top: 1012px; left: 243px;" onmouseout="hideTooltip()" onmouseover="showTooltip(93)" onclick="attack(93)">
-            <img id="i94" alt="S. Industrial 22" class="item sindustrial" src="./img/map/0/house.png" style="top: 1012px; left: 933px;" onmouseout="hideTooltip()" onmouseover="showTooltip(94)" onclick="attack(94)">
-            <img id="i95" alt="S. Industrial 23" class="item sindustrial" src="./img/map/0/house.png" style="top: 1105px; left: 69px;" onmouseout="hideTooltip()" onmouseover="showTooltip(95)" onclick="attack(95)">
-            <img id="i96" alt="S. Industrial 24" class="item sindustrial" src="./img/map/0/house.png" style="top: 1105px; left: 203px;" onmouseout="hideTooltip()" onmouseover="showTooltip(96)" onclick="attack(96)">
-            <img id="i97" alt="S. Industrial 25" class="item sindustrial" src="./img/map/0/house.png" style="top: 1105px; left: 973px;" onmouseout="hideTooltip()" onmouseover="showTooltip(97)" onclick="attack(97)">
-            <img id="i98" alt="S. Industrial 26" class="item sindustrial" src="./img/map/0/house.png" style="top: 1105px; left: 1106px;" onmouseout="hideTooltip()" onmouseover="showTooltip(98)" onclick="attack(98)">
-            <img id="i99" alt="S. Industrial 27" class="item sindustrial" src="./img/map/0/house.png" style="top: 1128px; left: 461px;" onmouseout="hideTooltip()" onmouseover="showTooltip(99)" onclick="attack(99)">
-            <img id="i100" alt="S. Industrial 28" class="item sindustrial" src="./img/map/0/house.png" style="top: 1128px; left: 714px;" onmouseout="hideTooltip()" onmouseover="showTooltip(100)" onclick="attack(100)">
+            <!-- ARMOR DEPOTS -->
+            <img id="i81" alt="Armor Depot 1" class="item depot" src="./img/map/0/armor.png" style="top: 271px; left: 121px;" onmouseout="hideTooltip()" onmouseover="showTooltip(81)" onclick="attack(81)">
+            <img id="i82" alt="Armor Depot 2" class="item depot" src="./img/map/0/armor.png" style="top: 764px; left: 121px;" onmouseout="hideTooltip()" onmouseover="showTooltip(82)" onclick="attack(82)">
+            <img id="i83" alt="Armor Depot 3" class="item depot" src="./img/map/0/armor.png" style="top: 1094px; left: 369px;" onmouseout="hideTooltip()" onmouseover="showTooltip(83)" onclick="attack(83)">
+            <img id="i84" alt="Armor Depot 4" class="item depot" src="./img/map/0/armor.png" style="top: 1094px; left: 862px;" onmouseout="hideTooltip()" onmouseover="showTooltip(84)" onclick="attack(84)">
+            <img id="i85" alt="Armor Depot 5" class="item depot" src="./img/map/0/armor.png" style="top: 891px; left: 1057px;" onmouseout="hideTooltip()" onmouseover="showTooltip(85)" onclick="attack(85)">
+            <img id="i86" alt="Armor Depot 6" class="item depot" src="./img/map/0/armor.png" style="top: 398px; left: 1057px;" onmouseout="hideTooltip()" onmouseover="showTooltip(86)" onclick="attack(86)">
+            <img id="i87" alt="Armor Depot 7" class="item depot" src="./img/map/0/armor.png" style="top: 113px; left: 899px;" onmouseout="hideTooltip()" onmouseover="showTooltip(87)" onclick="attack(87)">
+            <img id="i88" alt="Armor Depot 8" class="item depot" src="./img/map/0/armor.png" style="top: 113px; left: 405px;" onmouseout="hideTooltip()" onmouseover="showTooltip(88)" onclick="attack(88)">
             
-            <!-- MEDIUM INDUSTRIAL CITIES -->
-            <img id="i101" alt="M. Industrial 1" class="item mindustrial" src="./img/map/0/merchant.png" style="top: 113px; left: 417px;" onmouseout="hideTooltip()" onmouseover="showTooltip(101)" onclick="attack(101)">
-            <img id="i102" alt="M. Industrial 2" class="item mindustrial" src="./img/map/0/merchant.png" style="top: 113px; left: 751px;" onmouseout="hideTooltip()" onmouseover="showTooltip(102)" onclick="attack(102)">
-            <img id="i103" alt="M. Industrial 3" class="item mindustrial" src="./img/map/0/merchant.png" style="top: 252px; left: 371px;" onmouseout="hideTooltip()" onmouseover="showTooltip(103)" onclick="attack(103)">
-            <img id="i104" alt="M. Industrial 4" class="item mindustrial" src="./img/map/0/merchant.png" style="top: 252px; left: 798px;" onmouseout="hideTooltip()" onmouseover="showTooltip(104)" onclick="attack(104)">
-            <img id="i105" alt="M. Industrial 5" class="item mindustrial" src="./img/map/0/merchant.png" style="top: 372px; left: 250px;" onmouseout="hideTooltip()" onmouseover="showTooltip(105)" onclick="attack(105)">
-            <img id="i106" alt="M. Industrial 6" class="item mindustrial" src="./img/map/0/merchant.png" style="top: 372px; left: 917px;" onmouseout="hideTooltip()" onmouseover="showTooltip(106)" onclick="attack(106)">
-            <img id="i107" alt="M. Industrial 7" class="item mindustrial" src="./img/map/0/merchant.png" style="top: 419px; left: 107px;" onmouseout="hideTooltip()" onmouseover="showTooltip(107)" onclick="attack(107)">
-            <img id="i108" alt="M. Industrial 8" class="item mindustrial" src="./img/map/0/merchant.png" style="top: 419px; left: 1061px;" onmouseout="hideTooltip()" onmouseover="showTooltip(108)" onclick="attack(108)">
-            <img id="i109" alt="M. Industrial 9" class="item mindustrial" src="./img/map/0/merchant.png" style="top: 753px; left: 107px;" onmouseout="hideTooltip()" onmouseover="showTooltip(109)" onclick="attack(109)">
-            <img id="i110" alt="M. Industrial 10" class="item mindustrial" src="./img/map/0/merchant.png" style="top: 753px; left: 1061px;" onmouseout="hideTooltip()" onmouseover="showTooltip(110)" onclick="attack(110)">
-            <img id="i111" alt="M. Industrial 11" class="item mindustrial" src="./img/map/0/merchant.png" style="top: 799px; left: 250px;" onmouseout="hideTooltip()" onmouseover="showTooltip(111)" onclick="attack(111)">
-            <img id="i112" alt="M. Industrial 12" class="item mindustrial" src="./img/map/0/merchant.png" style="top: 799px; left: 917px;" onmouseout="hideTooltip()" onmouseover="showTooltip(112)" onclick="attack(112)">
-            <img id="i113" alt="M. Industrial 13" class="item mindustrial" src="./img/map/0/merchant.png" style="top: 919px; left: 371px;" onmouseout="hideTooltip()" onmouseover="showTooltip(113)" onclick="attack(113)">
-            <img id="i114" alt="M. Industrial 14" class="item mindustrial" src="./img/map/0/merchant.png" style="top: 919px; left: 798px;" onmouseout="hideTooltip()" onmouseover="showTooltip(114)" onclick="attack(114)">
-            <img id="i115" alt="M. Industrial 15" class="item mindustrial" src="./img/map/0/merchant.png" style="top: 1059px; left: 417px;" onmouseout="hideTooltip()" onmouseover="showTooltip(115)" onclick="attack(115)">
-            <img id="i116" alt="M. Industrial 16" class="item mindustrial" src="./img/map/0/merchant.png" style="top: 1059px; left: 751px;" onmouseout="hideTooltip()" onmouseover="showTooltip(116)" onclick="attack(116)">
+            <!-- WEAPON DEPOTS -->
+            <img id="i89" alt="Weapon Depot 1" class="item depot" src="./img/map/0/weapon.png" style="top: 305px; left: 75px;" onmouseout="hideTooltip()" onmouseover="showTooltip(89)" onclick="attack(89)">
+            <img id="i90" alt="Weapon Depot 2" class="item depot" src="./img/map/0/weapon.png" style="top: 799px; left: 75px;" onmouseout="hideTooltip()" onmouseover="showTooltip(90)" onclick="attack(90)">
+            <img id="i91" alt="Weapon Depot 3" class="item depot" src="./img/map/0/weapon.png" style="top: 1049px; left: 405px;" onmouseout="hideTooltip()" onmouseover="showTooltip(91)" onclick="attack(91)">
+            <img id="i92" alt="Weapon Depot 4" class="item depot" src="./img/map/0/weapon.png" style="top: 1049px; left: 899px;" onmouseout="hideTooltip()" onmouseover="showTooltip(92)" onclick="attack(92)">
+            <img id="i93" alt="Weapon Depot 5" class="item depot" src="./img/map/0/weapon.png" style="top: 855px; left: 1103px;" onmouseout="hideTooltip()" onmouseover="showTooltip(93)" onclick="attack(93)">
+            <img id="i94" alt="Weapon Depot 6" class="item depot" src="./img/map/0/weapon.png" style="top: 362px; left: 1103px;" onmouseout="hideTooltip()" onmouseover="showTooltip(94)" onclick="attack(94)">
+            <img id="i95" alt="Weapon Depot 7" class="item depot" src="./img/map/0/weapon.png" style="top: 67px; left: 862px;" onmouseout="hideTooltip()" onmouseover="showTooltip(95)" onclick="attack(95)">
+            <img id="i96" alt="Weapon Depot 8" class="item depot" src="./img/map/0/weapon.png" style="top: 67px; left: 369px;" onmouseout="hideTooltip()" onmouseover="showTooltip(96)" onclick="attack(96)">
             
-            <!-- LARGE INDUSTRIAL CITIES -->
-            <img id="i117" alt="L. Industrial 1" class="item lindustrial" src="./img/map/0/fortress.png" style="top: 334px; left: 329px;" onmouseout="hideTooltip()" onmouseover="showTooltip(117)" onclick="attack(117)">
-            <img id="i118" alt="L. Industrial 2" class="item lindustrial" src="./img/map/0/fortress.png" style="top: 334px; left: 836px;" onmouseout="hideTooltip()" onmouseover="showTooltip(118)" onclick="attack(118)">
-            <img id="i119" alt="L. Industrial 3" class="item lindustrial" src="./img/map/0/fortress.png" style="top: 402px; left: 582px;" onmouseout="hideTooltip()" onmouseover="showTooltip(119)" onclick="attack(119)">
-            <img id="i120" alt="L. Industrial 4" class="item lindustrial" src="./img/map/0/fortress.png" style="top: 749px; left: 582px;" onmouseout="hideTooltip()" onmouseover="showTooltip(120)" onclick="attack(120)">
-            <img id="i121" alt="L. Industrial 5" class="item lindustrial" src="./img/map/0/fortress.png" style="top: 575px; left: 409px;" onmouseout="hideTooltip()" onmouseover="showTooltip(121)" onclick="attack(121)">
-            <img id="i122" alt="L. Industrial 6" class="item lindustrial" src="./img/map/0/fortress.png" style="top: 575px; left: 755px;" onmouseout="hideTooltip()" onmouseover="showTooltip(122)" onclick="attack(122)">
-            <img id="i123" alt="L. Industrial 7" class="item lindustrial" src="./img/map/0/fortress.png" style="top: 816px; left: 329px;" onmouseout="hideTooltip()" onmouseover="showTooltip(123)" onclick="attack(123)">
-            <img id="i124" alt="L. Industrial 8" class="item lindustrial" src="./img/map/0/fortress.png" style="top: 816px; left: 836px;" onmouseout="hideTooltip()" onmouseover="showTooltip(124)" onclick="attack(124)">
+            <!-- TACK DEPOTS -->
+            <img id="i97" alt="Tack Depot 1" class="item tack depot" src="./img/map/0/tack.png" style="top: 362px; left: 75px;" onmouseout="hideTooltip()" onmouseover="showTooltip(97)" onclick="attack(97)">
+            <img id="i98" alt="Tack Depot 2" class="item tack depot" src="./img/map/0/tack.png" style="top: 855px; left: 75px;" onmouseout="hideTooltip()" onmouseover="showTooltip(98)" onclick="attack(98)">
+            <img id="i99" alt="Tack Depot 3" class="item tack depot" src="./img/map/0/tack.png" style="top: 1094px; left: 315px;" onmouseout="hideTooltip()" onmouseover="showTooltip(99)" onclick="attack(99)">
+            <img id="i100" alt="Tack Depot 4" class="item tack depot" src="./img/map/0/tack.png" style="top: 1094px; left: 809px;" onmouseout="hideTooltip()" onmouseover="showTooltip(100)" onclick="attack(100)">
+            <img id="i101" alt="Tack Depot 5" class="item tack depot" src="./img/map/0/tack.png" style="top: 800px; left: 1102px;" onmouseout="hideTooltip()" onmouseover="showTooltip(101)" onclick="attack(101)">
+            <img id="i102" alt="Tack Depot 6" class="item tack depot" src="./img/map/0/tack.png" style="top: 307px; left: 1102px;" onmouseout="hideTooltip()" onmouseover="showTooltip(102)" onclick="attack(102)">
+            <img id="i103" alt="Tack Depot 7" class="item tack depot" src="./img/map/0/tack.png" style="top: 67px; left: 809px;" onmouseout="hideTooltip()" onmouseover="showTooltip(103)" onclick="attack(103)">
+            <img id="i104" alt="Tack Depot 8" class="item tack depot" src="./img/map/0/tack.png" style="top: 67px; left: 315px;" onmouseout="hideTooltip()" onmouseover="showTooltip(104)" onclick="attack(104)">
+            
+            <!-- HERB DEPOTS -->
+            <img id="i105" alt="Herb Depot 1" class="item depot" src="./img/map/0/herb.png" style="top: 398px; left: 121px;" onmouseout="hideTooltip()" onmouseover="showTooltip(105)" onclick="attack(105)">
+            <img id="i106" alt="Herb Depot 2" class="item depot" src="./img/map/0/herb.png" style="top: 891px; left: 121px;" onmouseout="hideTooltip()" onmouseover="showTooltip(106)" onclick="attack(106)">
+            <img id="i107" alt="Herb Depot 3" class="item depot" src="./img/map/0/herb.png" style="top: 1049px; left: 279px;" onmouseout="hideTooltip()" onmouseover="showTooltip(107)" onclick="attack(107)">
+            <img id="i108" alt="Herb Depot 4" class="item depot" src="./img/map/0/herb.png" style="top: 1049px; left: 772px;" onmouseout="hideTooltip()" onmouseover="showTooltip(108)" onclick="attack(108)">
+            <img id="i109" alt="Herb Depot 5" class="item depot" src="./img/map/0/herb.png" style="top: 764px; left: 1057px;" onmouseout="hideTooltip()" onmouseover="showTooltip(109)" onclick="attack(109)">
+            <img id="i110" alt="Herb Depot 6" class="item depot" src="./img/map/0/herb.png" style="top: 271px; left: 1057px;" onmouseout="hideTooltip()" onmouseover="showTooltip(110)" onclick="attack(110)">
+            <img id="i111" alt="Herb Depot 7" class="item depot" src="./img/map/0/herb.png" style="top: 113px; left: 772px;" onmouseout="hideTooltip()" onmouseover="showTooltip(111)" onclick="attack(111)">
+            <img id="i112" alt="Herb Depot 8" class="item depot" src="./img/map/0/herb.png" style="top: 113px; left: 279px;" onmouseout="hideTooltip()" onmouseover="showTooltip(112)" onclick="attack(112)">
+            
+            <!-- SMALL MERCHANTS -->
+            <img id="i113" alt="S. Merchant City 1" class="item smerchant" src="./img/map/0/merchant.png" style="top: 51px; left: 123px;" onmouseout="hideTooltip()" onmouseover="showTooltip(113)" onclick="attack(113)">
+            <img id="i114" alt="S. Merchant City 2" class="item smerchant" src="./img/map/0/merchant.png" style="top: 530px; left: 60px;" onmouseout="hideTooltip()" onmouseover="showTooltip(114)" onclick="attack(114)">
+            <img id="i115" alt="S. Merchant City 3" class="item smerchant" src="./img/map/0/merchant.png" style="top: 1050px; left: 51px;" onmouseout="hideTooltip()" onmouseover="showTooltip(115)" onclick="attack(115)">
+            <img id="i116" alt="S. Merchant City 4" class="item smerchant" src="./img/map/0/merchant.png" style="top: 1109px; left: 539px;" onmouseout="hideTooltip()" onmouseover="showTooltip(116)" onclick="attack(116)">
+            <img id="i117" alt="S. Merchant City 5" class="item smerchant" src="./img/map/0/merchant.png" style="top: 1123px; left: 1050px;" onmouseout="hideTooltip()" onmouseover="showTooltip(117)" onclick="attack(117)">
+            <img id="i118" alt="S. Merchant City 6" class="item smerchant" src="./img/map/0/merchant.png" style="top: 530px; left: 1113px;" onmouseout="hideTooltip()" onmouseover="showTooltip(118)" onclick="attack(118)">
+            <img id="i119" alt="S. Merchant City 7" class="item smerchant" src="./img/map/0/merchant.png" style="top: 123px; left: 1123px;" onmouseout="hideTooltip()" onmouseover="showTooltip(119)" onclick="attack(119)">
+            <img id="i120" alt="S. Merchant City 8" class="item smerchant" src="./img/map/0/merchant.png" style="top: 65px; left: 634px;" onmouseout="hideTooltip()" onmouseover="showTooltip(120)" onclick="attack(120)">
+            <img id="i121" alt="S. Merchant City 9" class="item smerchant" src="./img/map/0/merchant.png" style="top: 377px; left: 448px;" onmouseout="hideTooltip()" onmouseover="showTooltip(121)" onclick="attack(121)">
+            <img id="i122" alt="S. Merchant City 10" class="item smerchant" src="./img/map/0/merchant.png" style="top: 449px; left: 376px;" onmouseout="hideTooltip()" onmouseover="showTooltip(122)" onclick="attack(122)">
+            <img id="i123" alt="S. Merchant City 11" class="item smerchant" src="./img/map/0/merchant.png" style="top: 548px; left: 362px;" onmouseout="hideTooltip()" onmouseover="showTooltip(123)" onclick="attack(123)">
+            <img id="i124" alt="S. Merchant City 12" class="item smerchant" src="./img/map/0/merchant.png" style="top: 626px; left: 362px;" onmouseout="hideTooltip()" onmouseover="showTooltip(124)" onclick="attack(124)">
+            <img id="i125" alt="S. Merchant City 13" class="item smerchant" src="./img/map/0/merchant.png" style="top: 725px; left: 376px;" onmouseout="hideTooltip()" onmouseover="showTooltip(125)" onclick="attack(125)">
+            <img id="i126" alt="S. Merchant City 14" class="item smerchant" src="./img/map/0/merchant.png" style="top: 798px; left: 448px;" onmouseout="hideTooltip()" onmouseover="showTooltip(126)" onclick="attack(126)">
+            <img id="i127" alt="S. Merchant City 15" class="item smerchant" src="./img/map/0/merchant.png" style="top: 811px; left: 548px;" onmouseout="hideTooltip()" onmouseover="showTooltip(127)" onclick="attack(127)">
+            <img id="i128" alt="S. Merchant City 16" class="item smerchant" src="./img/map/0/merchant.png" style="top: 811px; left: 626px;" onmouseout="hideTooltip()" onmouseover="showTooltip(128)" onclick="attack(128)">
+            <img id="i129" alt="S. Merchant City 17" class="item smerchant" src="./img/map/0/merchant.png" style="top: 798px; left: 725px;" onmouseout="hideTooltip()" onmouseover="showTooltip(129)" onclick="attack(129)">
+            <img id="i130" alt="S. Merchant City 18" class="item smerchant" src="./img/map/0/merchant.png" style="top: 725px; left: 797px;" onmouseout="hideTooltip()" onmouseover="showTooltip(130)" onclick="attack(130)">
+            <img id="i131" alt="S. Merchant City 19" class="item smerchant" src="./img/map/0/merchant.png" style="top: 626px; left: 811px;" onmouseout="hideTooltip()" onmouseover="showTooltip(131)" onclick="attack(131)">
+            <img id="i132" alt="S. Merchant City 20" class="item smerchant" src="./img/map/0/merchant.png" style="top: 548px; left: 811px;" onmouseout="hideTooltip()" onmouseover="showTooltip(132)" onclick="attack(132)">
+            <img id="i133" alt="S. Merchant City 21" class="item smerchant" src="./img/map/0/merchant.png" style="top: 449px; left: 797px;" onmouseout="hideTooltip()" onmouseover="showTooltip(133)" onclick="attack(133)">
+            <img id="i134" alt="S. Merchant City 22" class="item smerchant" src="./img/map/0/merchant.png" style="top: 377px; left: 725px;" onmouseout="hideTooltip()" onmouseover="showTooltip(134)" onclick="attack(134)">
+            <img id="i135" alt="S. Merchant City 23" class="item smerchant" src="./img/map/0/merchant.png" style="top: 363px; left: 626px;" onmouseout="hideTooltip()" onmouseover="showTooltip(135)" onclick="attack(135)">
+            <img id="i136" alt="S. Merchant City 24" class="item smerchant" src="./img/map/0/merchant.png" style="top: 363px; left: 548px;" onmouseout="hideTooltip()" onmouseover="showTooltip(136)" onclick="attack(136)">
+            <img id="i137" alt="S. Merchant City 25" class="item smerchant" src="./img/map/0/merchant.png" style="top: 467px; left: 467px;" onmouseout="hideTooltip()" onmouseover="showTooltip(137)" onclick="attack(137)">
+            <img id="i138" alt="S. Merchant City 26" class="item smerchant" src="./img/map/0/merchant.png" style="top: 587px; left: 457px;" onmouseout="hideTooltip()" onmouseover="showTooltip(138)" onclick="attack(138)">
+            <img id="i139" alt="S. Merchant City 27" class="item smerchant" src="./img/map/0/merchant.png" style="top: 707px; left: 467px;" onmouseout="hideTooltip()" onmouseover="showTooltip(139)" onclick="attack(139)">
+            <img id="i140" alt="S. Merchant City 28" class="item smerchant" src="./img/map/0/merchant.png" style="top: 716px; left: 587px;" onmouseout="hideTooltip()" onmouseover="showTooltip(140)" onclick="attack(140)">
+            <img id="i141" alt="S. Merchant City 29" class="item smerchant" src="./img/map/0/merchant.png" style="top: 707px; left: 707px;" onmouseout="hideTooltip()" onmouseover="showTooltip(141)" onclick="attack(141)">
+            <img id="i142" alt="S. Merchant City 30" class="item smerchant" src="./img/map/0/merchant.png" style="top: 587px; left: 716px;" onmouseout="hideTooltip()" onmouseover="showTooltip(142)" onclick="attack(142)">
+            <img id="i143" alt="S. Merchant City 31" class="item smerchant" src="./img/map/0/merchant.png" style="top: 467px; left: 707px;" onmouseout="hideTooltip()" onmouseover="showTooltip(143)" onclick="attack(143)">
+            <img id="i144" alt="S. Merchant City 32" class="item smerchant" src="./img/map/0/merchant.png" style="top: 458px; left: 587px;" onmouseout="hideTooltip()" onmouseover="showTooltip(144)" onclick="attack(144)">
+            
+            <!-- MEDIUM MERCHANTS -->
+            <img id="i145" alt="M. Merchant City 1" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 157px; left: 237px;" onmouseout="hideTooltip()" onmouseover="showTooltip(145)" onclick="attack(145)">
+            <img id="i146" alt="M. Merchant City 2" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 238px; left: 156px;" onmouseout="hideTooltip()" onmouseover="showTooltip(146)" onclick="attack(146)">
+            <img id="i147" alt="M. Merchant City 3" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 427px; left: 156px;" onmouseout="hideTooltip()" onmouseover="showTooltip(147)" onclick="attack(147)">
+            <img id="i148" alt="M. Merchant City 4" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 740px; left: 156px;" onmouseout="hideTooltip()" onmouseover="showTooltip(148)" onclick="attack(148)">
+            <img id="i149" alt="M. Merchant City 5" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 930px; left: 156px;" onmouseout="hideTooltip()" onmouseover="showTooltip(149)" onclick="attack(149)">
+            <img id="i150" alt="M. Merchant City 6" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 1011px; left: 237px;" onmouseout="hideTooltip()" onmouseover="showTooltip(150)" onclick="attack(150)">
+            <img id="i151" alt="M. Merchant City 7" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 1011px; left: 472px;" onmouseout="hideTooltip()" onmouseover="showTooltip(151)" onclick="attack(151)">
+            <img id="i152" alt="M. Merchant City 8" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 1011px; left: 739px;" onmouseout="hideTooltip()" onmouseover="showTooltip(152)" onclick="attack(152)">
+            <img id="i153" alt="M. Merchant City 9" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 1011px; left: 929px;" onmouseout="hideTooltip()" onmouseover="showTooltip(153)" onclick="attack(153)">
+            <img id="i154" alt="M. Merchant City 10" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 930px; left: 1011px;" onmouseout="hideTooltip()" onmouseover="showTooltip(154)" onclick="attack(154)">
+            <img id="i155" alt="M. Merchant City 11" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 740px; left: 1011px;" onmouseout="hideTooltip()" onmouseover="showTooltip(155)" onclick="attack(155)">
+            <img id="i156" alt="M. Merchant City 12" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 427px; left: 1011px;" onmouseout="hideTooltip()" onmouseover="showTooltip(156)" onclick="attack(156)">
+            <img id="i157" alt="M. Merchant City 13" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 238px; left: 1011px;" onmouseout="hideTooltip()" onmouseover="showTooltip(157)" onclick="attack(157)">
+            <img id="i158" alt="M. Merchant City 14" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 157px; left: 929px;" onmouseout="hideTooltip()" onmouseover="showTooltip(158)" onclick="attack(158)">
+            <img id="i159" alt="M. Merchant City 15" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 157px; left: 739px;" onmouseout="hideTooltip()" onmouseover="showTooltip(159)" onclick="attack(159)">
+            <img id="i160" alt="M. Merchant City 16" class="item mmerchant" src="./img/map/0/merchant.png" style="top: 157px; left: 427px;" onmouseout="hideTooltip()" onmouseover="showTooltip(160)" onclick="attack(160)">
+            
+            <!-- LARGE MERCHANTS -->
+            <img id="i161" alt="L. Merchant City 1" class="item lmerchant" src="./img/map/0/merchant.png" style="top: 467px; left: 294px;" onmouseout="hideTooltip()" onmouseover="showTooltip(161)" onclick="attack(161)">
+            <img id="i162" alt="L. Merchant City 2" class="item lmerchant" src="./img/map/0/merchant.png" style="top: 689px; left: 294px;" onmouseout="hideTooltip()" onmouseover="showTooltip(162)" onclick="attack(162)">
+            <img id="i163" alt="L. Merchant City 3" class="item lmerchant" src="./img/map/0/merchant.png" style="top: 861px; left: 466px;" onmouseout="hideTooltip()" onmouseover="showTooltip(163)" onclick="attack(163)">
+            <img id="i164" alt="L. Merchant City 4" class="item lmerchant" src="./img/map/0/merchant.png" style="top: 861px; left: 688px;" onmouseout="hideTooltip()" onmouseover="showTooltip(164)" onclick="attack(164)">
+            <img id="i165" alt="L. Merchant City 5" class="item lmerchant" src="./img/map/0/merchant.png" style="top: 689px; left: 860px;" onmouseout="hideTooltip()" onmouseover="showTooltip(165)" onclick="attack(165)">
+            <img id="i166" alt="L. Merchant City 6" class="item lmerchant" src="./img/map/0/merchant.png" style="top: 467px; left: 860px;" onmouseout="hideTooltip()" onmouseover="showTooltip(166)" onclick="attack(166)">
+            <img id="i167" alt="L. Merchant City 7" class="item lmerchant" src="./img/map/0/merchant.png" style="top: 295px; left: 688px;" onmouseout="hideTooltip()" onmouseover="showTooltip(167)" onclick="attack(167)">
+            <img id="i168" alt="L. Merchant City 8" class="item lmerchant" src="./img/map/0/merchant.png" style="top: 295px; left: 466px;" onmouseout="hideTooltip()" onmouseover="showTooltip(168)" onclick="attack(168)">
+            
+            <!-- SMALL MILITARY -->
+            <img id="i169" alt="S. Military City 1" class="item smilitary" src="./img/map/0/military.png" style="top: 123px; left: 55px;" onmouseout="hideTooltip()" onmouseover="showTooltip(169)" onclick="attack(169)">
+            <img id="i170" alt="S. Military City 2" class="item smilitary" src="./img/map/0/military.png" style="top: 643px; left: 65px;" onmouseout="hideTooltip()" onmouseover="showTooltip(170)" onclick="attack(170)">
+            <img id="i171" alt="S. Military City 3" class="item smilitary" src="./img/map/0/military.png" style="top: 1122px; left: 128px;" onmouseout="hideTooltip()" onmouseover="showTooltip(171)" onclick="attack(171)">
+            <img id="i172" alt="S. Military City 4" class="item smilitary" src="./img/map/0/military.png" style="top: 1108px; left: 639px;" onmouseout="hideTooltip()" onmouseover="showTooltip(172)" onclick="attack(172)">
+            <img id="i173" alt="S. Military City 5" class="item smilitary" src="./img/map/0/military.png" style="top: 1050px; left: 1127px;" onmouseout="hideTooltip()" onmouseover="showTooltip(173)" onclick="attack(173)">
+            <img id="i174" alt="S. Military City 6" class="item smilitary" src="./img/map/0/military.png" style="top: 643px; left: 1118px;" onmouseout="hideTooltip()" onmouseover="showTooltip(174)" onclick="attack(174)">
+            <img id="i175" alt="S. Military City 7" class="item smilitary" src="./img/map/0/military.png" style="top: 50px; left: 1055px;" onmouseout="hideTooltip()" onmouseover="showTooltip(175)" onclick="attack(175)">
+            <img id="i176" alt="S. Military City 8" class="item smilitary" src="./img/map/0/military.png" style="top: 64px; left: 543px;" onmouseout="hideTooltip()" onmouseover="showTooltip(176)" onclick="attack(176)">
+            
+            <!-- MEDIUM MILITARY -->
+            <img id="i177" alt="M. Military City 1" class="item mmilitary" src="./img/map/0/military.png" style="top: 83px; left: 179px;" onmouseout="hideTooltip()" onmouseover="showTooltip(177)" onclick="attack(177)">
+            <img id="i178" alt="M. Military City 2" class="item mmilitary" src="./img/map/0/military.png" style="top: 173px; left: 89px;" onmouseout="hideTooltip()" onmouseover="showTooltip(178)" onclick="attack(178)">
+            <img id="i179" alt="M. Military City 3" class="item mmilitary" src="./img/map/0/military.png" style="top: 481px; left: 89px;" onmouseout="hideTooltip()" onmouseover="showTooltip(179)" onclick="attack(179)">
+            <img id="i180" alt="M. Military City 4" class="item mmilitary" src="./img/map/0/military.png" style="top: 685px; left: 89px;" onmouseout="hideTooltip()" onmouseover="showTooltip(180)" onclick="attack(180)">
+            <img id="i181" alt="M. Military City 5" class="item mmilitary" src="./img/map/0/military.png" style="top: 992px; left: 89px;" onmouseout="hideTooltip()" onmouseover="showTooltip(181)" onclick="attack(181)">
+            <img id="i182" alt="M. Military City 6" class="item mmilitary" src="./img/map/0/military.png" style="top: 1082px; left: 179px;" onmouseout="hideTooltip()" onmouseover="showTooltip(182)" onclick="attack(182)">
+            <img id="i183" alt="M. Military City 7" class="item mmilitary" src="./img/map/0/military.png" style="top: 1082px; left: 496px;" onmouseout="hideTooltip()" onmouseover="showTooltip(183)" onclick="attack(183)">
+            <img id="i184" alt="M. Military City 8" class="item mmilitary" src="./img/map/0/military.png" style="top: 1082px; left: 682px;" onmouseout="hideTooltip()" onmouseover="showTooltip(184)" onclick="attack(184)">
+            <img id="i185" alt="M. Military City 9" class="item mmilitary" src="./img/map/0/military.png" style="top: 1082px; left: 998px;" onmouseout="hideTooltip()" onmouseover="showTooltip(185)" onclick="attack(185)">
+            <img id="i186" alt="M. Military City 10" class="item mmilitary" src="./img/map/0/military.png" style="top: 992px; left: 1089px;" onmouseout="hideTooltip()" onmouseover="showTooltip(186)" onclick="attack(186)">
+            <img id="i187" alt="M. Military City 11" class="item mmilitary" src="./img/map/0/military.png" style="top: 685px; left: 1089px;" onmouseout="hideTooltip()" onmouseover="showTooltip(187)" onclick="attack(187)">
+            <img id="i188" alt="M. Military City 12" class="item mmilitary" src="./img/map/0/military.png" style="top: 481px; left: 1089px;" onmouseout="hideTooltip()" onmouseover="showTooltip(188)" onclick="attack(188)">
+            <img id="i189" alt="M. Military City 13" class="item mmilitary" src="./img/map/0/military.png" style="top: 173px; left: 1089px;" onmouseout="hideTooltip()" onmouseover="showTooltip(189)" onclick="attack(189)">
+            <img id="i190" alt="M. Military City 14" class="item mmilitary" src="./img/map/0/military.png" style="top: 83px; left: 998px;" onmouseout="hideTooltip()" onmouseover="showTooltip(190)" onclick="attack(190)">
+            <img id="i191" alt="M. Military City 15" class="item mmilitary" src="./img/map/0/military.png" style="top: 83px; left: 682px;" onmouseout="hideTooltip()" onmouseover="showTooltip(191)" onclick="attack(191)">
+            <img id="i192" alt="M. Military City 16" class="item mmilitary" src="./img/map/0/military.png" style="top: 83px; left: 496px;" onmouseout="hideTooltip()" onmouseover="showTooltip(192)" onclick="attack(192)">
+            <img id="i193" alt="M. Military City 17" class="item mmilitary" src="./img/map/0/military.png" style="top: 291px; left: 297px;" onmouseout="hideTooltip()" onmouseover="showTooltip(193)" onclick="attack(193)">
+            <img id="i194" alt="M. Military City 18" class="item mmilitary" src="./img/map/0/military.png" style="top: 875px; left: 297px;" onmouseout="hideTooltip()" onmouseover="showTooltip(194)" onclick="attack(194)">
+            <img id="i195" alt="M. Military City 19" class="item mmilitary" src="./img/map/0/military.png" style="top: 875px; left: 881px;" onmouseout="hideTooltip()" onmouseover="showTooltip(195)" onclick="attack(195)">
+            <img id="i196" alt="M. Military City 20" class="item mmilitary" src="./img/map/0/military.png" style="top: 291px; left: 881px;" onmouseout="hideTooltip()" onmouseover="showTooltip(196)" onclick="attack(196)">
+            
+            <!-- LARGE MILITARY -->
+            <img id="i197" alt="L. Military City 1" class="item lmilitary" src="./img/map/0/military.png" style="top: 375px; left: 383px;" onmouseout="hideTooltip()" onmouseover="showTooltip(197)" onclick="attack(197)">
+            <img id="i198" alt="L. Military City 2" class="item lmilitary" src="./img/map/0/military.png" style="top: 576px; left: 302px;" onmouseout="hideTooltip()" onmouseover="showTooltip(198)" onclick="attack(198)">
+            <img id="i199" alt="L. Military City 3" class="item lmilitary" src="./img/map/0/military.png" style="top: 778px; left: 383px;" onmouseout="hideTooltip()" onmouseover="showTooltip(199)" onclick="attack(199)">
+            <img id="i200" alt="L. Military City 4" class="item lmilitary" src="./img/map/0/military.png" style="top: 859px; left: 585px;" onmouseout="hideTooltip()" onmouseover="showTooltip(200)" onclick="attack(200)">
+            <img id="i201" alt="L. Military City 5" class="item lmilitary" src="./img/map/0/military.png" style="top: 778px; left: 786px;" onmouseout="hideTooltip()" onmouseover="showTooltip(201)" onclick="attack(201)">
+            <img id="i202" alt="L. Military City 6" class="item lmilitary" src="./img/map/0/military.png" style="top: 576px; left: 867px;" onmouseout="hideTooltip()" onmouseover="showTooltip(202)" onclick="attack(202)">
+            <img id="i203" alt="L. Military City 7" class="item lmilitary" src="./img/map/0/military.png" style="top: 375px; left: 786px;" onmouseout="hideTooltip()" onmouseover="showTooltip(203)" onclick="attack(203)">
+            <img id="i204" alt="L. Military City 8" class="item lmilitary" src="./img/map/0/military.png" style="top: 293px; left: 585px;" onmouseout="hideTooltip()" onmouseover="showTooltip(204)" onclick="attack(204)">
         </div>
         </div>
         <div class="dataC">
             <div id="bRandomMap2" class="myButton" style="position: absolute; top: 10px; left: 0px; width: 140px; height: 30px;" onclick="randomMap()">Random</div>
             <div id="bResetMap2" class="myButton" style="position: absolute; top: 50px; left: 0px; width: 140px; height: 30px;" onclick="resetMap()">Reset</div>
             <div id="bNamesMap2" class="myButton" style="position: absolute; top: 10px; right: 0px; width: 140px; height: 30px;" onclick="toggleMapNames()">Hide Names</div>
-            <div id="bKingshipMap2" class="myButton" style="position: absolute; top: 50px; right: 0px; width: 140px; height: 30px;" onclick="toggleMapKingship()">Show Kingship</div>
-            <div id="bVillagesMap2" class="myButton" style="position: absolute; top: 10px; right: 150px; width: 140px; height: 30px;" onclick="toggleMapVillages()">Show Villages</div>
+            <div id="bDistancesMap2" class="myButton" style="position: absolute; top: 50px; right: 0px; width: 140px; height: 30px;" onclick="toggleMapDistances()">Show Distances</div>
+            <div id="bDoubleTimeMarch2" style="position: absolute; top: 10px; left: 120px; width: 140px; height: 30px;">
+                <div class="tooltipT" style="cursor: pointer;">
+                    <img id="DT2" class="scroll-img disabled" src="./img/double_time.png" style="width: 70px; height: 70px;" alt="Double Time March" onclick="toggleDoubleTime()">
+                    <span class="tooltiptextT"><div class="talent-name">Double Time March</div>Increases Glorious Battle Marching Speed by 30% for 30 minutes.</span>
+                </div>
+                
+            </div>
             <br>
             <img src="./img/icon.png">
             <br>
